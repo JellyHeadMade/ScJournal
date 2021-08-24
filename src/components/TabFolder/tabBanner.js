@@ -4,34 +4,32 @@ class TabBanner extends React.Component{
     render() {
         return(
             <div className='tab-base-stack-banner'>
-                <div className='tab-base-stack-banner-tags'>
-                    <div className='tab-tag-type'>
-                        Type
+                <div className='tab-base-stack-banner__tags'>
+                    <div className='tab-tag__type'>
+                        <a>Type</a>
                     </div>
-                    <div className='tab-tag-activity'>
-                        Activity
+                    <div className='tab-tag__activity'>
+                        <a>Activity</a>
                     </div>
-                    <div className='tab-tag-location'>
-                        Location
+                    <div className='tab-tag__location'>
+                        <a>Location</a>
                     </div>
-                    <div className='tab-tag-ship'>
-                        Ship
+                    <div className='tab-tag__ship'>
+                        <a>Ship</a>
                     </div>
                 </div>
-                <div className='tab-base-stack-banner-info'>
-                    <div className='tab-base-stack-banner-user-img'>
+                    <div className='tab-base-stack-banner__img'>
                         user profile image
                     </div>
-                    <div className='tab-base-stack-banner-username'>
+                    <div className='tab-base-stack-banner__username'>
                         username
                     </div>
-                    <div className='tab-base-stack-banner-post-date'>
+                    <div className='tab-base-stack-banner__date'>
                         08/21/21
                     </div>
-                    <div className='tab-base-stack-banner-post-title'>
+                    <div className='tab-base-stack-banner__title'>
                         Post Title
                     </div>
-                </div>
             </div>
         )
     }

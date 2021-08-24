@@ -5,7 +5,17 @@ class DropTab extends React.Component{
         super(props);
 
         this.state = {
-            isExpanded : this.props.isExpanded
+            isExpanded : false
+        }
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onClick(event) {
+        console.log('clicked!!');
+        if(this.state.isExpanded == false) {
+            this.setState({ isExpanded : true })
+        } else {
+            this.setState({ isExpanded : false})
         }
     }
 
@@ -13,7 +23,7 @@ class DropTab extends React.Component{
     render() {
         return (
             <div className='drop-tab-base-container'>
-                {this.props.isExpanded == true ?
+                {this.state.isExpanded == true ?
                 <div className='drop-tab-base-content__expanded'>
                     {this.props.content}
                 </div>
@@ -23,14 +33,14 @@ class DropTab extends React.Component{
                 <div className='drop-tab-base-title'>
                     {this.props.type}
                 </div>
-                {this.props.isExpanded == true ?
-                <div className='drop-tab-base-arrow__expanded'>
+                {this.state.isExpanded == true ?
+                <button onClick={this.onClick}className='drop-tab-base-arrow__expanded'>
                     arrow facing up
-                </div>
+                </button>
                     :
-                <div className='drop-tab-base-arrow__shrunk'>
+                <button onClick={this.onClick} className='drop-tab-base-arrow__shrunk'>
                     arrow facing down
-                </div>
+                </button>
                 }
             </div>
         )
