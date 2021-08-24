@@ -15,7 +15,7 @@ class DropTab extends React.Component{
             <div className='drop-tab-base-container'>
                 {this.props.isExpanded == true ?
                 <div className='drop-tab-base-content__expanded'>
-                    {this.props.content.props.story}
+                    {this.props.content}
                 </div>
                     :
                 <div className='drop-tab-base-content__shrunk'></div>
@@ -23,9 +23,15 @@ class DropTab extends React.Component{
                 <div className='drop-tab-base-title'>
                     {this.props.type}
                 </div>
-                <div className='drop-tab-base-arrow'>
-                    {this.props.isExpanded}
+                {this.props.isExpanded == true ?
+                <div className='drop-tab-base-arrow__expanded'>
+                    arrow facing up
                 </div>
+                    :
+                <div className='drop-tab-base-arrow__shrunk'>
+                    arrow facing down
+                </div>
+                }
             </div>
         )
     }
