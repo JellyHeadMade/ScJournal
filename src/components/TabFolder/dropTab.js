@@ -5,25 +5,30 @@ class DropTab extends React.Component{
         super(props);
 
         this.state = {
-            isExpanded : this.props.isExpanded,
-            droptype : this.props.type,
-            content : this.props.conent
+            isExpanded : this.props.isExpanded
         }
     }
+
 
     render() {
         return (
             <div className='drop-tab-base-container'>
-                <div className='drop-tab-base-content'>
-                    
+                {this.props.isExpanded == true ?
+                <div className='drop-tab-base-content__expanded'>
+                    {this.props.content.props.story}
                 </div>
+                    :
+                <div className='drop-tab-base-content__shrunk'></div>
+                }
                 <div className='drop-tab-base-title'>
-                    {this.state.droptype}
+                    {this.props.type}
                 </div>
                 <div className='drop-tab-base-arrow'>
-                    
+                    {this.props.isExpanded}
                 </div>
             </div>
         )
     }
 }
+
+export default DropTab;
