@@ -11,8 +11,7 @@ class TabBase extends React.Component{
         super(props);
 
         this.state = {
-            story : 'this is a very short story for a test',
-            isExpanded : false
+            story : 'this is a very short story for a test'
         }
     }
 
@@ -20,9 +19,9 @@ class TabBase extends React.Component{
         return (
             <div className='tab-base-stack-container'>
                 <TabBanner />
-                <DropTab type='Story' order='1' content={<StoryContent story={this.state.story} onClick={this.onClick}/>}/>
-                <DropTab type='Images' order='2' content={<ImageGallery onClick={this.onClick}/>} />
-                <DropTab type='Comments' order='3' content={<CommentContent onClick={this.onClick}/>} />
+                <DropTab type='Story' order='1' content={<StoryContent story={this.state.story} />}/>
+                <DropTab type='Images' order='2' content={<ImageGallery />} />
+                <DropTab type='Comments' order='3' content={<CommentContent />} />
                 
             </div>
         )

@@ -19,16 +19,16 @@ class TabBanner extends React.Component{
                     </div>
                 </div>
                     <div className='tab-base-stack-banner__img'>
-                        user profile image
+                        <img src='http://via.placeholder.com/63'></img>
                     </div>
                     <div className='tab-base-stack-banner__username'>
-                        username
+                        JellyHeadMade
                     </div>
                     <div className='tab-base-stack-banner__date'>
                         08/21/21
                     </div>
                     <div className='tab-base-stack-banner__title'>
-                        Post Title
+                        The Prison Escape that lasted Six hours
                     </div>
             </div>
         )
