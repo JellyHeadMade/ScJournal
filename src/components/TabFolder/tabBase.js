@@ -22,7 +22,9 @@ class TabBase extends React.Component{
                 <div className='tab-base-stack-drop-container'>
                     <DropTab type='Story' order='1' content={<StoryContent story={this.state.story} />}/>
                     <DropTab type='Images' order='2' content={<ImageGallery />} />
+                    <div className='tab-spacer-1'></div>
                     <DropTab type='Comments' order='3' content={<CommentContent />} />
+                    <div className='tab-spacer-2'></div>
                 </div>
                 
             </div>

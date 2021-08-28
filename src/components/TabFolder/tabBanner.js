@@ -28,7 +28,7 @@ class TabBanner extends React.Component{
                         08/21/21
                     </div>
                     <div className='tab-base-stack-banner__title'>
-                        The Prison Escape that lasted Six hours
+                        Post Title
                     </div>
             </div>
         )
