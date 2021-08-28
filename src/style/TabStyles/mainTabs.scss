@@ -1,5 +1,4 @@
 .tab-base-stack-container {
-    // background-color: #296D94;
     width: 85%;
     // width: 1617px; this is the width from the design doc. 85% is almost there on width. 
     display: flex;
@@ -8,7 +7,7 @@
 
 .tab-base-stack-banner{
     border-radius: 50px 50px 0 0;
-    background-color: #296D94;
+    background-color: $banner-color;
     display: grid;
     width: 100%;
     height: 100px;
@@ -38,7 +37,7 @@
                 z-index: 10;
                 border-radius: 25px 0 0 0;
                 height: 50px;
-                background-color: #DEFF0B;
+                background-color: $type-tag-color;
                 grid-row: end-s/end-e;
                 grid-column: tagFour-s/tagFour-e;
                 display: flex;
@@ -53,7 +52,7 @@
                 z-index: 9;
                 border-radius: 25px 0 0 0;
                 height: 50px;
-                background-color: #FFB300;
+                background-color: $activity-tag-color;
                 grid-row: end-s/end-e;
                 grid-column: tagThree-s/tagFour-e;
                 display: flex;
@@ -69,7 +68,7 @@
                 z-index: 8;
                 border-radius: 25px 0 0 0;
                 height: 50px;
-                background-color: #42A0FF;
+                background-color: $location-tag-color;
                 grid-row: end-s/end-e;
                 grid-column: tagTwo-s/tagFour-e;
                 display: flex;
@@ -85,7 +84,7 @@
                 z-index: 7;
                 border-radius: 25px 0 0 0;
                 height: 50px;
-                background-color: #6BFFE6;
+                background-color: $ship-tag-color;
                 grid-row: end-s/end-e;
                 grid-column: tagOne-s/tagFour-e;
                 display: flex;
@@ -115,7 +114,7 @@
         padding-left: 20px;
         padding-top: 20px;
         font-size: 16px;
-        color: #E9E9E9;
+        color: $white-text;
         font-family: 'Poppins', sans-serif;
         align-self: center;
     }
@@ -126,7 +125,7 @@
         padding-bottom: 8px;
         font-size: 12px;
         font-family: 'Poppins', sans-serif;
-        color: #929292;
+        color: $light-gray-text;
         align-self: end;
     }
     &__title {
@@ -134,7 +133,7 @@
         grid-row: top-s/top-e;
         align-self: center;
         font-size: 30px;
-        color: #E9E9E9;
+        color: $white-text;
         font-family: 'Poppins', sans-serif;
         padding-left: 20px;
     }

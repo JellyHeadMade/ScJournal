@@ -9,7 +9,8 @@ class DropTab extends React.Component{
         super(props);
 
         this.state = {
-            isExpanded : false
+            isExpanded : false,
+            drop : 'up'
         }
         this.onClick = this.onClick.bind(this);
     }
@@ -17,9 +18,9 @@ class DropTab extends React.Component{
     onClick(event) {
         console.log('clicked!!');
         if(this.state.isExpanded == false) {
-            this.setState({ isExpanded : true })
+            this.setState({ isExpanded : true , drop : 'down' })
         } else {
-            this.setState({ isExpanded : false})
+            this.setState({ isExpanded : false , drop : 'up' })
         }
     }
 

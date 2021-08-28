@@ -22,7 +22,7 @@ class TabBanner extends React.Component{
                         <img src='http://via.placeholder.com/63'></img>
                     </div>
                     <div className='tab-base-stack-banner__username'>
-                        JellyHeadMade
+                        UserName
                     </div>
                     <div className='tab-base-stack-banner__date'>
                         08/21/21
