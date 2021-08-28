@@ -19,9 +19,11 @@ class TabBase extends React.Component{
         return (
             <div className='tab-base-stack-container'>
                 <TabBanner />
-                <DropTab type='Story' order='1' content={<StoryContent story={this.state.story} />}/>
-                <DropTab type='Images' order='2' content={<ImageGallery />} />
-                <DropTab type='Comments' order='3' content={<CommentContent />} />
+                <div className='tab-base-stack-drop-container'>
+                    <DropTab type='Story' order='1' content={<StoryContent story={this.state.story} />}/>
+                    <DropTab type='Images' order='2' content={<ImageGallery />} />
+                    <DropTab type='Comments' order='3' content={<CommentContent />} />
+                </div>
                 
             </div>
         )

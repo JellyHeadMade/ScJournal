@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+
+
 class DropTab extends React.Component{
     constructor(props) {
         super(props);
@@ -22,26 +26,19 @@ class DropTab extends React.Component{
 
     render() {
         return (
-            <div className='drop-tab-base-container'>
-                {this.state.isExpanded == true ?
-                <div className='drop-tab-base-content__expanded'>
-                    {this.props.content}
+            <div className={`drop-tab-${this.props.type}`}>
+                <div className={`droptab-${this.props.type}__content`}>
+                    {null}
+                    {this.state.isExpanded ? this.props.content : null}
                 </div>
-                    :
-                <div className='drop-tab-base-content__shrunk'></div>
-                }
-                <div className='drop-tab-base-title'>
-                    {this.props.type}
+                <div className={`droptab-${this.props.type}__bottom`}>
+                    <div className={`${this.props.type}-bottom-title`}>
+                        <a>{this.props.type}</a>
+                    </div>
+                    <div onClick={this.onClick} className={`${this.props.type}-bottom-arrow`}>
+                        {this.state.isExpanded ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown}/>}
+                    </div>
                 </div>
-                {this.state.isExpanded == true ?
-                <button onClick={this.onClick}className='drop-tab-base-arrow__expanded'>
-                    arrow facing up
-                </button>
-                    :
-                <button onClick={this.onClick} className='drop-tab-base-arrow__shrunk'>
-                    arrow facing down
-                </button>
-                }
             </div>
         )
     }
