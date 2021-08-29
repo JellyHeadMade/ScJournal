@@ -23,7 +23,7 @@
         .droptab-Story__content {
             grid-column: inner-s/inner-e;
             grid-row: content-s/content-e;
-            padding: 0px 20px 0px 20px;
+            padding: 0px 3% 0px 3%;
 
             .sub-tab-story-content {
                 padding: 15px;
@@ -151,6 +151,15 @@
     }
     
 }
+
+@keyframes right-animate {
+    0% {
+      transform: height(48px);
+    }
+    100% {
+      transform: height(400px);
+    }
+  }
 
 @keyframes tab-height-change-down {
     0% { height: 48px;}
