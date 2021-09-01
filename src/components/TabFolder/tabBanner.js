@@ -6,17 +6,20 @@ class TabBanner extends React.Component{
             <div className='tab-base-stack-banner'>
                 <div className='tab-base-stack-banner__tags'>
                     <div className='tab-tag__type'>
-                        <a>Type</a>
+                        <a>Story</a>
                     </div>
                     <div className='tab-tag__activity'>
-                        <a>Activity</a>
+                        <a>Mining</a>
                     </div>
+                    <div className='tab-tag__bgTagOne'></div>
                     <div className='tab-tag__location'>
-                        <a>Location</a>
+                        <a>Lyria</a>
                     </div>
+                    <div className='tab-tag__bgTagTwo'></div>
                     <div className='tab-tag__ship'>
-                        <a>Ship</a>
+                        <a>Mercury Star Runner</a>
                     </div>
+                    <div className='tab-tag__bgTagThree'></div>
                 </div>
                     <div className='tab-base-stack-banner__img'>
                         <img src='http://via.placeholder.com/63'></img>
