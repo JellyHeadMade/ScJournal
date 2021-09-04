@@ -1,0 +1,2 @@
+// POST 
+export const SET_POST_DETAILS = 'SET_POST_DETAILS';
