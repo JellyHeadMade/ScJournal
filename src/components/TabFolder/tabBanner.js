@@ -1,3 +1,4 @@
+import { faRulerHorizontal } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 class TabBanner extends React.Component{
@@ -6,32 +7,32 @@ class TabBanner extends React.Component{
             <div className='tab-base-stack-banner'>
                 <div className='tab-base-stack-banner__tags'>
                     <div className='tab-tag__type'>
-                        <a>Story</a>
+                        <a>{this.props.typeTag}</a>
                     </div>
                     <div className='tab-tag__activity'>
-                        <a>Mining</a>
+                        <a>{this.props.activityTag}</a>
                     </div>
                     <div className='tab-tag__bgTagOne'></div>
                     <div className='tab-tag__location'>
-                        <a>Lyria</a>
+                        <a>{this.props.locationTag}</a>
                     </div>
                     <div className='tab-tag__bgTagTwo'></div>
                     <div className='tab-tag__ship'>
-                        <a>Mercury Star Runner</a>
+                        <a>{this.props.shipTag}</a>
                     </div>
                     <div className='tab-tag__bgTagThree'></div>
                 </div>
                     <div className='tab-base-stack-banner__img'>
-                        <img src='http://via.placeholder.com/63'></img>
+                        <img src={this.props.userImage}></img>
                     </div>
                     <div className='tab-base-stack-banner__username'>
-                        UserName
+                        {this.props.userName}
                     </div>
                     <div className='tab-base-stack-banner__date'>
-                        08/21/21
+                        {this.props.postDate}
                     </div>
                     <div className='tab-base-stack-banner__title'>
-                        Post Title
+                        {this.props.postTitle}
                     </div>
             </div>
         )

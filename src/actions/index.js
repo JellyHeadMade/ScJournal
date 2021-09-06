@@ -1,7 +1,7 @@
 import {
-
-} from '';
+    setPostDetails
+} from './postTest';
 
 export {
-
+    setPostDetails
 };

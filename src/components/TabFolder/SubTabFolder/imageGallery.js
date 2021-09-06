@@ -9,9 +9,9 @@ class ImageGallery extends React.Component {
     render() {
         return (
             <div className='image-gallery-tab-content'>
-                <img className='img' src='http://via.placeholder.com/300X150' />
-                <img className='img' src='http://via.placeholder.com/300X150' />
-                <img className='img' src='http://via.placeholder.com/300X150' />
+                <img className='img' src={this.props.image1} />
+                <img className='img' src={this.props.image2} />
+                <img className='img' src={this.props.image3} />
             </div>
         )
     }

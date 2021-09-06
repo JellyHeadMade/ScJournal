@@ -9,9 +9,7 @@ class CommentContent extends React.Component {
     render() {
         return(
             <div className='comment-content'>
-                this is comment 1
-                this is comment 2
-                this is comment 3
+                {this.props.comments}
             </div>
         )
     }

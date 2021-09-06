@@ -18,12 +18,12 @@ class TabBase extends React.Component{
     render() {
         return (
             <div className='tab-base-stack-container'>
-                <TabBanner />
+                <TabBanner postTitle={this.props.postTitle} userName={this.props.userName} postDate={this.props.postDate} userImage={this.props.userImage} shipTag={this.props.shipTag} locationTag={this.props.locationTag} activityTag={this.props.activityTag} typeTag={this.props.typeTag}/>
                 <div className='tab-base-stack-drop-container'>
-                    <DropTab type='Story' order='1' content={<StoryContent story={this.state.story} />}/>
-                    <DropTab type='Images' order='2' content={<ImageGallery />} />
+                    <DropTab type='Story' order='1' content={<StoryContent story={this.props.story} />}/>
+                    <DropTab type='Images' order='2' content={<ImageGallery image1={this.props.images[0]} image2={this.props.images[1]} image3={this.props.images[2]}/>} />
                     <div className='tab-spacer-1'></div>
-                    <DropTab type='Comments' order='3' content={<CommentContent />} />
+                    <DropTab type='Comments' order='3' content={<CommentContent comments={this.props.comments}/>} />
                     <div className='tab-spacer-2'></div>
                 </div>
                 

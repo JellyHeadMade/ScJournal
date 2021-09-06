@@ -22,8 +22,12 @@ body {
     background-color: $bg-color;
 }
 
-.app {
+.time-line {
     margin-top: 2rem;
-    display: grid;
     justify-items: center;
+    height: 100vh;
+    padding-left: 11%;
+    display:flex;
+    width: 85%;
+    flex-direction: column;
 }
