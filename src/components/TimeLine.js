@@ -17,24 +17,23 @@ class TimeLine extends React.Component {
     }
 
     render() {
-        const freshPosts = this.props.posts;
-        {console.log(this.props.posts)}
         return(
             <div className='time-line'>
-                {freshPosts.map((i) => (
+                {this.props.posts.map((post) => (
                     <div className='test'>
-                        {console.log(i.postDate)}
-                        <TabBase userImage={i.userImage} 
-                            postTitle={i.postTitle} 
-                            userName={i.userName} 
-                            postDate={i.postDate} 
-                            shipTag={i.shipTag} 
-                            locationTag={i.locationTag}
-                            activityTag={i.activityTag}
-                            typeTag={i.typeTag}
-                            story={i.story}
-                            images={i.images}
-                            comments={i.comments}/>
+                        {/* {console.log(i.postDate)} */}
+                        <TabBase userImage={post.userImage} 
+                            postTitle={post.postTitle} 
+                            userName={post.userName} 
+                            postDate={post.postDate} 
+                            shipTag={post.shipTag} 
+                            locationTag={post.locationTag}
+                            activityTag={post.activityTag}
+                            typeTag={post.typeTag}
+                            story={post.story}
+                            images={post.images}
+                            comments={post.comments}
+                            key={post._id}/>
                     </div>
                 ))}
             </div>

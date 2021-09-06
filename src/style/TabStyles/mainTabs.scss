@@ -1,3 +1,15 @@
+.time-line {
+    margin-top: 2rem;
+    height: auto;
+    padding-left: 11%;
+    width: 85%;
+    display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, auto);
+    grid-row-gap: .5em;
+    // grid-column-gap: 1em;
+}
+
 .tab-base-stack-container {
     width: 100%;
     // width: 1617px; this is the width from the design doc. 85% is almost there on width. 
