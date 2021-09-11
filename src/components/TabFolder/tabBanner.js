@@ -2,26 +2,24 @@ import { faRulerHorizontal } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 class TabBanner extends React.Component{
-    render() {
+    render() { 
         return(
             <div className='tab-base-stack-banner'>
-                <div className='tab-base-stack-banner__tags'>
-                    <div className='tab-tag__type'>
+                    <div className='tab-base-stack-banner__type'>
                         <a>{this.props.typeTag}</a>
                     </div>
-                    <div className='tab-tag__activity'>
+                    <div className='tab-base-stack-banner__activity'>
                         <a>{this.props.activityTag}</a>
                     </div>
-                    <div className='tab-tag__bgTagOne'></div>
-                    <div className='tab-tag__location'>
+                    <div className='tab-base-stack-banner__bgTagOne'></div>
+                    <div className='tab-base-stack-banner__location'>
                         <a>{this.props.locationTag}</a>
                     </div>
-                    <div className='tab-tag__bgTagTwo'></div>
-                    <div className='tab-tag__ship'>
+                    <div className='tab-base-stack-banner__bgTagTwo'></div>
+                    <div className='tab-base-stack-banner__ship'>
                         <a>{this.props.shipTag}</a>
                     </div>
-                    <div className='tab-tag__bgTagThree'></div>
-                </div>
+                    <div className='tab-base-stack-banner__bgTagThree'></div>
                     <div className='tab-base-stack-banner__img'>
                         <img src={this.props.userImage}></img>
                     </div>

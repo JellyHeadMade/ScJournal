@@ -27,7 +27,7 @@ class DropTab extends React.Component{
 
     render() {
         return (
-            <div className={`drop-tab-${this.props.type}`}>
+            <div className={`drop-container__${this.props.type}`}>
                 <div className={`droptab-${this.props.type}__content`}>
                     {null}
                     {this.state.isExpanded ? this.props.content : null}
