@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import TabBase from './TabFolder/tabBase';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TimeLine from './TimeLine';
+import CreatePost from './CreateApostTab';
 
 export default class App extends Component {
 
@@ -9,7 +10,12 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
-        <TimeLine />
+        <Router>
+          <Switch>
+            <Route exact path='/' component={TimeLine} />
+            <Route path ='/createpost' component={CreatePost} />
+          </Switch>
+        </Router>
       </div>
     );
   }
