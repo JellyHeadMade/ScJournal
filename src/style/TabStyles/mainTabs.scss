@@ -134,6 +134,8 @@
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.57);
                 z-index: 4;
                 grid-row: tab1-s/tab1-e;
+                height: 100%;
+                transition: 2s ease;
             
                 .droptab-Story__content {
                     grid-column: inner-s/inner-e;
@@ -146,9 +148,10 @@
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
                         color: $white-text;
-                        font-size: 15px
+                        font-size: 15px;
                     }
                 }
+                
             
                 .droptab-Story__bottom {
                     grid-column: inner-s/inner-e;
@@ -163,6 +166,7 @@
                     z-index: 4;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 400pt;
+                    transition:  0.3s ease-in-out
                 }
             
             }
@@ -172,6 +176,9 @@
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
+                height: 100%;
+                transform-origin: 0 0;
+                animation:elastic 2s ease 0s 1 normal;
             
                 .droptab-Images__content {
                     grid-column: inner-s/inner-e;
@@ -213,10 +220,12 @@
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.39);
                 z-index: 2;
                 grid-row: tab3-s/tab3-e;
+                height: 100%;
             
                 .drop-tab-Comments__content {
                     grid-column: inner-s/inner-e;
                     grid-row: content-s/content-e;
+
                 }
             
                 .droptab-Comments__bottom {
@@ -251,5 +260,29 @@
         }    
     }        
 }
+// .angry-animate{
+//     -webkit-animation:elastic 2s ease 0s 1 normal;
+//     -moz-animation:elastic 2s ease 0s 1 normal;
+//     -ms-animation:elastic 2s ease 0s 1 normal;
+//     animation:elastic 2s ease 0s 1 normal;
+//     }
+
+    @keyframes elastic {
+        0%{  transform: height(48px); }
+        30%{  transform: height(70%); }
+        40%{  transform: height(90%); }
+        60%{  transform: height(110%); }
+        100%{  transform: height(auto); }
+        }
+
+        #up {
+            height: 48px;
+            transition: height 0.3s ease-in-out;
+        }
+
+        #down {
+            height: 100%;
+            transition: height 0.3s ease-in-out;
+        }
 
 

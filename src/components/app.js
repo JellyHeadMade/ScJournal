@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import TimeLine from './TimeLine';
-import CreatePost from './CreateApostTab';
+import TimeLine from './timeLine';
 
 export default class App extends Component {
 
@@ -13,7 +12,7 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/' component={TimeLine} />
-            <Route path ='/createpost' component={CreatePost} />
+            {/* <Route path ='/createpost' component={} /> */}
           </Switch>
         </Router>
       </div>

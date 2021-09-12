@@ -10,7 +10,8 @@ class DropTab extends React.Component{
 
         this.state = {
             isExpanded : false,
-            drop : 'up'
+            drop : 'up',
+            content : 'drained'
         }
         this.onClick = this.onClick.bind(this);
     }
@@ -18,19 +19,19 @@ class DropTab extends React.Component{
     onClick(event) {
         console.log('clicked!!');
         if(this.state.isExpanded == false) {
-            this.setState({ isExpanded : true , drop : 'down' })
+            this.setState({ isExpanded : true , drop : 'down' , content : 'fill'})
         } else {
-            this.setState({ isExpanded : false , drop : 'up' })
+            this.setState({ isExpanded : false , drop : 'up' , content : 'drained'})
         }
     }
 
 
     render() {
         return (
-            <div className={`drop-container__${this.props.type}`}>
-                <div className={`droptab-${this.props.type}__content`}>
-                    {null}
+            <div id={this.state.drop} className={`drop-container__${this.props.type}`}>
+                <div id={this.state.content} className={`droptab-${this.props.type}__content`}>
                     {this.state.isExpanded ? this.props.content : null}
+                    {/* {this.props.content} */}
                 </div>
                 <div className={`droptab-${this.props.type}__bottom`}>
                     <div className={`${this.props.type}-bottom-title`}>

@@ -1,4 +1,4 @@
-import { faRulerHorizontal } from '@fortawesome/free-solid-svg-icons';
+// import { faRulerHorizontal } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 class TabBanner extends React.Component{
