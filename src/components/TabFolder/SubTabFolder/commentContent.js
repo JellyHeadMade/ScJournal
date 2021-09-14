@@ -9,7 +9,7 @@ class CommentContent extends React.Component {
     render() {
         return(
             <div className='comment-content'>
-                {this.props.comments}
+                <a className='comment-content__text'>{this.props.comments}</a>
             </div>
         )
     }

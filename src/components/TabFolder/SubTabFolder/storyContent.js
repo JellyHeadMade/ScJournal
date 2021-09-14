@@ -7,7 +7,7 @@ class StoryContent extends React.Component{
     render() {
         return(
             <div className='sub-tab-story-content'>
-                {this.props.story}
+                <a className='sub-tab-story-content__text'>{this.props.story}</a>
             </div>
         )
     }

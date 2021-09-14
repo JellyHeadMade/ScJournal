@@ -128,19 +128,22 @@
             display: grid;
             grid-template-columns: [main-s] 1fr [main-e];
             grid-template-rows: [tab1-s] minmax(48px, auto) [tab1-e tab2-s] minmax(48px, auto) [tab2-e tab3-s] minmax(48px, auto) [tab3-e] ;
+            transition: all 10s ease-in-out;
 
-            &__Story{
+            .drop-container-Story__up{
                 @include drop-tabs;
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.57);
                 z-index: 4;
                 grid-row: tab1-s/tab1-e;
-                height: 100%;
-                transition: 2s ease;
+                height: 48px;
+                transition: 0.3s ease-in-out;
             
-                .droptab-Story__content {
+                .droptab-Story-content {
                     grid-column: inner-s/inner-e;
                     grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
+                    height: 0px;
+                    transition: 0.3s ease-in-out;
                 
                     .sub-tab-story-content {
                         padding: 15px;
@@ -149,11 +152,20 @@
                         font-family: 'Lora', serif;
                         color: $white-text;
                         font-size: 15px;
+                        height: 0px;
+                        transition: 0.3s ease-in-out;
+                        opacity: 0%;
+
+                        &__text {
+                            height: 0%;
+                            opacity: 0%;
+                            transition: 0.3s ease-in-out;
+                        }
                     }
                 }
                 
             
-                .droptab-Story__bottom {
+                .droptab-Story-bottom {
                     grid-column: inner-s/inner-e;
                     grid-row: bottom-s/bottom-e;
                     color: $white-text;
@@ -166,24 +178,78 @@
                     z-index: 4;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 400pt;
-                    transition:  0.3s ease-in-out
+                    transition: position 0.3s ease-in-out;
+                }
+            
+            }
+
+            .drop-container-Story__down{
+                @include drop-tabs;
+                background-color: rgba($color: $drop-tab-color, $alpha: 0.57);
+                z-index: 4;
+                grid-row: tab1-s/tab1-e;
+                height: 100%;
+                transition: 0.3s ease-in-out;
+            
+                .droptab-Story-content {
+                    grid-column: inner-s/inner-e;
+                    grid-row: content-s/content-e;
+                    padding: 0px 3% 0px 3%;
+                    height: 93%;
+                    transition: 0.3s ease-in-out;
+                
+                    .sub-tab-story-content {
+                        padding: 15px;
+                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.5);
+                        border-radius: 0px 0px 20px 20px;
+                        font-family: 'Lora', serif;
+                        color: $white-text;
+                        font-size: 15px;
+                        height: 93%;
+                        transition: 0.3s ease-in-out;
+                        opacity: 100%;
+
+                        &__text {
+                            height: 100%;
+                            opacity: 100%;
+                            transition: 0.3s ease-in-out;
+                        }
+                    }
+                }
+                
+            
+                .droptab-Story-bottom {
+                    grid-column: inner-s/inner-e;
+                    grid-row: bottom-s/bottom-e;
+                    color: $white-text;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 25px;
+                    padding-left: 3%;
+                    padding-right: 3%;
+                    z-index: 4;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400pt;
+                    transition: position 0.3s ease-in-out;
                 }
             
             }
         
-            &__Images{
+            .drop-container-Images__up{
                 @include drop-tabs;
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
-                height: 100%;
-                transform-origin: 0 0;
-                animation:elastic 2s ease 0s 1 normal;
+                height: 48px !important;
+                transition: 0.3s ease-in-out;height: 100%;
             
-                .droptab-Images__content {
+                .droptab-Images-content {
                     grid-column: inner-s/inner-e;
                     grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
+                    height: 0px;
+                    transition: 0.3s ease-in-out;
 
                 
                     .image-gallery-tab-content {
@@ -196,10 +262,73 @@
                         font-family: 'Lora', serif;
                         color: $white-text;
                         font-size: 15px;
+                        height: 0%;
+                        opacity: 0%;
+                        transition: 0.3s ease-in-out;
+
+                        .img {
+                            height: 0%;
+                            opacity: 0%;
+                            transition: 0.3s ease-in-out;
+                        }
                     }
                 }
             
-                .droptab-Images__bottom {
+                .droptab-Images-bottom {
+                    grid-column: inner-s/inner-e;
+                    grid-row: bottom-s/bottom-e;
+                    color: $white-text;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 25px;
+                    padding-left: 3%;
+                    padding-right: 3%;
+                    z-index: 3;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400pt;
+                }
+            }
+
+            .drop-container-Images__down{
+                @include drop-tabs;
+                background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
+                z-index: 3;
+                grid-row: tab2-s/tab2-e;
+                height: 100%;
+                transition: 0.3s ease-in-out;
+            
+                .droptab-Images-content {
+                    grid-column: inner-s/inner-e;
+                    grid-row: content-s/content-e;
+                    padding: 0px 3% 0px 3%;
+                    height: 93%;
+                    transition: 0.3s ease-in-out;
+
+                
+                    .image-gallery-tab-content {
+                        display: flex;
+                        padding: 0px 25px 0px 25px;
+                        justify-content: space-around;
+                        padding: 15px;
+                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.4);
+                        border-radius: 0px 0px 20px 20px;
+                        font-family: 'Lora', serif;
+                        color: $white-text;
+                        font-size: 15px;
+                        height: 93%;
+                        opacity: 100%;
+                        transition: 0.3s ease-in-out;
+
+                        .img {
+                            height: 100%;
+                            opacity: 100%;
+                            transition: 0.3s ease-in-out;
+                        }
+                    }
+                }
+            
+                .droptab-Images-bottom {
                     grid-column: inner-s/inner-e;
                     grid-row: bottom-s/bottom-e;
                     color: $white-text;
@@ -215,20 +344,79 @@
                 }
             }
         
-            &__Comments{
+            .drop-container-Comments__up{
+                @include drop-tabs;
+                background-color: rgba($color: $drop-tab-color, $alpha: 0.39);
+                z-index: 2;
+                grid-row: tab3-s/tab3-e;
+                height: 48px !important;
+                transition: 5s ease-in-out;
+            
+                .droptab-Comments-content {
+                    grid-column: inner-s/inner-e;
+                    grid-row: content-s/content-e;
+                    height: 93%;
+                    font-size: 0px;
+                    transition: 5s ease-in-out;
+
+                    .comment-content {
+                        font-size: 0px;
+                        opacity: 0%;
+                        transition: 5s ease-in-out;
+                        &__text {
+                            height: 93%;
+                            opacity: 100%;
+                            transition: 5s ease-in-out;
+                         }
+                    }
+
+                }
+            
+                .droptab-Comments-bottom {
+                    grid-column: inner-s/inner-e;
+                    grid-row: bottom-s/bottom-e;
+                    color: $white-text;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 25px;
+                    padding-left: 3%;
+                    padding-right: 3%;
+                    z-index: 2;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400pt;
+                }
+            }
+
+            .drop-container-Comments__down{
                 @include drop-tabs;
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.39);
                 z-index: 2;
                 grid-row: tab3-s/tab3-e;
                 height: 100%;
+                transition: 5s ease-in-out;
             
-                .drop-tab-Comments__content {
+                .droptab-Comments-content {
                     grid-column: inner-s/inner-e;
                     grid-row: content-s/content-e;
+                    height: 93%;
+                    font-size: 12px;
+                    transition: 5s ease-in-out;
+
+                    .comment-content {
+                        font-size: 12px;
+                        opacity: 100%;
+                        transition: 5s ease-in-out;
+                         &__text {
+                            font-size: 12px;
+                            opacity: 100%;
+                            transition: 5s ease-in-out;
+                         }
+                    }
 
                 }
             
-                .droptab-Comments__bottom {
+                .droptab-Comments-bottom {
                     grid-column: inner-s/inner-e;
                     grid-row: bottom-s/bottom-e;
                     color: $white-text;
@@ -260,29 +448,22 @@
         }    
     }        
 }
-// .angry-animate{
-//     -webkit-animation:elastic 2s ease 0s 1 normal;
-//     -moz-animation:elastic 2s ease 0s 1 normal;
-//     -ms-animation:elastic 2s ease 0s 1 normal;
-//     animation:elastic 2s ease 0s 1 normal;
-//     }
 
-    @keyframes elastic {
-        0%{  transform: height(48px); }
-        30%{  transform: height(70%); }
-        40%{  transform: height(90%); }
-        60%{  transform: height(110%); }
-        100%{  transform: height(auto); }
-        }
+@keyframes elastic {
+    0%{  transform: height(48px); }
+    30%{  transform: height(70%); }
+    40%{  transform: height(90%); }
+    60%{  transform: height(110%); }
+    100%{  transform: height(auto); }
+    }
 
-        #up {
-            height: 48px;
-            transition: height 0.3s ease-in-out;
-        }
-
-        #down {
-            height: 100%;
-            transition: height 0.3s ease-in-out;
-        }
+// #up {
+//     height: 48px;
+//     // transition: height 0.3s ease-in-out;
+// }
+// #down {
+//     height: 100%;
+//     // transition: height 0.3s ease-in-out;
+// }
 
 

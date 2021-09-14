@@ -2,6 +2,7 @@ import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import StoryContent from './SubTabFolder/storyContent';
 
 
 class DropTab extends React.Component{
@@ -28,12 +29,12 @@ class DropTab extends React.Component{
 
     render() {
         return (
-            <div id={this.state.drop} className={`drop-container__${this.props.type}`}>
-                <div id={this.state.content} className={`droptab-${this.props.type}__content`}>
-                    {this.state.isExpanded ? this.props.content : null}
-                    {/* {this.props.content} */}
+            <div className={`drop-container-${this.props.type}__${this.state.drop}`}>
+                <div className={`droptab-${this.props.type}-content`}>
+                    {/* {this.state.isExpanded ? this.props.content : null} */}
+                    {this.props.content}
                 </div>
-                <div className={`droptab-${this.props.type}__bottom`}>
+                <div className={`droptab-${this.props.type}-bottom`}>
                     <div className={`${this.props.type}-bottom-title`}>
                         <a>{this.props.type}</a>
                     </div>
