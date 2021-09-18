@@ -128,7 +128,7 @@
             display: grid;
             grid-template-columns: [main-s] 1fr [main-e];
             grid-template-rows: [tab1-s] minmax(48px, auto) [tab1-e tab2-s] minmax(48px, auto) [tab2-e tab3-s] minmax(48px, auto) [tab3-e] ;
-            transition: all 10s ease-in-out;
+            // transition: all 10s ease-in-out;
 
             .drop-container-Story__up{
                 @include drop-tabs;
@@ -136,49 +136,63 @@
                 z-index: 4;
                 grid-row: tab1-s/tab1-e;
                 height: 48px;
-                transition: 0.3s ease-in-out;
+                transition: 0.2s ease-in-out;
+                display: flex;
+                flex-direction: column;
             
                 .droptab-Story-content {
-                    grid-column: inner-s/inner-e;
-                    grid-row: content-s/content-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 0px;
-                    transition: 0.3s ease-in-out;
+                    transition: all 0.2s ease-in-out;
                 
                     .sub-tab-story-content {
-                        padding: 15px;
+                        // padding: 15px;
                         background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.5);
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
                         color: $white-text;
                         font-size: 15px;
-                        height: 0px;
-                        transition: 0.3s ease-in-out;
+                        height: 0%;
+                        // transform: scaleY(0);
+                        transition: all 0.2s ease-in-out;
                         opacity: 0%;
 
                         &__text {
-                            height: 0%;
-                            opacity: 0%;
-                            transition: 0.3s ease-in-out;
+                            animation: 2s 1 alternate elastic;
+                            transform-origin: 0 0;
+                            transform: scaleY(0);
+                            // visibility: hidden;
+                            font-size: 0px;
+                            max-height: 400px;
+                            overflow-y: auto;
+                            // height: 0%;
+                            // text-transform: ;
+                            // text-size-adjust: 0%;
+                            // opacity: 0%;
+                            transition: all 0.2s ease-in-out;
                         }
                     }
                 }
                 
             
                 .droptab-Story-bottom {
-                    grid-column: inner-s/inner-e;
-                    grid-row: bottom-s/bottom-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     font-size: 25px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     padding-left: 3%;
                     padding-right: 3%;
                     z-index: 4;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 400pt;
-                    transition: position 0.3s ease-in-out;
+                    // transition: position 0.2s ease-in-out;
                 }
             
             }
@@ -189,14 +203,16 @@
                 z-index: 4;
                 grid-row: tab1-s/tab1-e;
                 height: 100%;
-                transition: 0.3s ease-in-out;
+                transition: all 0.2s ease-in-out;
+                display: flex;
+                flex-direction: column;
             
                 .droptab-Story-content {
-                    grid-column: inner-s/inner-e;
-                    grid-row: content-s/content-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 93%;
-                    transition: 0.3s ease-in-out;
+                    transition: all 0.2s ease-in-out;
                 
                     .sub-tab-story-content {
                         padding: 15px;
@@ -205,33 +221,45 @@
                         font-family: 'Lora', serif;
                         color: $white-text;
                         font-size: 15px;
-                        height: 93%;
-                        transition: 0.3s ease-in-out;
+                        height: auto;
+                        // transform: scaleY(0.85);
+                        transition: all 0.2s ease-in-out;
                         opacity: 100%;
 
                         &__text {
-                            height: 100%;
-                            opacity: 100%;
-                            transition: 0.3s ease-in-out;
+                            animation: 2s 1 alternate forwards elastic;
+                            transform-origin: 0 0;
+                            transform: scaleY(1);
+                            max-height: 400px;
+                            overflow-y: auto;
+                            // height: 100%;
+                            // visibility: visible;
+                            font-size: 15px;
+                            // text-size-adjust: 100%;
+                            // transform: scaleX(1);
+                            // opacity: 100%;
+                            transition: all 0.2s ease-in-out;
                         }
                     }
                 }
                 
             
                 .droptab-Story-bottom {
-                    grid-column: inner-s/inner-e;
-                    grid-row: bottom-s/bottom-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     font-size: 25px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     padding-left: 3%;
                     padding-right: 3%;
                     z-index: 4;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 400pt;
-                    transition: position 0.3s ease-in-out;
+                    // transition: position 0.2s ease-in-out;
                 }
             
             }
@@ -242,21 +270,23 @@
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
                 height: 48px !important;
-                transition: 0.3s ease-in-out;height: 100%;
+                transition: 0.2s ease-in-out;height: 100%;
+                display: flex;
+                flex-direction: column;
             
                 .droptab-Images-content {
-                    grid-column: inner-s/inner-e;
-                    grid-row: content-s/content-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 0px;
-                    transition: 0.3s ease-in-out;
+                    transition: all 0.2s ease-in-out;
 
                 
                     .image-gallery-tab-content {
                         display: flex;
                         padding: 0px 25px 0px 25px;
                         justify-content: space-around;
-                        padding: 15px;
+                        // padding: 15px;
                         background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.4);
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
@@ -264,24 +294,26 @@
                         font-size: 15px;
                         height: 0%;
                         opacity: 0%;
-                        transition: 0.3s ease-in-out;
+                        transition: all 0.2s ease-in-out;
 
                         .img {
-                            height: 0%;
+                            height: 0px;
                             opacity: 0%;
-                            transition: 0.3s ease-in-out;
+                            transition: all 0.2s ease-in-out;
                         }
                     }
                 }
             
                 .droptab-Images-bottom {
-                    grid-column: inner-s/inner-e;
-                    grid-row: bottom-s/bottom-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     font-size: 25px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     padding-left: 3%;
                     padding-right: 3%;
                     z-index: 3;
@@ -296,14 +328,16 @@
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
                 height: 100%;
-                transition: 0.3s ease-in-out;
+                transition: all 0.2s ease-in-out;
+                display: flex;
+                flex-direction: column;
             
                 .droptab-Images-content {
-                    grid-column: inner-s/inner-e;
-                    grid-row: content-s/content-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 93%;
-                    transition: 0.3s ease-in-out;
+                    transition: all 0.2s ease-in-out;
 
                 
                     .image-gallery-tab-content {
@@ -316,26 +350,28 @@
                         font-family: 'Lora', serif;
                         color: $white-text;
                         font-size: 15px;
-                        height: 93%;
+                        height: 85%;
                         opacity: 100%;
-                        transition: 0.3s ease-in-out;
+                        transition: all 0.2s ease-in-out;
 
                         .img {
-                            height: 100%;
+                            height: 150px;
                             opacity: 100%;
-                            transition: 0.3s ease-in-out;
+                            transition: all 0.2s ease-in-out;
                         }
                     }
                 }
             
                 .droptab-Images-bottom {
-                    grid-column: inner-s/inner-e;
-                    grid-row: bottom-s/bottom-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     font-size: 25px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     padding-left: 3%;
                     padding-right: 3%;
                     z-index: 3;
@@ -350,36 +386,40 @@
                 z-index: 2;
                 grid-row: tab3-s/tab3-e;
                 height: 48px !important;
-                transition: 5s ease-in-out;
+                transition: all 0.2s ease-in-out;
+                display: flex;
+                flex-direction: column;
             
                 .droptab-Comments-content {
                     grid-column: inner-s/inner-e;
                     grid-row: content-s/content-e;
-                    height: 93%;
+                    height: 0%;
                     font-size: 0px;
-                    transition: 5s ease-in-out;
+                    transition: all 0.2s ease-in-out;
 
                     .comment-content {
                         font-size: 0px;
                         opacity: 0%;
-                        transition: 5s ease-in-out;
+                        transition: all 0.2s ease-in-out;
                         &__text {
-                            height: 93%;
-                            opacity: 100%;
-                            transition: 5s ease-in-out;
+                            font-size: 0px;
+                            opacity: 0%;
+                            transition: all 0.2s ease-in-out;
                          }
                     }
 
                 }
             
                 .droptab-Comments-bottom {
-                    grid-column: inner-s/inner-e;
-                    grid-row: bottom-s/bottom-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     font-size: 25px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     padding-left: 3%;
                     padding-right: 3%;
                     z-index: 2;
@@ -394,36 +434,40 @@
                 z-index: 2;
                 grid-row: tab3-s/tab3-e;
                 height: 100%;
-                transition: 5s ease-in-out;
+                transition: 0.2s ease-in-out;
+                display: flex;
+                flex-direction: column;
             
                 .droptab-Comments-content {
-                    grid-column: inner-s/inner-e;
-                    grid-row: content-s/content-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: content-s/content-e;
                     height: 93%;
                     font-size: 12px;
-                    transition: 5s ease-in-out;
+                    transition: 0.2s ease-in-out;
 
                     .comment-content {
                         font-size: 12px;
                         opacity: 100%;
-                        transition: 5s ease-in-out;
+                        transition: 0.2s ease-in-out;
                          &__text {
                             font-size: 12px;
                             opacity: 100%;
-                            transition: 5s ease-in-out;
+                            transition: 0.2s ease-in-out;
                          }
                     }
 
                 }
             
                 .droptab-Comments-bottom {
-                    grid-column: inner-s/inner-e;
-                    grid-row: bottom-s/bottom-e;
+                    // grid-column: inner-s/inner-e;
+                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     font-size: 25px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     padding-left: 3%;
                     padding-right: 3%;
                     z-index: 2;
@@ -450,11 +494,11 @@
 }
 
 @keyframes elastic {
-    0%{  transform: height(48px); }
-    30%{  transform: height(70%); }
-    40%{  transform: height(90%); }
-    60%{  transform: height(110%); }
-    100%{  transform: height(auto); }
+    0%{  opacity: 0%; }
+    30%{  opacity: 10%; }
+    60%{  opacity: 20%; }
+    90%{  opacity: 30%; }
+    100%{  opacity: 100%; }
     }
 
 // #up {
