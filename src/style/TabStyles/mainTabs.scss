@@ -128,7 +128,10 @@
             display: grid;
             grid-template-columns: [main-s] 1fr [main-e];
             grid-template-rows: [tab1-s] minmax(48px, auto) [tab1-e tab2-s] minmax(48px, auto) [tab2-e tab3-s] minmax(48px, auto) [tab3-e] ;
-            // transition: all 10s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
 
             .drop-container-Story__up{
                 @include drop-tabs;
@@ -141,36 +144,31 @@
                 flex-direction: column;
             
                 .droptab-Story-content {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 0px;
                     transition: all 0.2s ease-in-out;
                 
                     .sub-tab-story-content {
-                        // padding: 15px;
                         background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.5);
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
                         color: $white-text;
                         font-size: 15px;
                         height: 0%;
-                        // transform: scaleY(0);
-                        transition: all 0.2s ease-in-out;
+                        transition: all 0.1s ease-in-out;
                         opacity: 0%;
 
                         &__text {
                             animation: 2s 1 alternate elastic;
                             transform-origin: 0 0;
                             transform: scaleY(0);
-                            // visibility: hidden;
-                            font-size: 0px;
-                            max-height: 400px;
-                            overflow-y: auto;
-                            // height: 0%;
-                            // text-transform: ;
-                            // text-size-adjust: 0%;
-                            // opacity: 0%;
+                            font-size: 15px;
+                            max-height: 0px;
+                            overflow-y:hidden;
+                            opacity: 0%;
+                            -webkit-transition: all 0.2s ease-in-out;
+                            -moz-transition: all 0.2s ease-in-out;
+                            -o-transition: all 0.2s ease-in-out;
                             transition: all 0.2s ease-in-out;
                         }
                     }
@@ -178,8 +176,6 @@
                 
             
                 .droptab-Story-bottom {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
@@ -192,7 +188,6 @@
                     z-index: 4;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 400pt;
-                    // transition: position 0.2s ease-in-out;
                 }
             
             }
@@ -208,8 +203,6 @@
                 flex-direction: column;
             
                 .droptab-Story-content {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 93%;
                     transition: all 0.2s ease-in-out;
@@ -222,22 +215,19 @@
                         color: $white-text;
                         font-size: 15px;
                         height: auto;
-                        // transform: scaleY(0.85);
-                        transition: all 0.2s ease-in-out;
+                        transition: all 0.3s ease-in-out;
                         opacity: 100%;
 
                         &__text {
-                            animation: 2s 1 alternate forwards elastic;
                             transform-origin: 0 0;
                             transform: scaleY(1);
                             max-height: 400px;
                             overflow-y: auto;
-                            // height: 100%;
-                            // visibility: visible;
                             font-size: 15px;
-                            // text-size-adjust: 100%;
-                            // transform: scaleX(1);
-                            // opacity: 100%;
+                            opacity: 100%;
+                            -webkit-transition: all 0.2s ease-in-out;
+                            -moz-transition: all 0.2s ease-in-out;
+                            -o-transition: all 0.2s ease-in-out;
                             transition: all 0.2s ease-in-out;
                         }
                     }
@@ -245,8 +235,6 @@
                 
             
                 .droptab-Story-bottom {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
@@ -259,7 +247,6 @@
                     z-index: 4;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 400pt;
-                    // transition: position 0.2s ease-in-out;
                 }
             
             }
@@ -275,8 +262,6 @@
                 flex-direction: column;
             
                 .droptab-Images-content {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 0px;
                     transition: all 0.2s ease-in-out;
@@ -286,7 +271,6 @@
                         display: flex;
                         padding: 0px 25px 0px 25px;
                         justify-content: space-around;
-                        // padding: 15px;
                         background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.4);
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
@@ -305,8 +289,6 @@
                 }
             
                 .droptab-Images-bottom {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
@@ -333,8 +315,6 @@
                 flex-direction: column;
             
                 .droptab-Images-content {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: content-s/content-e;
                     padding: 0px 3% 0px 3%;
                     height: 93%;
                     transition: all 0.2s ease-in-out;
@@ -363,8 +343,6 @@
                 }
             
                 .droptab-Images-bottom {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
@@ -411,8 +389,6 @@
                 }
             
                 .droptab-Comments-bottom {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
@@ -439,8 +415,6 @@
                 flex-direction: column;
             
                 .droptab-Comments-content {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: content-s/content-e;
                     height: 93%;
                     font-size: 12px;
                     transition: 0.2s ease-in-out;
@@ -459,8 +433,6 @@
                 }
             
                 .droptab-Comments-bottom {
-                    // grid-column: inner-s/inner-e;
-                    // grid-row: bottom-s/bottom-e;
                     color: $white-text;
                     display: flex;
                     justify-content: space-between;
@@ -500,14 +472,3 @@
     90%{  opacity: 30%; }
     100%{  opacity: 100%; }
     }
-
-// #up {
-//     height: 48px;
-//     // transition: height 0.3s ease-in-out;
-// }
-// #down {
-//     height: 100%;
-//     // transition: height 0.3s ease-in-out;
-// }
-
-
