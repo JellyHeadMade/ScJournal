@@ -3,6 +3,7 @@ import TabBannerTitle from './tabBannerTitle';
 import DropTab from './dropTab';
 import CreateStory from './SubTabFolder/createStory';
 import AddImages from './SubTabFolder/addImages';
+import TabButton from './SubTabFolder/tabButton';
 
 class CreateStoryTab extends React.Component {
     constructor(props) {
@@ -24,6 +25,8 @@ class CreateStoryTab extends React.Component {
                         <DropTab type='Story' content={<CreateStory />}/>
                         <DropTab type='Images' content={<AddImages />}/>
                         <div className='drop-container-spacer1'></div>
+                        <TabButton />
+                        <div className='drop-container-spacer2'></div>
                     </div>
                 </div>
             </div>

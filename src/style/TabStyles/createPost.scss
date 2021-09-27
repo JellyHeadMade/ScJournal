@@ -2,7 +2,7 @@
     padding-top: 50px;
     padding-bottom: 50px;
     height: auto;
-    padding-left: 11%;
+    padding-left: 7.5%;
     width: 85%; 
 }
 
@@ -162,7 +162,7 @@
         
             .drop-container-Images__up{
                 @include drop-tabs;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
+                background-color: rgba($color: #164664, $alpha: 0.62);
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
                 height: 48px !important;
@@ -215,7 +215,7 @@
 
             .drop-container-Images__down{
                 @include drop-tabs;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
+                background-color: rgba($color: #164664, $alpha: 0.62);
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
                 height: 100%;
@@ -266,17 +266,62 @@
                     font-weight: 400pt;
                 }
             }
+            .drop-container-button{
+                @include drop-tabs;
+                background-color: rgba($color: lime, $alpha: 0.39);
+                z-index: 2;
+                grid-row: tab3-s/tab3-e;
+                height: 48px !important;
+                transition: all 0.2s ease-in-out;
+                display: flex;
+                flex-direction: column;
+            
+                .droptab-Comments-content {
+                    grid-column: inner-s/inner-e;
+                    grid-row: content-s/content-e;
+                    height: 0%;
+                    font-size: 0px;
+                    transition: all 0.2s ease-in-out;
+
+                    .comment-content {
+                        font-size: 0px;
+                        opacity: 0%;
+                        transition: all 0.2s ease-in-out;
+                        &__text {
+                            font-size: 0px;
+                            opacity: 0%;
+                            transition: all 0.2s ease-in-out;
+                         }
+                    }
+
+                }
+            
+                .droptab-Comments-bottom {
+                    color: black;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 25px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                    padding-left: 3%;
+                    padding-right: 3%;
+                    z-index: 2;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400pt;
+                }
+            }
             .drop-container-spacer1 {
                 grid-column: main-s/main-e;
                 grid-row: tab1-s/tab1-e;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
+                background-color: rgba($color: rgb(65, 139, 108), $alpha: 0.62);
                 z-index: 1;
             }
         
             .drop-container-spacer2 {
                 grid-column: main-s/main-e;
                 grid-row: tab2-s/tab3-s;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.39);
+                background-color: rgba($color: lime, $alpha: 0.39);
                 z-index: 1;
             }            
         }
