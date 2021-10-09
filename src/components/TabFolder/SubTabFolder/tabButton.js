@@ -8,7 +8,9 @@ class TabButton extends React.Component {
     render() {
         return (
             <div className='drop-container-button'>
-
+                <div className='drop-container-button__title'>
+                    {this.props.title}
+                </div>
             </div>
         )
     }

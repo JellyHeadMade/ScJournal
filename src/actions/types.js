@@ -1,2 +1,5 @@
 // POST 
 export const SET_POST_DETAILS = 'SET_POST_DETAILS';
+
+//USER INFO
+export const SET_USER_INFO = 'SET_USER_INFO';

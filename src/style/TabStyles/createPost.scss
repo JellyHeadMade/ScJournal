@@ -296,19 +296,21 @@
 
                 }
             
-                .droptab-Comments-bottom {
-                    color: black;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-size: 25px;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                    padding-left: 3%;
-                    padding-right: 3%;
-                    z-index: 2;
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 400pt;
+                .drop-container-button {
+
+                    &__title {
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 25px;
+                        padding-top: 5px;
+                        padding-left: 3%;
+                        padding-right: 3%;
+                        z-index: 2;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400pt;
+                    }
                 }
             }
             .drop-container-spacer1 {

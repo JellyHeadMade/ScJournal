@@ -25,7 +25,7 @@ class CreateStoryTab extends React.Component {
                         <DropTab type='Story' content={<CreateStory />}/>
                         <DropTab type='Images' content={<AddImages />}/>
                         <div className='drop-container-spacer1'></div>
-                        <TabButton />
+                        <TabButton title='Create Story'/>
                         <div className='drop-container-spacer2'></div>
                     </div>
                 </div>
