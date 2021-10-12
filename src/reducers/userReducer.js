@@ -3,17 +3,15 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    userImage: '',
-    userName: ''
+    usersStuff: []
 }
 
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
         case SET_USER_INFO:
-            const userInfo = action.payload
+            const usersStuff = action.payload
             return {
-                ...state,
-                userInfo
+                usersStuff
             }
         default: return state;
     }

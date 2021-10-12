@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-import * as actions from '../../../actions';
-
 class CreateStory extends React.Component {
     constructor(props) {
         super(props);
@@ -17,11 +14,11 @@ class CreateStory extends React.Component {
             locationTag: '',
             activityTag: '',
             story: '',
-            images: [],
-            minInfo: false
+            images: []
         }
 
         this.handleChange = this.handleChange.bind(this);
+        // this.SettingUserInfo = this.SettingUserInfo.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
         // this.buildForm = this.buildForm.bind(this);
         // this.componentCondfig = this.componentCondfig.bind(this);
@@ -35,9 +32,7 @@ class CreateStory extends React.Component {
         // this.image3 = React.createRef();
 
     }
-    componentDidMount() {
-        this.props.setUserInfo();
-    }
+
 
     handleChange(event) {
         this.setState({
@@ -46,7 +41,8 @@ class CreateStory extends React.Component {
     }
 
     render() {
-        console.log(this.props.userInfo)
+        console.log(this.props)
+        console.log(this.props.userName)
         return (
             <form onSubmit={this.handleSubmit} className='create-story-form'>
                 <div className='' >
@@ -61,15 +57,5 @@ class CreateStory extends React.Component {
         )
     }
 }
-
-function mapStateToProps(state) {
-    const { userInfo, setUserInfo } = state.userReducer;
-    return {
-        userInfo,
-        setUserInfo
-    }
-}
-
-CreateStory = connect(mapStateToProps, actions)(CreateStory);
 
 export default CreateStory;

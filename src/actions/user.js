@@ -8,10 +8,10 @@ export function setUserInfo() {
         type: SET_USER_INFO,
         payload: [
             {
-                userImage: 'http://via.placeholder.com/63',
-                userName: 'JellyHeadMade',
-                userId: '77'
-            }
+                savedUserImage: 'http://via.placeholder.com/63',
+                savedUserName: 'JellyHeadMade',
+                savedUserId: '77'
+            },
         ]
     })
 }

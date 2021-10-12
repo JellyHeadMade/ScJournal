@@ -5,15 +5,21 @@ import CreateStory from './SubTabFolder/createStory';
 import AddImages from './SubTabFolder/addImages';
 import TabButton from './SubTabFolder/tabButton';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 class CreateStoryTab extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            tabTitle : 'Create a Post'
+            tabTitle : 'Create a Post',
+            pulledUserInfo : []
         }
+    }
 
-
+    componentDidMount() {
+        this.props.setUserInfo();
     }
 
     render() {
@@ -22,7 +28,9 @@ class CreateStoryTab extends React.Component {
                 <TabBannerTitle title={this.state.tabTitle}/>
                 <div className='tab-group-drop-container'>
                     <div className='drop-container'>
-                        <DropTab type='Story' content={<CreateStory />}/>
+                        {this.props.usersStuff.map((info) => {
+                            return (<DropTab type='Story' content={<CreateStory key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
+                        })}
                         <DropTab type='Images' content={<AddImages />}/>
                         <div className='drop-container-spacer1'></div>
                         <TabButton title='Create Story'/>
@@ -33,5 +41,15 @@ class CreateStoryTab extends React.Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    const { usersStuff, setUserInfo } = state.userReducer;
+    return {
+        usersStuff,
+        setUserInfo
+    }
+}
+
+CreateStoryTab = connect(mapStateToProps, actions)(CreateStoryTab);
 
 export default CreateStoryTab;
