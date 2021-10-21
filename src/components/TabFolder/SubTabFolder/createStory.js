@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+
+import DropZoneComponent from 'react-dropzone-component';
+import '../../../../node_modules/react-dropzone-component/styles/filepicker.css';
+import '../../../../node_modules/dropzone/dist/min/dropzone.min.css';
 
 class CreateStory extends React.Component {
     constructor(props) {
@@ -15,16 +19,18 @@ class CreateStory extends React.Component {
             activityTag: '',
             typeTag: '',
             story: '',
-            images: []
+            images1: '',
+            images2: '',
+            images3: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
         // this.SettingUserInfo = this.SettingUserInfo.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.buildForm = this.buildForm.bind(this);
-        // this.componentCondfig = this.componentCondfig.bind(this);
-        // this.djsConfig = this.djsConfig.bind(this);
-        // this.handleImage1drop = this.handleImage1drop.bind(this);
+        this.componentCondfig = this.componentConfig.bind(this);
+        this.djsConfig = this.djsConfig.bind(this);
+        this.handleImage1drop = this.handleImage1drop.bind(this);
         // this.handleImage2drop = this.handleImage2drop.bind(this);
         // this.handleImage3drop = this.handleImage3drop.bind(this);
         // // this.deleteImage = this.deleteImage.bind(this);
@@ -34,12 +40,37 @@ class CreateStory extends React.Component {
 
     }
 
+    handleImage1drop() {
+        return {
+            addedfile: file => this.setState({ images: file})
+        }
+    }
+
+    componentConfig() {
+        return {
+            iconFiletypes: ['.jpg', '.png'], 
+            showFiletypeIcon: true,
+            postUrl: 'https://httpbin.org/post'
+        }
+    }
+
+    djsConfig() {
+        return {
+            addRemoveLinks: true,
+            maxFiles: 1
+        }
+    }
+
     buildForm() {
         // console.log('im i alive?');
         let formData = new FormData();
 
         formData.append('test_userImage[userImage]', this.state.userImage);
         formData.append('PostTltle', this.state.postTitle);
+
+        if (this.state.images1) {
+            formData.append('images1', this.state.images1);
+        }
         // console.log(formData)
 
         return formData;
@@ -264,6 +295,13 @@ class CreateStory extends React.Component {
                         <option value='Game'>Game Stroy</option>
                         <option value='Lore'>Lore Story</option>
                     </select>
+                </div>
+                <div className='img-uploaders'>
+                    <DropZoneComponent 
+                        config={this.componentConfig()}
+                        djsConfig={this.djsConfig()}
+                        eventHandlers={this.handleImage1drop}
+                    ></DropZoneComponent>
                 </div>
                 <button className='btn' type='submit'>Enter</button>
             </form>
