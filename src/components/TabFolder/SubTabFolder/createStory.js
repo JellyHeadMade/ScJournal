@@ -31,8 +31,8 @@ class CreateStory extends React.Component {
         this.componentCondfig = this.componentConfig.bind(this);
         this.djsConfig = this.djsConfig.bind(this);
         this.handleImage1drop = this.handleImage1drop.bind(this);
-        // this.handleImage2drop = this.handleImage2drop.bind(this);
-        // this.handleImage3drop = this.handleImage3drop.bind(this);
+        this.handleImage2drop = this.handleImage2drop.bind(this);
+        this.handleImage3drop = this.handleImage3drop.bind(this);
         // // this.deleteImage = this.deleteImage.bind(this);
         // this.image1 = React.createRef();
         // this.image2 = React.createRef();
@@ -42,7 +42,17 @@ class CreateStory extends React.Component {
 
     handleImage1drop() {
         return {
-            addedfile: file => this.setState({ images: file})
+            addedfile: file => this.setState({ images1: file})
+        }
+    }
+    handleImage2drop() {
+        return {
+            addedfile: file => this.setState({ images2: file})
+        }
+    }
+    handleImage3drop() {
+        return {
+            addedfile: file => this.setState({ images3: file})
         }
     }
 
@@ -89,7 +99,7 @@ class CreateStory extends React.Component {
         console.log(this.state.story);
         this.buildForm();
         event.preventDefault();
-        // console.log('hey');
+        console.log('hey');
         console.log(event.target);
 
     }
@@ -300,7 +310,17 @@ class CreateStory extends React.Component {
                     <DropZoneComponent 
                         config={this.componentConfig()}
                         djsConfig={this.djsConfig()}
-                        eventHandlers={this.handleImage1drop}
+                        eventHandlers={this.handleImage1drop()}
+                    ></DropZoneComponent>
+                    <DropZoneComponent 
+                        config={this.componentConfig()}
+                        djsConfig={this.djsConfig()}
+                        eventHandlers={this.handleImage2drop()}
+                    ></DropZoneComponent>
+                    <DropZoneComponent 
+                        config={this.componentConfig()}
+                        djsConfig={this.djsConfig()}
+                        eventHandlers={this.handleImage3drop()}
                     ></DropZoneComponent>
                 </div>
                 <button className='btn' type='submit'>Enter</button>
