@@ -31,7 +31,9 @@ class TimeLine extends React.Component {
                             activityTag={post.activityTag}
                             typeTag={post.typeTag}
                             story={post.story}
-                            images={post.images}
+                            images1={post.image1}
+                            images2={post.image2}
+                            images3={post.image3}
                             comments={post.comments}
                             key={post._id}/>
                     </div>

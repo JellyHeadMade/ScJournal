@@ -22,7 +22,7 @@ class TabBase extends React.Component{
                 <div className='tab-group-drop-container'>
                     <div className='drop-container'>
                         <DropTab type='Story' order='1' content={<StoryContent story={this.props.story} />}/>
-                        <DropTab type='Images' order='2' content={<ImageGallery image1={this.props.images[0]} image2={this.props.images[1]} image3={this.props.images[2]}/>} />
+                        <DropTab type='Images' order='2' content={<ImageGallery image1={this.props.images1} image2={this.props.images2} image3={this.props.images3}/>} />
                         <div className='drop-container-spacer1'></div>
                         <DropTab type='Comments' order='3' content={<CommentContent comments={this.props.comments}/>} />
                         <div className='drop-container-spacer2'></div>

@@ -31,10 +31,6 @@ class CreateStoryTab extends React.Component {
                         {this.props.usersStuff.map((info) => {
                             return (<DropTab type='Story' content={<CreateStory key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
                         })}
-                        <DropTab type='Images' content={<AddImages />}/>
-                        <div className='drop-container-spacer1'></div>
-                        <TabButton title='Create Story'/>
-                        <div className='drop-container-spacer2'></div>
                     </div>
                 </div>
             </div>

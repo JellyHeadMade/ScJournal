@@ -159,118 +159,11 @@
                 }
             
             }
-        
-            .drop-container-Images__up{
-                @include drop-tabs;
-                background-color: rgba($color: #164664, $alpha: 0.62);
-                z-index: 3;
-                grid-row: tab2-s/tab2-e;
-                height: 48px !important;
-                transition: 0.2s ease-in-out;height: 100%;
-                display: flex;
-                flex-direction: column;
-            
-                .droptab-Images-content {
-                    padding: 0px 3% 0px 3%;
-                    height: 0px;
-                    transition: all 0.2s ease-in-out;
-
-                
-                    .image-gallery-tab-content {
-                        display: flex;
-                        padding: 0px 25px 0px 25px;
-                        justify-content: space-around;
-                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.4);
-                        border-radius: 0px 0px 20px 20px;
-                        font-family: 'Lora', serif;
-                        color: $white-text;
-                        font-size: 15px;
-                        height: 0%;
-                        opacity: 0%;
-                        transition: all 0.2s ease-in-out;
-
-                        .img {
-                            height: 0px;
-                            opacity: 0%;
-                            transition: all 0.2s ease-in-out;
-                        }
-                    }
-                }
-            
-                .droptab-Images-bottom {
-                    color: $white-text;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-size: 25px;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                    padding-left: 3%;
-                    padding-right: 3%;
-                    z-index: 3;
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 400pt;
-                }
-            }
-
-            .drop-container-Images__down{
-                @include drop-tabs;
-                background-color: rgba($color: #164664, $alpha: 0.62);
-                z-index: 3;
-                grid-row: tab2-s/tab2-e;
-                height: 100%;
-                transition: all 0.2s ease-in-out;
-                display: flex;
-                flex-direction: column;
-            
-                .droptab-Images-content {
-                    padding: 0px 3% 0px 3%;
-                    height: 93%;
-                    transition: all 0.2s ease-in-out;
-
-                
-                    .image-gallery-tab-content {
-                        display: flex;
-                        padding: 0px 25px 0px 25px;
-                        justify-content: space-around;
-                        padding: 15px;
-                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.4);
-                        border-radius: 0px 0px 20px 20px;
-                        font-family: 'Lora', serif;
-                        color: $white-text;
-                        font-size: 15px;
-                        height: 85%;
-                        opacity: 100%;
-                        transition: all 0.2s ease-in-out;
-
-                        .img {
-                            height: 150px;
-                            opacity: 100%;
-                            transition: all 0.2s ease-in-out;
-                        }
-                    }
-                }
-            
-                .droptab-Images-bottom {
-                    color: $white-text;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-size: 25px;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                    padding-left: 3%;
-                    padding-right: 3%;
-                    z-index: 3;
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 400pt;
-                }
-            }
             .drop-container-button{
                 @include drop-tabs;
                 background-color: rgba($color: lime, $alpha: 0.39);
                 z-index: 2;
-                grid-row: tab3-s/tab3-e;
+                grid-row: tab2-s/tab2-e;
                 height: 48px !important;
                 transition: all 0.2s ease-in-out;
                 display: flex;
