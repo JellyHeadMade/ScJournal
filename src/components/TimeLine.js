@@ -14,6 +14,8 @@ class TimeLine extends React.Component {
 
     componentDidMount() {
         this.props.setPostDetails();
+        this.props.testPostDetails();
+        console.log(this.props.testPostDetails().payload);
     }
 
     render() {
@@ -44,10 +46,11 @@ class TimeLine extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { posts, setPostDetails } = state.postReducer;
+    const { posts, setPostDetails, testPostDetails } = state.postReducer;
     return {
         posts,
-        setPostDetails
+        setPostDetails,
+        testPostDetails
     }
   }
   

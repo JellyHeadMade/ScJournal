@@ -3,10 +3,15 @@ import {
 } from './postTest';
 
 import {
+    testPostDetails
+} from './testPost';
+
+import {
     setUserInfo
 } from './user'
 
 export {
     setPostDetails,
-    setUserInfo
+    setUserInfo,
+    testPostDetails
 };

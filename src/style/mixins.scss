@@ -21,3 +21,21 @@
     grid-template-columns: [inner-s] 1fr [inner-e];
     grid-template-rows: [content-s] auto [content-e] 0px [bottom-s] 48px [bottom-e];
 }
+
+@mixin drop-tabs-content-up-transistion {
+    height: 0%;
+    opacity: 0%;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+@mixin drop-tabs-contnent-down-transistion {
+    height: auto;
+    opacity: 100%;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}

@@ -1,5 +1,7 @@
 // POST 
 export const SET_POST_DETAILS = 'SET_POST_DETAILS';
 
+// TEST POST 
+export const TEST_POST_GET = 'TEST_POST_GET';
 //USER INFO
 export const SET_USER_INFO = 'SET_USER_INFO';

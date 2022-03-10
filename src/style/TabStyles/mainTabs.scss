@@ -9,9 +9,16 @@
     grid-row-gap: 50px;
 }
 
+// ctrl shift [ to collapse and ctrl shift ] to open. 
+
 .tab-group-container {
     width: 100%;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
+    //#region Banner
     .tab-base-stack-banner{
         border-radius: 50px 50px 0 0;
         background-color: $banner-color;
@@ -118,11 +125,16 @@
             padding-left: 20px;
         }
     }
+    //end
 
     .tab-group-drop-container{
         height: auto;
         grid-row: tab-s/tab-e;
         z-index: 5;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
     
         .drop-container {
             display: grid;
@@ -133,43 +145,38 @@
             -o-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
 
+            // Story up
             .drop-container-Story__up{
                 @include drop-tabs;
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.57);
                 z-index: 4;
                 grid-row: tab1-s/tab1-e;
                 height: 48px;
-                transition: 0.2s ease-in-out;
                 display: flex;
                 flex-direction: column;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
             
                 .droptab-Story-content {
                     padding: 0px 3% 0px 3%;
-                    height: 0px;
-                    transition: all 0.2s ease-in-out;
+                    @include drop-tabs-content-up-transistion;
+                    height: auto;
                 
                     .sub-tab-story-content {
-                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.5);
+                        background-color:  $tab-back-drop-color;
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
                         color: $white-text;
-                        font-size: 15px;
-                        height: 0%;
-                        transition: all 0.1s ease-in-out;
-                        opacity: 0%;
+                        @include drop-tabs-content-up-transistion;
 
                         &__text {
-                            animation: 2s 1 alternate elastic;
                             transform-origin: 0 0;
-                            transform: scaleY(0);
                             font-size: 15px;
+                            overflow-y:auto;
                             max-height: 0px;
-                            overflow-y:hidden;
-                            opacity: 0%;
-                            -webkit-transition: all 0.2s ease-in-out;
-                            -moz-transition: all 0.2s ease-in-out;
-                            -o-transition: all 0.2s ease-in-out;
-                            transition: all 0.2s ease-in-out;
+                            @include drop-tabs-content-up-transistion;
                         }
                     }
                 }
@@ -191,44 +198,46 @@
                 }
             
             }
+            //end
 
+            // Story down
             .drop-container-Story__down{
                 @include drop-tabs;
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.57);
                 z-index: 4;
                 grid-row: tab1-s/tab1-e;
                 height: 100%;
-                transition: all 0.2s ease-in-out;
                 display: flex;
                 flex-direction: column;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
             
                 .droptab-Story-content {
                     padding: 0px 3% 0px 3%;
                     height: 93%;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -moz-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
                     transition: all 0.2s ease-in-out;
                 
                     .sub-tab-story-content {
                         padding: 15px;
-                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.5);
+                        background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
                         color: $white-text;
                         font-size: 15px;
-                        height: auto;
-                        transition: all 0.3s ease-in-out;
-                        opacity: 100%;
+                        @include drop-tabs-contnent-down-transistion;
 
                         &__text {
                             transform-origin: 0 0;
-                            transform: scaleY(1);
+                            // transform: scaleY(1);
                             max-height: 400px;
                             overflow-y: auto;
                             font-size: 15px;
-                            opacity: 100%;
-                            -webkit-transition: all 0.2s ease-in-out;
-                            -moz-transition: all 0.2s ease-in-out;
-                            -o-transition: all 0.2s ease-in-out;
-                            transition: all 0.2s ease-in-out;
+                            @include drop-tabs-contnent-down-transistion;
                         }
                     }
                 }
@@ -250,16 +259,22 @@
                 }
             
             }
+            //end
         
+            // Images up
             .drop-container-Images__up{
                 @include drop-tabs;
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
-                height: 48px !important;
-                transition: 0.2s ease-in-out;height: 100%;
+                height: 48px;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
             
                 .droptab-Images-content {
                     padding: 0px 3% 0px 3%;
@@ -271,7 +286,7 @@
                         display: flex;
                         padding: 0px 25px 0px 25px;
                         justify-content: space-around;
-                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.4);
+                        background-color:  $tab-back-drop-color;
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
                         color: $white-text;
@@ -283,7 +298,7 @@
                         .img {
                             height: 0px;
                             opacity: 0%;
-                            transition: all 0.2s ease-in-out;
+                            transition: all 0.1s ease-in-out;
                         }
                     }
                 }
@@ -303,16 +318,21 @@
                     font-weight: 400pt;
                 }
             }
+            //end
 
+            // Images down
             .drop-container-Images__down{
                 @include drop-tabs;
                 background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
                 z-index: 3;
                 grid-row: tab2-s/tab2-e;
                 height: 100%;
-                transition: all 0.2s ease-in-out;
                 display: flex;
                 flex-direction: column;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
             
                 .droptab-Images-content {
                     padding: 0px 3% 0px 3%;
@@ -325,7 +345,7 @@
                         padding: 0px 25px 0px 25px;
                         justify-content: space-around;
                         padding: 15px;
-                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.4);
+                        background-color:  rgba($color: $tab-back-drop-color, $alpha: 0.7);
                         border-radius: 0px 0px 20px 20px;
                         font-family: 'Lora', serif;
                         color: $white-text;
@@ -357,32 +377,86 @@
                     font-weight: 400pt;
                 }
             }
+            //end
         
+            // Comments up
             .drop-container-Comments__up{
                 @include drop-tabs;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.39);
+                background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
                 z-index: 2;
                 grid-row: tab3-s/tab3-e;
-                height: 48px !important;
-                transition: all 0.2s ease-in-out;
+                height: 48px;
                 display: flex;
                 flex-direction: column;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
             
                 .droptab-Comments-content {
                     grid-column: inner-s/inner-e;
                     grid-row: content-s/content-e;
-                    height: 0%;
-                    font-size: 0px;
-                    transition: all 0.2s ease-in-out;
+                    @include drop-tabs-content-up-transistion;
 
-                    .comment-content {
-                        font-size: 0px;
-                        opacity: 0%;
-                        transition: all 0.2s ease-in-out;
-                        &__text {
-                            font-size: 0px;
-                            opacity: 0%;
-                            transition: all 0.2s ease-in-out;
+                    .comments {
+                        padding: 15px 3% 0px 3%;
+                        @include drop-tabs-content-up-transistion;
+
+                         .comments-container {
+                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                            border-radius: 20px;
+                            display: grid;
+                            grid-gap: 15px;
+                            transform-origin: 0 0;
+                            max-height: 0px;
+                            overflow-y: auto;
+                            transform: scaleY(0);
+                            @include drop-tabs-content-up-transistion;
+
+                            .comment-wrapper {
+                                display: grid;
+                                grid-template-columns: [image-s] 60px [image-e user-s] auto [user-e];
+                                grid-template-rows: [top-s] 40px [top-e bottom-s] auto [bottom-e];
+                                @include drop-tabs-content-up-transistion;
+   
+                                .comment-userimage {
+                                    grid-column: image-s/image-e;
+                                    grid-row: top-s/top-e;
+                                    padding: 5px 15px;
+                                    @include drop-tabs-content-up-transistion;
+
+                                    &__img {
+                                        @include drop-tabs-content-up-transistion;
+                                    }
+                                }
+   
+                                .comment-username {
+                                   grid-column: user-s/user-e;
+                                   grid-row: top-s/top-e;
+                                   justify-self: start;
+                                   align-self: center;
+                                   color: #e9e9e9;
+                                   @include drop-tabs-content-up-transistion;
+
+                                   &__name{
+                                       font-size: 0px;
+                                    @include drop-tabs-content-up-transistion;
+                                   }
+                                }
+   
+                                .comment-post-comment {
+                                    grid-column: image-s/user-e;
+                                    grid-row: bottom-s/bottom-e;
+                                    padding: 5px 10px 10px 10px;
+                                    color: #e9e9e9;
+                                    @include drop-tabs-content-up-transistion;
+
+                                    &__text{
+                                        font-size: 0px;
+                                        @include drop-tabs-content-up-transistion;
+                                    }
+                                }
+                            }
                          }
                     }
 
@@ -403,30 +477,87 @@
                     font-weight: 400pt;
                 }
             }
+            //end
 
+            // Comments down
             .drop-container-Comments__down{
                 @include drop-tabs;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.39);
+                background-color: rgba($color: $drop-tab-color, $alpha: 0.47);
                 z-index: 2;
                 grid-row: tab3-s/tab3-e;
                 height: 100%;
-                transition: 0.2s ease-in-out;
                 display: flex;
                 flex-direction: column;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
             
                 .droptab-Comments-content {
                     height: 93%;
                     font-size: 12px;
                     transition: 0.2s ease-in-out;
 
-                    .comment-content {
+                    .comments {
+                        padding: 15px 3% 0px 3%;
                         font-size: 12px;
-                        opacity: 100%;
-                        transition: 0.2s ease-in-out;
-                         &__text {
-                            font-size: 12px;
-                            opacity: 100%;
-                            transition: 0.2s ease-in-out;
+                        @include drop-tabs-contnent-down-transistion;
+
+                         .comments-container {
+                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                            border-radius: 20px;
+                            display: grid;
+                            grid-gap: 15px;
+                            transform-origin: 0 0;
+                            max-height: 200px;
+                            overflow-y: auto;
+                            transform: scaleY(1);
+                            @include drop-tabs-contnent-down-transistion;
+
+                            .comment-wrapper {
+                                display: grid;
+                                grid-template-columns: [image-s] 60px [image-e user-s] auto [user-e];
+                                grid-template-rows: [top-s] 40px [top-e bottom-s] auto [bottom-e];
+                                @include drop-tabs-contnent-down-transistion;
+   
+                                .comment-userimage {
+                                    grid-column: image-s/image-e;
+                                    grid-row: top-s/top-e;
+                                    padding: 5px 15px;
+                                    @include drop-tabs-contnent-down-transistion;
+
+                                    &__img{
+                                        @include drop-tabs-contnent-down-transistion;
+                                    }
+                                }
+   
+                                .comment-username {
+                                   grid-column: user-s/user-e;
+                                   grid-row: top-s/top-e;
+                                   justify-self: start;
+                                   align-self: center;
+                                   color: #e9e9e9;
+                                   @include drop-tabs-contnent-down-transistion;
+
+                                   &__name{
+                                        font-size: 12px;
+                                        @include drop-tabs-contnent-down-transistion;
+                                   }
+                                }
+   
+                                .comment-post-comment {
+                                    grid-column: image-s/user-e;
+                                    grid-row: bottom-s/bottom-e;
+                                    padding: 5px 10px 10px 10px;
+                                    color: #e9e9e9;
+                                    @include drop-tabs-contnent-down-transistion;
+
+                                    &__text{
+                                        font-size: 12px;
+                                        @include drop-tabs-contnent-down-transistion;
+                                    }
+                                }
+                            }
                          }
                     }
 
@@ -447,20 +578,23 @@
                     font-weight: 400pt;
                 }
             }
+            //end
 
+            // Spacers
             .drop-container-spacer1 {
                 grid-column: main-s/main-e;
                 grid-row: tab1-s/tab1-e;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.67);
+                background-color: rgba($color: $drop-tab-color, $alpha: 0.75);
                 z-index: 1;
             }
         
             .drop-container-spacer2 {
                 grid-column: main-s/main-e;
                 grid-row: tab2-s/tab3-s;
-                background-color: rgba($color: $drop-tab-color, $alpha: 0.39);
+                background-color: rgba($color: $drop-tab-color, $alpha: 0.5);
                 z-index: 1;
             }
+            //end
         }    
     }        
 }

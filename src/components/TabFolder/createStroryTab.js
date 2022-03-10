@@ -14,7 +14,8 @@ class CreateStoryTab extends React.Component {
 
         this.state = {
             tabTitle : 'Create a Post',
-            pulledUserInfo : []
+            pulledUserInfo : [],
+            createbool : true
         }
     }
 
@@ -29,7 +30,7 @@ class CreateStoryTab extends React.Component {
                 <div className='tab-group-drop-container'>
                     <div className='drop-container'>
                         {this.props.usersStuff.map((info) => {
-                            return (<DropTab type='Story' content={<CreateStory key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
+                            return (<DropTab create={this.state.createbool} type='Story' content={<CreateStory key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
                         })}
                     </div>
                 </div>
