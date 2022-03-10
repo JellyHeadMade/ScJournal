@@ -13,10 +13,7 @@
 
 .tab-group-container {
     width: 100%;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    @include base-animation-transision;
 
     //#region Banner
     .tab-base-stack-banner{
@@ -131,19 +128,13 @@
         height: auto;
         grid-row: tab-s/tab-e;
         z-index: 5;
-        -webkit-transition: all 0.2s ease-in-out;
-        -moz-transition: all 0.2s ease-in-out;
-        -o-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out;
+        @include base-animation-transision;
     
         .drop-container {
             display: grid;
             grid-template-columns: [main-s] 1fr [main-e];
             grid-template-rows: [tab1-s] minmax(48px, auto) [tab1-e tab2-s] minmax(48px, auto) [tab2-e tab3-s] minmax(48px, auto) [tab3-e] ;
-            -webkit-transition: all 0.2s ease-in-out;
-            -moz-transition: all 0.2s ease-in-out;
-            -o-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out;
+            @include base-animation-transision;
 
             // Story up
             .drop-container-Story__up{
@@ -154,10 +145,7 @@
                 height: 48px;
                 display: flex;
                 flex-direction: column;
-                -webkit-transition: all 0.2s ease-in-out;
-                -moz-transition: all 0.2s ease-in-out;
-                -o-transition: all 0.2s ease-in-out;
-                transition: all 0.2s ease-in-out;
+                @include base-animation-transision;
             
                 .droptab-Story-content {
                     padding: 0px 3% 0px 3%;
@@ -209,18 +197,12 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                -webkit-transition: all 0.2s ease-in-out;
-                -moz-transition: all 0.2s ease-in-out;
-                -o-transition: all 0.2s ease-in-out;
-                transition: all 0.2s ease-in-out;
+                @include base-animation-transision;
             
                 .droptab-Story-content {
                     padding: 0px 3% 0px 3%;
                     height: 93%;
-                    -webkit-transition: all 0.2s ease-in-out;
-                    -moz-transition: all 0.2s ease-in-out;
-                    -o-transition: all 0.2s ease-in-out;
-                    transition: all 0.2s ease-in-out;
+                    @include base-animation-transision;
                 
                     .sub-tab-story-content {
                         padding: 15px;
@@ -271,10 +253,7 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                -webkit-transition: all 0.2s ease-in-out;
-                -moz-transition: all 0.2s ease-in-out;
-                -o-transition: all 0.2s ease-in-out;
-                transition: all 0.2s ease-in-out;
+                @include base-animation-transision;
             
                 .droptab-Images-content {
                     padding: 0px 3% 0px 3%;
@@ -388,10 +367,7 @@
                 height: 48px;
                 display: flex;
                 flex-direction: column;
-                -webkit-transition: all 0.2s ease-in-out;
-                -moz-transition: all 0.2s ease-in-out;
-                -o-transition: all 0.2s ease-in-out;
-                transition: all 0.2s ease-in-out;
+                @include base-animation-transision;
             
                 .droptab-Comments-content {
                     grid-column: inner-s/inner-e;
@@ -488,10 +464,7 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                -webkit-transition: all 0.2s ease-in-out;
-                -moz-transition: all 0.2s ease-in-out;
-                -o-transition: all 0.2s ease-in-out;
-                transition: all 0.2s ease-in-out;
+                @include base-animation-transision;
             
                 .droptab-Comments-content {
                     height: 93%;
