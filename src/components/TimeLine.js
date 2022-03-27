@@ -9,13 +9,17 @@ class TimeLine extends React.Component {
     constructor(props){
         super(props);
 
+        this.state = {
+            userId: 3,
+            viewerId: '3'
+        }
 
     }
 
     componentDidMount() {
         this.props.setPostDetails();
-        this.props.testPostDetails();
-        console.log(this.props.testPostDetails().payload);
+        // this.props.testPostDetails();
+        // console.log(this.props.testPostDetails().payload);
     }
 
     render() {
@@ -23,9 +27,12 @@ class TimeLine extends React.Component {
             <div className='time-line'>
                 {this.props.posts.map((post) => (
                     <div className='test'>
+                        {console.log("timeline state test = " + this.state.viewerId)}
                         {/* {console.log(i.postDate)} */}
                         <TabBase userImage={post.userImage} 
                             postTitle={post.postTitle} 
+                            viewer_id={this.state.viewerId}
+                            user_id={post.user_id}
                             userName={post.userName} 
                             postDate={post.postDate} 
                             shipTag={post.shipTag} 
@@ -46,11 +53,10 @@ class TimeLine extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { posts, setPostDetails, testPostDetails } = state.postReducer;
+    const { posts, setPostDetails } = state.postReducer;
     return {
         posts,
-        setPostDetails,
-        testPostDetails
+        setPostDetails
     }
   }
   

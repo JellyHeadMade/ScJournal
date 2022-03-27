@@ -18,7 +18,7 @@ class TabBase extends React.Component{
     render() {
         return (
             <div className='tab-group-container'>
-                <TabBanner postTitle={this.props.postTitle} userName={this.props.userName} postDate={this.props.postDate} userImage={this.props.userImage} shipTag={this.props.shipTag} locationTag={this.props.locationTag} activityTag={this.props.activityTag} typeTag={this.props.typeTag}/>
+                <TabBanner postTitle={this.props.postTitle} viewer_id={this.props.viewer_id} user_id={this.props.user_id} userName={this.props.userName} postDate={this.props.postDate} userImage={this.props.userImage} shipTag={this.props.shipTag} locationTag={this.props.locationTag} activityTag={this.props.activityTag} typeTag={this.props.typeTag}/>
                 <div className='tab-group-drop-container'>
                     <div className='drop-container'>
                         <DropTab type='Story' order='1' content={<StoryContent story={this.props.story} />}/>

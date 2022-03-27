@@ -2,9 +2,28 @@
 import React from 'react';
 
 class TabBanner extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.Editcheck = this.Editcheck.bind(this);
+    }
+
+    Editcheck(viewer, user) {
+        if (viewer === user) {
+            return true;
+        } else { 
+            return false;
+        }
+    }
+
     render() { 
         return(
             <div className='tab-base-stack-banner'>
+                    {this.Editcheck(this.props.user_id , this.props.viewer_id) ? 
+                        <div className='tab-base-stack-banner__edit'>
+                            <a>Edit</a>
+                        </div> : null}
+                        {console.log(this.props.viewer_id)}
                     <div className='tab-base-stack-banner__type'>
                         <a>{this.props.typeTag}</a>
                     </div>
@@ -36,5 +55,6 @@ class TabBanner extends React.Component{
         )
     }
 }
+
 
 export default TabBanner;
