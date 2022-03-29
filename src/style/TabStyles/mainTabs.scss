@@ -1,6 +1,7 @@
   .line { 
+    width: 97%;
     display: grid;  
-    grid-template-columns: [leftofline-s] 5.35% [leftofline-e line-s] 0.08% [line-e rightofline-s] 5.35% [rightofline-e post-s] auto [post-e padding-s] 3% [padding-e];
+    grid-template-columns: [leftofline-s] 4.85% [leftofline-e line-s] 1.3% [line-e rightofline-s] 4.85% [rightofline-e post-s] auto [post-e];
     grid-template-rows: [topPadding-s] 150px [topPadding-e rest-s] 1fr [rest-e];
     z-index: 13;
 
@@ -10,17 +11,18 @@
         grid-column: line-s/line-e;
         grid-row: topPadding-e/rest-e;
         height: 100%;
-        width: auto;
+        width: 2px;
+        justify-self: center;
     }
     .time-line {
-        grid-column: leftofline-s/padding-e;
+        grid-column: leftofline-s/post-e;
         grid-row: topPadding-s/rest-e;
         padding-top: 50px;
         padding-bottom: 50px;
         height: auto;
         width: 100%;
         display: grid;
-        grid-template-columns: [timedot-s] 11% [timedot-e post-s] auto [post-e padding-s] 3% [padding-e];
+        grid-template-columns: [timedot-s] 11% [timedot-e post-s] auto [post-e];
         grid-template-rows: repeat(auto-fill, auto);
         grid-row-gap: 50px;
 
@@ -42,19 +44,18 @@
         width: 100%;
         height: 100px;
         grid-template-rows: [bannertop-s] 50px [bannertop-e bannerend-s] 50px [bannerend-e tab-s] minmax(144px, auto) [tab-e];
-        grid-template-columns: [timedot-s] 11% [timedot-e image-s] 6.3% [image-e meta-s] auto [meta-e tagOne-s] min-content [tagOne-e tagTwo-s] min-content [tagTwo-e tagThree-s] min-content [tagThree-e tagFour-s] min-content [tagFour-e];
+        grid-template-columns: [leftpadding-s] 4.85% [leftpadding-e circle-s] 1.3% [circle-e rightpadding-s] 4.85% [rightpadding-e image-s] 6.3% [image-e meta-s] auto [meta-e tagOne-s] min-content [tagOne-e tagTwo-s] min-content [tagTwo-e tagThree-s] min-content [tagThree-e tagFour-s] min-content [tagFour-e];
         z-index: 6;
 
         .timedotdot{
-            grid-row: bannertop-e/bannerend-e;
-            grid-column: timedot-s/timedot-e;
-            padding-top: 18.5%;
-            padding-left: 45%;
-            // margin-left: auto;
-            // margin-right: auto;
-            transform-origin: 0, 0;
-            img{
-                transform-origin: 0, 0;
+            z-index: 14;
+            grid-row: bannertop-s/tab-e;
+            grid-column: circle-s/circle-e;
+            // padding-top: 90%;
+            height: 100%;
+
+            &__img {
+                padding-top: 88px;
             }
         }
 
@@ -68,7 +69,7 @@
             border-radius: 50px 50px 0 0;
             background-color: $banner-color;
             z-index: 7;
-            grid-column: timedot-e/tagFour-e;
+            grid-column: rightpadding-e/tagFour-e;
             grid-row: bannertop-s/bannerend-e;
             box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.2)  ; 
             -webkit-box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.2)  ; 
