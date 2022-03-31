@@ -20,7 +20,7 @@ class TabBanner extends React.Component{
         return(
             <div className='tab-base-stack-banner'>
                     <div className='timedotdot'>
-                    <img src='https://via.placeholder.com/24/09f.png/fff' className='timedotdot__img'/>
+                    <img src='https://via.placeholder.com/24/ffffff.png' className='timedotdot__img'/>
                     </div>
                     <div className='tab-base-stack-banner__bg'></div>
                     {this.Editcheck(this.props.user_id , this.props.viewer_id) ? 

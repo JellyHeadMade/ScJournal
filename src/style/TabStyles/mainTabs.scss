@@ -43,20 +43,21 @@
         display: grid;
         width: 100%;
         height: 100px;
-        grid-template-rows: [bannertop-s] 50px [bannertop-e bannerend-s] 50px [bannerend-e tab-s] minmax(144px, auto) [tab-e];
-        grid-template-columns: [leftpadding-s] 4.85% [leftpadding-e circle-s] 1.3% [circle-e rightpadding-s] 4.85% [rightpadding-e image-s] 6.3% [image-e meta-s] auto [meta-e tagOne-s] min-content [tagOne-e tagTwo-s] min-content [tagTwo-e tagThree-s] min-content [tagThree-e tagFour-s] min-content [tagFour-e];
+        grid-template-rows: [bannertop-s] 50px [bannertop-e bannerend-s] 38px [bannerend-e timedottophalf-s] 12px [timedottophalf-e timedotbottomhalf-s] 12px [timedotbottomhalf-e tab-s] minmax(132px, auto) [tab-e];        grid-template-columns: [leftpadding-s] 4.85% [leftpadding-e circle-s] 1.3% [circle-e rightpadding-s] 4.85% [rightpadding-e image-s] 6.3% [image-e meta-s] auto [meta-e tagOne-s] min-content [tagOne-e tagTwo-s] min-content [tagTwo-e tagThree-s] min-content [tagThree-e tagFour-s] min-content [tagFour-e];
         z-index: 6;
 
         .timedotdot{
             z-index: 14;
-            grid-row: bannertop-s/tab-e;
+            grid-row: timedottophalf-s/timedotbottomhalf-e;
             grid-column: circle-s/circle-e;
-            // padding-top: 90%;
+            align-self: center;
+            justify-self: center;
             height: 100%;
+            
 
-            &__img {
-                padding-top: 88px;
-            }
+            // &__img {
+            //     // width: 100%;
+            // }
         }
 
         a {
@@ -70,7 +71,7 @@
             background-color: $banner-color;
             z-index: 7;
             grid-column: rightpadding-e/tagFour-e;
-            grid-row: bannertop-s/bannerend-e;
+            grid-row: bannertop-s/timedottophalf-e;
             box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.2)  ; 
             -webkit-box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.2)  ; 
             -moz-box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.2)  ;
@@ -88,28 +89,28 @@
         &__type {
             z-index: 10;
             background-color: $type-tag-color;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             grid-column: tagFour-s/tagFour-e;
             @include banner-tags;
         } 
         &__activity {
             z-index: 9;
             background-color: $activity-tag-color;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             grid-column: tagThree-s/tagThree-e;
             @include banner-tags;
         } 
         &__location {
             z-index: 8;
             background-color: $location-tag-color;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             grid-column: tagTwo-s/tagTwo-e;
             @include banner-tags;
         }
         &__ship {
             z-index: 7;
             background-color: $ship-tag-color;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             grid-column: tagOne-s/tagOne-e;
             @include banner-tags;
         } 
@@ -117,34 +118,34 @@
             z-index: 9;
             background-color: $activity-tag-color;
             height: 50px;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             grid-column: tagFour-s/tagFour-e;
         } 
         &__bgTagTwo {
             z-index: 8;
             height: 50px;
             background-color: $location-tag-color;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             grid-column: tagThree-s/tagFour-e;
         } 
         &__bgTagThree {
             z-index: 7;
             height: 50px;
             background-color: $ship-tag-color;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             grid-column: tagTwo-s/tagFour-e;
         }
     
         &__img {
             grid-column: image-s/image-e;
-            grid-row: bannertop-s/bannerend-e;
+            grid-row: bannertop-s/timedottophalf-e;
             align-self: center;
             justify-self: end;
             z-index: 8;
         }
         &__username {
             grid-column: meta-s/meta-e;
-            grid-row: bannertop-s/bannerend-e;
+            grid-row: bannertop-s/timedottophalf-e;
             align-self: end;
             padding-left: 20px;
             padding-top: 20px;
@@ -156,7 +157,7 @@
         }
         &__date {
             grid-column: meta-s/meta-e;
-            grid-row: bannerend-s/bannerend-e;
+            grid-row: bannerend-s/timedottophalf-e;
             padding-left: 20px;
             padding-bottom: 8px;
             font-size: 12px;
@@ -180,7 +181,7 @@
 
     .tab-group-drop-container{
         height: auto;
-        grid-row: tab-s/tab-e;
+        grid-row: timedotbottomhalf-s/tab-e;
         z-index: 5;
         @include base-animation-transision;
     
