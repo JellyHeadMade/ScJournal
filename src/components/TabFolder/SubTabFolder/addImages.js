@@ -1,18 +1,12 @@
 import React from 'react';
 
-class AddImages extends React.Component {
-    constructor(props) {
-        super(props);
+function AddImages() {
 
-    }
-
-    render() {
-        return(
-            <div className=''>
-
-            </div>
-        )
-    }
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
 export default AddImages;
