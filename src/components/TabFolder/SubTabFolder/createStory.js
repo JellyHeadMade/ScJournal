@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import DropZoneComponent from 'react-dropzone-component';
 import '../../../../node_modules/react-dropzone-component/styles/filepicker.css';
@@ -19,31 +19,13 @@ function CreateStory(props) {
             activityTag: '',
             typeTag: '',
             story: '', 
-            image1: '', 
+            image1: '',
             image2: '',
             image3: ''
         }
     )
 
-    const [draftImage1, setDraftImage1] = useState({image1: ''});
-    const [draftImage2, setDraftImage2] = useState({image2: ''});
-    const [draftImage3, setDraftImage3] = useState({image3: ''});
-
-
     const handleImage1drop = () => {
-        return {
-            addedfile: file => imagethingy1(file)
-        }
-    }
-    const handleImage2drop = () => {
-        return {
-            addedfile: file => setDraftImage2({...draftImage2, image2: file})
-        }
-    }
-    const handleImage3drop = () => {
-        return {
-            addedfile: file => setDraftImage3({...draftImage3, image3: file})
-        }
     }
 
     function componentConfig() {
@@ -61,9 +43,45 @@ function CreateStory(props) {
         }
     }
 
+    const buildForm = () => {
+        let formData = new FormData();
+
+        console.log('just after making formData' + formData);
+
+        formData.append('postInfo[user_id]', postInfo.__id);
+        formData.append('postInfo[userImage]', postInfo.userImage);
+        formData.append('postInfo[userName]', postInfo.userName);
+        formData.append('postInfo[postTitle]', postInfo.postTitle);
+        formData.append('postInfo[postDate]', postInfo.postDate);
+        formData.append('postInfo[shipTag]', postInfo.shipTag);
+        formData.append('postInfo[locationTag]', postInfo.locationTag);
+        formData.append('postInfo[activityTag]', postInfo.activityTag);
+        formData.append('postInfo[typeTag]', postInfo.typeTag);
+        formData.append('postInfo[story]', postInfo.story);
+
+        if (postInfo.image1) {
+            formData.append('postInfo[image1]', postInfo.image1);
+        }
+        if (postInfo.image2) {
+            formData.append('postInfo[image2]', postInfo.image2);
+        }
+        if (postInfo.image3) {
+            formData.append('postInfo[image3]', postInfo.image3);
+        }
+
+        console.log('formData after all the appends that should have ran' + formData);
+
+        return formData;
+    }
+
     const handleSubmit = e => {
+        // if (postInfo.image1 != '') {
+        //     const
+        // }
+        // console.log('before defautl prev' + postInfo);
+        buildForm();
         e.preventDefault();
-        console.log(postInfo);
+        // console.log('after defautl prev' + postInfo);
         return postInfo;
     }
 
@@ -73,17 +91,34 @@ function CreateStory(props) {
         });
     }
 
-    const imagethingy1 = (z) => {
-        console.log(z);
-        console.log(draftImage1);
-        setDraftImage1({...draftImage1, image1: z})
-        console.log(draftImage1);
-        setpostInfo({...postInfo, image1: draftImage1.image1.dataURL});
-        console.log(postInfo)
+    const handleImage2drop = () => {
+        return {
+            addedfile: file => setpostInfo({...postInfo, 
+                    __id: postInfo.__id,
+                    userImage: postInfo.userImage,
+                    userName: postInfo.userName,
+                    postTitle: postInfo.postTitle,
+                    postDate: postInfo.postDate,
+                    shipTag: postInfo.shipTag,
+                    locationTag: postInfo.locationTag,
+                    activityTag: postInfo.activityTag,
+                    typeTag: postInfo.typeTag,
+                    story: postInfo.story, 
+                    image1: 'haha',
+                    image2: postInfo.image2,
+                    image3: postInfo.image3
+                }
+                )
+        }
+    }
+    const handleImage3drop = () => {
+        return {
+            addedfile: file => setpostInfo({ image3: file.name})
+        }
     }
 
     return (
-        <form onConfirm={handleConfirmation} onSubmit={handleSubmit} className='create-story-form'>
+        <form onSubmit={handleSubmit} className='create-story-form'>
             <div className='form1' >
                 <input
                     type='text' name='postTitle'
@@ -279,7 +314,7 @@ function CreateStory(props) {
                 <DropZoneComponent 
                     config={componentConfig()}
                     djsConfig={djsConfig()}
-                    eventHandlers={handleImage1drop()}
+                    eventHandlers={handleImage1drop}
                 ></DropZoneComponent>
                 <DropZoneComponent 
                     config={componentConfig()}
