@@ -25,9 +25,48 @@ function CreateStory(props) {
         }
     )
 
-    const handleImage1drop = () => {
+    const [img1draft, setImg1draft] = useState({img1: ''});
+    const [img2draft, setImg2draft] = useState({img2: ''});
+    const [img3draft, setImg3draft] = useState({img3: ''});
+
+    const useComponentDidUpdate = (callback, condition) => {
+        const mounted = React.useRef(false);
+        React.useEffect(() => {
+            if (mounted.current) callback();
+            else mounted.current = true;
+        }, condition);
     }
 
+    useComponentDidUpdate(() => {
+        console.log(`current state of image 2 is ${postInfo.image2} in the postinfo and ${img2draft.img2[0]} for the draft image state`);
+        if (img2draft.img2 != '') {
+            console.log('image 2 was blank so i updated it')
+            setpostInfo({...postInfo, image2: img2draft.img2})
+        } else if (postInfo.image2 != '') {
+            console.log('the else if statement was triggered');
+            return
+        }
+    })
+
+    // image handlers
+    const handleImage1drop = () => {
+        return {
+            addedfile: file => setImg1draft({...img1draft, img1: file})
+        }
+
+    }
+    const handleImage2drop = () => {
+        return {
+            addedfile: file => setImg2draft({...img2draft, img2: file})
+        }
+    }
+    const handleImage3drop = () => {
+        return {
+            addedfile: file => setImg3draft({...img3draft, img3: file})
+        }
+    }
+    
+    // dropzone handlers besides the image ones
     function componentConfig() {
         return {
             iconFiletypes: ['.jpg', '.png'], 
@@ -43,6 +82,7 @@ function CreateStory(props) {
         }
     }
 
+    // build form if i need it
     const buildForm = () => {
         let formData = new FormData();
 
@@ -74,47 +114,18 @@ function CreateStory(props) {
         return formData;
     }
 
+    // the submit function that should call out to axios after state issues are resolved.
     const handleSubmit = e => {
-        // if (postInfo.image1 != '') {
-        //     const
-        // }
-        // console.log('before defautl prev' + postInfo);
-        buildForm();
         e.preventDefault();
-        // console.log('after defautl prev' + postInfo);
+        console.log(postInfo);
         return postInfo;
     }
 
+    // the onchange function that works with the input fields but not the dropzone images.
     const handleChange = e => {
         setpostInfo({...postInfo,
             [e.target.name] : e.target.value
         });
-    }
-
-    const handleImage2drop = () => {
-        return {
-            addedfile: file => setpostInfo({...postInfo, 
-                    __id: postInfo.__id,
-                    userImage: postInfo.userImage,
-                    userName: postInfo.userName,
-                    postTitle: postInfo.postTitle,
-                    postDate: postInfo.postDate,
-                    shipTag: postInfo.shipTag,
-                    locationTag: postInfo.locationTag,
-                    activityTag: postInfo.activityTag,
-                    typeTag: postInfo.typeTag,
-                    story: postInfo.story, 
-                    image1: 'haha',
-                    image2: postInfo.image2,
-                    image3: postInfo.image3
-                }
-                )
-        }
-    }
-    const handleImage3drop = () => {
-        return {
-            addedfile: file => setpostInfo({ image3: file.name})
-        }
     }
 
     return (
