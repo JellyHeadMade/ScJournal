@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter } from "react-router-dom";
@@ -10,14 +10,15 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 import "./style/main.scss";
 
+const root = ReactDOM.createRoot(document.querySelector(".app-wrapper"));
+
 function main() {
-  ReactDOM.render(
+  root.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>,
-    document.querySelector(".app-wrapper")
+    </Provider>
   );
 }
 

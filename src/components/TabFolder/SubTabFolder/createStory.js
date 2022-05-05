@@ -29,24 +29,24 @@ function CreateStory(props) {
     const [img2draft, setImg2draft] = useState({img2: ''});
     const [img3draft, setImg3draft] = useState({img3: ''});
 
-    const useComponentDidUpdate = (callback, condition) => {
-        const mounted = React.useRef(false);
-        React.useEffect(() => {
-            if (mounted.current) callback();
-            else mounted.current = true;
-        }, condition);
-    }
+    // const useComponentDidUpdate = (callback, condition) => {
+    //     const mounted = React.useRef(false);
+    //     React.useEffect(() => {
+    //         if (mounted.current) callback();
+    //         else mounted.current = true;
+    //     }, condition);
+    // }
 
-    useComponentDidUpdate(() => {
-        console.log(`current state of image 2 is ${postInfo.image2} in the postinfo and ${img2draft.img2[0]} for the draft image state`);
-        if (img2draft.img2 != '') {
-            console.log('image 2 was blank so i updated it')
-            setpostInfo({...postInfo, image2: img2draft.img2})
-        } else if (postInfo.image2 != '') {
-            console.log('the else if statement was triggered');
-            return
-        }
-    })
+    // useComponentDidUpdate(() => {
+    //     console.log(`current state of image 2 is ${postInfo.image2} in the postinfo and ${img2draft.img2[0]} for the draft image state`);
+    //     if (img2draft.img2 != '') {
+    //         console.log('image 2 was blank so i updated it')
+    //         setpostInfo({...postInfo, image2: img2draft.img2})
+    //     } else if (postInfo.image2 != '') {
+    //         console.log('the else if statement was triggered');
+    //         return
+    //     }
+    // })
 
     // image handlers
     const handleImage1drop = () => {
@@ -114,8 +114,15 @@ function CreateStory(props) {
         return formData;
     }
 
+    function img2test() {
+        if (postInfo.image2 === '') {
+            setpostInfo({...postInfo, image2: img2draft.img2})
+        }
+    }
+
     // the submit function that should call out to axios after state issues are resolved.
     const handleSubmit = e => {
+        img2test();
         e.preventDefault();
         console.log(postInfo);
         return postInfo;
