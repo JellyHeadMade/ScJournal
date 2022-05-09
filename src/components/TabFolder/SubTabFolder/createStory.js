@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import DropZoneComponent from 'react-dropzone-component';
 import '../../../../node_modules/react-dropzone-component/styles/filepicker.css';
 import '../../../../node_modules/dropzone/dist/min/dropzone.min.css';
-import { setPostDetails } from '../../../actions';
+// import { setPostDetails } from '../../../actions';
 
-function CreateStory(props) {
+class CreateStory extends React.Component {
+    constructor(props) {
+        super(props);
 
-    const [postInfo, setpostInfo] = useState(
-        {
-            __id: props.userId,
-            userImage: props.userImage,
-            userName: props.userName,
+        this.state = {
+            __id: this.props.userId,
+            userImage: this.props.userImage,
+            userName: this.props.userName,
             postTitle: '',
             postDate: new Date(),
             shipTag: '',
@@ -23,51 +24,34 @@ function CreateStory(props) {
             image2: '',
             image3: ''
         }
-    )
 
-    const [img1draft, setImg1draft] = useState({img1: ''});
-    const [img2draft, setImg2draft] = useState({img2: ''});
-    const [img3draft, setImg3draft] = useState({img3: ''});
-
-    // const useComponentDidUpdate = (callback, condition) => {
-    //     const mounted = React.useRef(false);
-    //     React.useEffect(() => {
-    //         if (mounted.current) callback();
-    //         else mounted.current = true;
-    //     }, condition);
-    // }
-
-    // useComponentDidUpdate(() => {
-    //     console.log(`current state of image 2 is ${postInfo.image2} in the postinfo and ${img2draft.img2[0]} for the draft image state`);
-    //     if (img2draft.img2 != '') {
-    //         console.log('image 2 was blank so i updated it')
-    //         setpostInfo({...postInfo, image2: img2draft.img2})
-    //     } else if (postInfo.image2 != '') {
-    //         console.log('the else if statement was triggered');
-    //         return
-    //     }
-    // })
-
-    // image handlers
-    const handleImage1drop = () => {
+        this.handleImage1drop = this.handleImage1drop.bind(this);
+        this.handleImage2drop = this.handleImage2drop.bind(this);
+        this.handleImage3drop = this.handleImage3drop.bind(this);
+        this.componentConfig = this.componentConfig.bind(this);
+        this.djsConfig = this.djsConfig.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleImage1drop() {
         return {
-            addedfile: file => setImg1draft({...img1draft, img1: file})
+            addedfile: file => this.setState({image1: file})
         }
 
     }
-    const handleImage2drop = () => {
+    handleImage2drop() {
         return {
-            addedfile: file => setImg2draft({...img2draft, img2: file})
+            addedfile: file => this.setState({image2: file})
         }
     }
-    const handleImage3drop = () => {
+     handleImage3drop() {
         return {
-            addedfile: file => setImg3draft({...img3draft, img3: file})
+            addedfile: file => this.setState({image3: file})
         }
     }
     
     // dropzone handlers besides the image ones
-    function componentConfig() {
+    componentConfig() {
         return {
             iconFiletypes: ['.jpg', '.png'], 
             showFiletypeIcon: true,
@@ -75,82 +59,41 @@ function CreateStory(props) {
         }
     }
 
-    function djsConfig() {
+    djsConfig() {
         return {
             addRemoveLinks: true,
             maxFiles: 1
         }
     }
 
-    // build form if i need it
-    const buildForm = () => {
-        let formData = new FormData();
-
-        console.log('just after making formData' + formData);
-
-        formData.append('postInfo[user_id]', postInfo.__id);
-        formData.append('postInfo[userImage]', postInfo.userImage);
-        formData.append('postInfo[userName]', postInfo.userName);
-        formData.append('postInfo[postTitle]', postInfo.postTitle);
-        formData.append('postInfo[postDate]', postInfo.postDate);
-        formData.append('postInfo[shipTag]', postInfo.shipTag);
-        formData.append('postInfo[locationTag]', postInfo.locationTag);
-        formData.append('postInfo[activityTag]', postInfo.activityTag);
-        formData.append('postInfo[typeTag]', postInfo.typeTag);
-        formData.append('postInfo[story]', postInfo.story);
-
-        if (postInfo.image1) {
-            formData.append('postInfo[image1]', postInfo.image1);
-        }
-        if (postInfo.image2) {
-            formData.append('postInfo[image2]', postInfo.image2);
-        }
-        if (postInfo.image3) {
-            formData.append('postInfo[image3]', postInfo.image3);
-        }
-
-        console.log('formData after all the appends that should have ran' + formData);
-
-        return formData;
+    handleChange(e) {
+        this.setState({[e.target.name]: e.target.value})
     }
 
-    function img2test() {
-        if (postInfo.image2 === '') {
-            setpostInfo({...postInfo, image2: img2draft.img2})
-        }
-    }
-
-    // the submit function that should call out to axios after state issues are resolved.
-    const handleSubmit = e => {
-        img2test();
+    handleSubmit(e) {
         e.preventDefault();
-        console.log(postInfo);
-        return postInfo;
+        console.log("submit was hit");
+        const testState = this.state;
+        console.log(testState);
     }
 
-    // the onchange function that works with the input fields but not the dropzone images.
-    const handleChange = e => {
-        setpostInfo({...postInfo,
-            [e.target.name] : e.target.value
-        });
-    }
-
-    return (
-        <form onSubmit={handleSubmit} className='create-story-form'>
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit} className='create-story-form'>
             <div className='form1' >
                 <input
                     type='text' name='postTitle'
                     placeholder='Enter Name Here'
-                    value={postInfo.PostTitle}
-                    onChange={handleChange}
+                    value={this.state.postTitle}
+                    onChange={this.handleChange}
                 />
                 <input 
                     type='text' name='story'
                     placeholder='Tell your story'
-                    value={postInfo.story}
-                    onChange={handleChange}
+                    value={this.state.story}
+                    onChange={this.handleChange}
                 />
-                <select name='shipTag' onChange={handleChange} value={postInfo.shipTag}>
+                <select name='shipTag' onChange={this.handleChange} value={this.state.shipTag}>
                     <option default>Select your Ship</option>
                     <option value='1'>Aegis Avenger Titan</option>
                     <option value='2'>Aegis Avenger Warlock</option>
@@ -276,7 +219,7 @@ function CreateStory(props) {
                     <option value='122'>Tumbril Cyclone MT</option>
                     <option value='123'>Vanduul Scythe</option>
                 </select>
-                <select name='locationTag' onChange={handleChange} value={postInfo.locationTag}>
+                <select name='locationTag' onChange={this.handleChange} value={this.state.locationTag}>
                     <option default>Select Story Location</option>
                     <option value='1'>Microtech</option>
                     <option value='2'>Calliope</option>
@@ -307,7 +250,7 @@ function CreateStory(props) {
                     <option value='27'>R&R CRU-L4</option>
                     <option value='28'>Jericho Station</option>
                 </select>
-                <select name='activityTag' onChange={handleChange} value={postInfo.activityTag}>
+                <select name='activityTag' onChange={this.handleChange} value={this.state.activityTag}>
                     <option default>Select Story Activity</option>
                     <option value='1'>Mining</option>
                     <option value='2'>Bounty Hunting</option>
@@ -322,7 +265,7 @@ function CreateStory(props) {
                     <option value='11'>Smuggling</option>
                     <option value='12'>Criminal</option>
                 </select>
-                <select name='typeTag' onChange={handleChange} value={postInfo.typeTag}>
+                <select name='typeTag' onChange={this.handleChange} value={this.state.typeTag}>
                     <option default>Select Story Type</option>
                     <option value='1'>Game Play</option>
                     <option value='2'>Lore</option>
@@ -330,25 +273,26 @@ function CreateStory(props) {
             </div>
             <div className='img-uploaders'>
                 <DropZoneComponent 
-                    config={componentConfig()}
-                    djsConfig={djsConfig()}
-                    eventHandlers={handleImage1drop}
+                    config={this.componentConfig()}
+                    djsConfig={this.djsConfig()}
+                    eventHandlers={this.handleImage1drop()}
                 ></DropZoneComponent>
                 <DropZoneComponent 
-                    config={componentConfig()}
-                    djsConfig={djsConfig()}
-                    eventHandlers={handleImage2drop()}
+                    config={this.componentConfig()}
+                    djsConfig={this.djsConfig()}
+                    eventHandlers={this.handleImage2drop()}
                 ></DropZoneComponent>
                 <DropZoneComponent 
-                    config={componentConfig()}
-                    djsConfig={djsConfig()}
-                    eventHandlers={handleImage3drop()}
+                    config={this.componentConfig()}
+                    djsConfig={this.djsConfig()}
+                    eventHandlers={this.handleImage3drop()}
                 ></DropZoneComponent>
             </div>
             <button className='btn' type='submit'>Enter</button>
             <button className='btn' type='confirm'>Confirmr</button>
         </form>
-    )
+        )
+    }
 }
 
 export default CreateStory;
