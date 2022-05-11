@@ -1,50 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import StoryContent from './SubTabFolder/storyContent';
 
 
-class DropTab extends React.Component{
-    constructor(props) {
-        super(props);
+function DropTab(props) {
 
-        this.state = {
-            isExpanded : false,
-            drop : 'up',
-            content : 'drained'
-        }
-        this.onClick = this.onClick.bind(this);
-    }
+    const [dropTabState, setDropTabState] = useState({isExpanded: false, drop: 'up', content: 'drained'});
 
-    onClick(event) {
-        console.log('clicked!!');
-        if(this.state.isExpanded == false) {
-            this.setState({ isExpanded : true , drop : 'down' , content : 'fill'})
+    const onClick = (event) => {
+        console.log('Clicked!');
+        if(dropTabState.isExpanded == false) {
+            setDropTabState({...dropTabState, isExpanded: true, drop: 'down', content: 'fill'});
         } else {
-            this.setState({ isExpanded : false , drop : 'up' , content : 'drained'})
+            setDropTabState({...dropTabState, isExpanded: false, drop: 'up', content: 'drained'});
         }
     }
 
-
-    render() {
-        return (
-            <div className={`drop-container-${this.props.type}__${this.props.create ? 'down' : this.state.drop}`}>
-                <div className={`droptab-${this.props.type}-content`}>
-                    {/* {this.state.isExpanded ? this.props.content : null} */}
-                    {this.props.content}
+    return (
+        <div className={`drop-container-${props.type}__${props.create ? 'down' : dropTabState.drop}`}>
+                <div className={`droptab-${props.type}-content`}>
+                    {props.content}
                 </div>
-                <div className={`droptab-${this.props.type}-bottom`}>
-                    <div className={`${this.props.type}-bottom-title`}>
-                        <a>{this.props.type}</a>
+                <div className={`droptab-${props.type}-bottom`}>
+                    <div className={`${props.type}-bottom-title`}>
+                        <a>{props.type}</a>
                     </div>
-                    <div onClick={this.onClick} className={`${this.props.type}-bottom-arrow`}>
-                        {this.state.isExpanded ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown}/>}
+                    <div onClick={onClick} className={`${props.type}-bottom-arrow`}>
+                        {dropTabState.isExpanded ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown}/>}
                     </div>
                 </div>
             </div>
-        )
-    }
+    )
 }
 
 export default DropTab;

@@ -1,35 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import TabBase from './TabFolder/tabBase';
 
-class TimeLine extends React.Component {
-    constructor(props){
-        super(props);
+function TimeLine(props) {
 
-        this.state = {
-            userId: 3,
-            viewerId: '3'
-        }
+    const [timelineState, setTimelinestate] = useState({userId: 3, viewerId: '3'});
 
-    }
+    useEffect(() => {
+        props.setPostDetails();
+    }, [])
 
-    componentDidMount() {
-        this.props.setPostDetails();
-    }
-
-    render() {
-        return(
-            <div className='line'>
+    return (
+        <div className='line'>
                 <div className='line__line'></div>
                 <div className='time-line'>
-                    {this.props.posts.map((post) => (
+                    {props.posts.map((post) => (
                         <div className='test'>
                             <TabBase userImage={post.userImage} 
                                 postTitle={post.postTitle} 
-                                viewer_id={this.state.viewerId}
+                                viewer_id={timelineState.viewerId}
                                 user_id={post.user_id}
                                 userName={post.userName} 
                                 postDate={post.postDate} 
@@ -44,11 +36,10 @@ class TimeLine extends React.Component {
                                 comments={post.comments}
                                 key={post._id}/>
                         </div>
-                    ))}
+                        ))}
                 </div>
-            </div>
-        )
-    }
+        </div>
+    )
 }
 
 function mapStateToProps(state) {

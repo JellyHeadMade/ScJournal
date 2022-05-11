@@ -1,42 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TabBannerTitle from './tabBannerTitle';
 import DropTab from './dropTab';
 import CreateStory from './SubTabFolder/createStory';
-import AddImages from './SubTabFolder/addImages';
-import TabButton from './SubTabFolder/tabButton';
+// import AddImages from './SubTabFolder/addImages';
+// import TabButton from './SubTabFolder/tabButton';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-class CreateStoryTab extends React.Component {
-    constructor(props) {
-        super(props);
+function CreateStoryTab(props) {
+    const [userinfo, setUserinfo] = useState({tabTitle: 'Create a Post', pulledUserInfo: [], createbool: true})
 
-        this.state = {
-            tabTitle : 'Create a Post',
-            pulledUserInfo : [],
-            createbool : true
-        }
-    }
+    useEffect(() => {
+        props.setUserInfo();
+    }, [])
 
-    componentDidMount() {
-        this.props.setUserInfo();
-    }
-
-    render() {
-        return(
-            <div className='create-post-tab-group'>
-                <TabBannerTitle title={this.state.tabTitle}/>
-                <div className='tab-group-drop-container'>
-                    <div className='drop-container'>
-                        {this.props.usersStuff.map((info) => {
-                            return (<DropTab create={this.state.createbool} type='Story' content={<CreateStory key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
-                        })}
-                    </div>
+    return(
+        <div className='create-post-tab-group'>
+            <TabBannerTitle title={userinfo.tabTitle}/>
+            <div className='tab-group-drop-container'>
+                <div className='drop-container'>
+                    {props.usersStuff.map((info) => {
+                        return (<DropTab create={userinfo.createbool} type='Story' content={<CreateStory key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
+                    })}
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 function mapStateToProps(state) {
