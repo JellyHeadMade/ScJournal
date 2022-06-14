@@ -7,7 +7,7 @@ import TabBase from './TabFolder/tabBase';
 
 function TimeLine(props) {
 
-    const [timelineState, setTimelinestate] = useState({userId: 3, viewerId: '3'});
+    const [timelineState, setTimelinestate] = useState({userId: 2, viewerId: '2'});
 
     useEffect(() => {
         props.setPostDetails();
@@ -34,7 +34,8 @@ function TimeLine(props) {
                                 images2={post.image2}
                                 images3={post.image3}
                                 comments={post.comments}
-                                key={post._id}/>
+                                key={post._id}
+                                postId={post._id}/>
                         </div>
                         ))}
                 </div>

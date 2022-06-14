@@ -10,7 +10,7 @@ function TabBase(props) {
 
     return (
         <div className='tab-group-container'>
-            <TabBanner postTitle={props.postTitle} viewer_id={props.viewer_id} user_id={props.user_id} userName={props.userName} postDate={props.postDate} userImage={props.userImage} shipTag={props.shipTag} locationTag={props.locationTag} activityTag={props.activityTag} typeTag={props.typeTag}/>
+            <TabBanner postId={props.postId} postTitle={props.postTitle} viewer_id={props.viewer_id} user_id={props.user_id} userName={props.userName} postDate={props.postDate} userImage={props.userImage} shipTag={props.shipTag} locationTag={props.locationTag} activityTag={props.activityTag} typeTag={props.typeTag}/>
             <div className='tab-group-drop-container'>
                 <div className='drop-container'>
                     <DropTab type='Story' order='1' content={<StoryContent story={props.story} />}/>

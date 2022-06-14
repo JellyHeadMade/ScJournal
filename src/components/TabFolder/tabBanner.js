@@ -11,6 +11,10 @@ function TabBanner(props) {
         }
     }
 
+    const handleEditRedirect = () => {
+        console.log(props.postId)
+    }
+
     return (
         <div className='tab-base-stack-banner'>
                     <div className='timedotdot'>
@@ -18,7 +22,7 @@ function TabBanner(props) {
                     </div>
                     <div className='tab-base-stack-banner__bg'></div>
                     {Editcheck(props.user_id , props.viewer_id) ? 
-                        <div className='tab-base-stack-banner__edit'>
+                        <div onClick={handleEditRedirect} className='tab-base-stack-banner__edit'>
                             <a>Edit</a>
                         </div> : null}
                         {console.log(props.viewer_id)}
