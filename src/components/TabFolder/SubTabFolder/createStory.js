@@ -4,6 +4,7 @@ import DropZoneComponent from 'react-dropzone-component';
 import '../../../../node_modules/react-dropzone-component/styles/filepicker.css';
 import '../../../../node_modules/dropzone/dist/min/dropzone.min.css';
 // import { setPostDetails } from '../../../actions';
+var bcrypt = require('bcryptjs');
 
 class CreateStory extends React.Component {
     constructor(props) {
@@ -22,7 +23,9 @@ class CreateStory extends React.Component {
             story: '', 
             image1: '',
             image2: '',
-            image3: ''
+            image3: '', 
+            hash: '', 
+            password: ''
         }
 
         this.handleImage1drop = this.handleImage1drop.bind(this);
@@ -32,7 +35,10 @@ class CreateStory extends React.Component {
         this.djsConfig = this.djsConfig.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEncryptChange = this.handleEncryptChange.bind(this);
+        this.handleEncryptCheck = this.handleEncryptCheck.bind(this);
     }
+
     handleImage1drop() {
         return {
             addedfile: file => this.setState({image1: file})
@@ -66,6 +72,24 @@ class CreateStory extends React.Component {
         }
     }
 
+    handleEncryptChange(password) {
+        bcrypt.genSalt().then(salt => {
+            bcrypt.hash(password, salt).then(hash => {
+                console.log("hash before state submit" + hash)
+                this.setState({password: password, 
+                hash: hash});
+                console.log("password after state commit" + password);
+            });
+        })
+    }
+
+    handleEncryptCheck(password) {
+        console.log("compare check pre check " + password)
+        bcrypt.compare(password, this.state.hash).then((res) => {
+            console.log(res);
+        })
+    }
+
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value})
     }
@@ -75,6 +99,7 @@ class CreateStory extends React.Component {
         console.log("submit was hit");
         const testState = this.state;
         console.log(testState);
+        this.handleEncryptChange("jellytest");
     }
 
     render() {
@@ -289,7 +314,7 @@ class CreateStory extends React.Component {
                 ></DropZoneComponent>
             </div>
             <button className='btn' type='submit'>Enter</button>
-            <button className='btn' type='confirm'>Confirmr</button>
+            <button className='btn' onClick={this.handleEncryptCheck(this.state.password)}>Confirmr</button>
         </form>
         )
     }
