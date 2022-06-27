@@ -32,6 +32,111 @@
     }
   }
 
+.main-navbar-container {
+   display: grid;
+   grid-template-columns: [leftnav-s] 50% [leftnav-e rightnav-s] 50% [rightnav-e];
+   grid-template-rows: [mainrow-s] 60px [mainrow-e];
+   color: white;
+
+    .left-navbar-container {
+        display: grid;
+        grid-column: leftnav-s/leftnav-e;
+        grid-row: mainrow-s/mainrow-e;
+
+        .left-nav-cluster-container {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: [collasped-s] min-content [collasped-e arrow-s] 3% [arrow-e empty-s] auto [empty-e];
+            grid-template-rows: [first-s] 1fr [first-e];
+
+            .logo-tab {
+                display: grid;
+                grid-column: collasped-s/collasped-e;
+                grid-row: first-s/first-e;
+                background-color: $banner-color;
+                height: 60px;
+                width: min-content;
+                padding: 0 50px;
+                z-index: 17;
+                // display: flex;
+                justify-content: center;
+                align-items: center;
+                // position: absolute;
+            }
+            .home-tab {
+                display: grid;
+                grid-column: collasped-s/collasped-e;
+                grid-row: first-s/first-e;
+                z-index: 16;
+                color: black;
+                background-color: $type-tag-color;
+                height: 60px;
+                width: min-content;
+                padding: 0 50px;
+                // display: flex;
+                justify-content: center;
+                align-items: center;
+                // position: absolute;
+                // padding-left: 100px;
+            }
+            .contact-tab {
+                display: grid;
+                grid-column: collasped-s/collasped-e;
+                grid-row: first-s/first-e;
+                z-index: 15;
+                color: black;
+                background-color: $activity-tag-color;
+                height: 60px;
+                width: min-content;
+                padding: 0 50px;
+                // display: flex;
+                justify-content: center;
+                align-items: center;
+                // position: absolute;
+                // padding-left: 100px;
+            }
+            .create-post-tab {
+                display: grid;
+                grid-column: collasped-s/collasped-e;
+                grid-row: first-s/first-e;
+                z-index: 14;
+                color: black;
+                background-color: $location-tag-color;
+                height: 60px;
+                width: min-content;
+                padding: 0 20%;
+                // display: flex;
+                justify-content: center;
+                align-items: center;
+                // position: absolute;
+                padding-left: 100px;
+            }
+            .arrow-tab {
+                display: grid;
+                grid-column: arrow-s/arrow-e;
+                grid-row: first-s/first-e;
+                z-index: 13;
+                color: black;
+                background-color: #d9534f;
+                height: 60px;
+                width: 100%;
+                // display: flex;
+                justify-content: center;
+                align-items: center;
+                // position: absolute;
+            }
+        }
+    }
+
+    .right-navbar-container {
+        grid-column: rightnav-s/rightnav-e;
+        grid-row: mainrow-s/mainrow-e;
+        justify-self: end;
+
+    }
+}
+
 // ctrl shift [ to collapse and ctrl shift ] to open. 
 
 .tab-group-container {
