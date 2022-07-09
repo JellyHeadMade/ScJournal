@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../../actions';
 
 const HOME_TAB_STATE = [
     {name: 'Home', active: true, clickable: false}, 
@@ -45,18 +47,22 @@ class LeftNavBarCluster extends React.Component {
         switch(name) {
             case 'Home':
                 this.setState({activeStates: HOME_TAB_STATE});
+                this.props.setPage('Home');
                 this.onClickArrow();
                 break;
             case 'Contact':
                 this.setState({activeStates: CONTACT_TAB_STATE});
+                this.props.setPage('Contact');
                 this.onClickArrow();
                 break;
             case 'Create':
                 this.setState({activeStates: CREATE_TAB_STATE});
+                this.props.setPage('Create');
                 this.onClickArrow();
                 break;
             default:
                 this.setState({activeStates: HOME_TAB_STATE});
+                this.props.setPage('Home');
         }
     }
 
@@ -80,5 +86,14 @@ class LeftNavBarCluster extends React.Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    const { page } = state.navigationReducer;
+    return {
+        page
+    }
+}
+
+LeftNavBarCluster = connect(mapStateToProps, actions)(LeftNavBarCluster);
 
 export default LeftNavBarCluster;

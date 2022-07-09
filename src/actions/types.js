@@ -5,3 +5,5 @@ export const SET_POST_DETAILS = 'SET_POST_DETAILS';
 export const TEST_POST_GET = 'TEST_POST_GET';
 //USER INFO
 export const SET_USER_INFO = 'SET_USER_INFO';
+//NAVIGATION 
+export const SET_PAGE = 'SET_PAGE';

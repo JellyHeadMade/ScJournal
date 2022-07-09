@@ -63,6 +63,10 @@
                  justify-content: center;
                  align-items: center;
                  // position: absolute;
+                 border-radius: 0 0 25px 0;
+                 box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+               -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                 -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
              }
              .home-tab {
                  display: grid;
@@ -72,12 +76,15 @@
                  color: black;
                  font-size: 62.5%;
                  height: 60px;
+                 border-radius: 0 0 25px 0;
                  &__Hidden__activefalse {
+                    z-index: 16;
                     width: 0px;
                     font-size: 0;
                     padding: 0;
                  }
                  &__Hidden__activetrue {
+                    z-index: 16;
                     display: grid;
                     width: min-content;
                     font-size: inherit;
@@ -85,9 +92,14 @@
                     justify-content: center;
                     align-items: center;
                     color: black;
-                    background-color: #e9e9e9;
+                    background-color: $active-tab-color;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activetrue {
+                    z-index: 16;
                     display: grid;
                     width: min-content;
                     font-size: inherit;
@@ -95,17 +107,26 @@
                     justify-content: center;
                     align-items: center;
                     color: black;
-                    background-color: #e9e9e9;
+                    background-color: $active-tab-color;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activefalse {
+                    z-index: 16;
                     display: grid;
-                    background-color: $activity-tag-color;
+                    background-color: $drop-tab-color;
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
                     justify-content: center;
                     align-items: center;
-                    color: black;
+                    color: white;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
              }
              .contact-tab {
@@ -118,11 +139,13 @@
                  font-size: 62.5%;
 
                  &__Hidden__activefalse {
+                    z-index: 15;
                     width: 0px;
                     font-size: 0;
                     padding: 0;
                  }
                  &__Hidden__activetrue {
+                    z-index: 15;
                     display: grid;
                     width: min-content;
                     font-size: inherit;
@@ -130,9 +153,14 @@
                     justify-content: center;
                     align-items: center;
                     color: black;
-                    background-color: #e9e9e9;
+                    background-color: $active-tab-color;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activetrue {
+                    z-index: 15;
                     display: grid;
                     width: min-content;
                     font-size: inherit;
@@ -140,17 +168,26 @@
                     justify-content: center;
                     align-items: center;
                     color: black;
-                    background-color: #e9e9e9;
+                    background-color: $active-tab-color;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activefalse {
+                    z-index: 15;
                     display: grid;
-                    background-color: $type-tag-color;
+                    background-color: $drop-tab-color;
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
                     justify-content: center;
                     align-items: center;
-                    color: black;
+                    color: white;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
              }
              .create-post-tab {
@@ -163,11 +200,13 @@
                  font-size: 62.5%;
 
                 &__Hidden__activefalse {
+                    z-index: 14;
                     width: 0px;
                     font-size: 0;
                     padding: 0;
                 }
                 &__Hidden__activetrue {
+                    z-index: 14;
                     display: grid;
                     width: min-content;
                     font-size: inherit;
@@ -175,9 +214,14 @@
                     justify-content: center;
                     align-items: center;
                     color: black;
-                    background-color: #e9e9e9;
+                    background-color: $active-tab-color;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                 }
                 &__notHidden__activetrue {
+                    z-index: 14;
                     display: grid;
                     width: min-content;
                     font-size: inherit;
@@ -185,17 +229,26 @@
                     justify-content: center;
                     align-items: center;
                     color: black;
-                    background-color: #e9e9e9;
+                    background-color: $active-tab-color;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                 }
                 &__notHidden__activefalse {
+                    z-index: 14;
                     display: grid;
-                    background-color: $location-tag-color;
+                    background-color: $drop-tab-color;
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
                     justify-content: center;
                     align-items: center;
-                    color: black;
+                    color: white;
+                    border-radius: 0 0 25px 0;
+                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                 }
              }
              .arrow-tab {
@@ -203,14 +256,18 @@
                  grid-column: arrow-s/arrow-e;
                  grid-row: first-s/first-e;
                  z-index: 13;
-                 color: black;
-                 background-color: #d9534f;
+                 color: white;
+                 background-color: $drop-tab-color;
                  height: 60px;
                  width: 100%;
                  // display: flex;
                  justify-content: center;
                  align-items: center;
                  // position: absolute;
+                 border-radius: 0 0 25px 0;
+                 box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                 -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
+                 -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
              }
          }
      }
