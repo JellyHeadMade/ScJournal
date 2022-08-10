@@ -82,6 +82,7 @@
                     width: 0px;
                     font-size: 0;
                     padding: 0;
+                    font-family: 'Poppins', sans-serif;
                  }
                  &__Hidden__activetrue {
                     z-index: 16;
@@ -89,6 +90,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: black;
@@ -104,6 +106,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: black;
@@ -120,6 +123,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: white;
@@ -143,6 +147,7 @@
                     width: 0px;
                     font-size: 0;
                     padding: 0;
+                    font-family: 'Poppins', sans-serif;
                  }
                  &__Hidden__activetrue {
                     z-index: 15;
@@ -150,6 +155,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: black;
@@ -165,6 +171,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: black;
@@ -181,6 +188,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: white;
@@ -204,6 +212,7 @@
                     width: 0px;
                     font-size: 0;
                     padding: 0;
+                    font-family: 'Poppins', sans-serif;
                 }
                 &__Hidden__activetrue {
                     z-index: 14;
@@ -211,6 +220,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: black;
@@ -226,6 +236,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: black;
@@ -242,6 +253,7 @@
                     width: min-content;
                     font-size: inherit;
                     padding: 0 50px;
+                    font-family: 'Poppins', sans-serif;
                     justify-content: center;
                     align-items: center;
                     color: white;
@@ -256,6 +268,7 @@
                  grid-column: arrow-s/arrow-e;
                  grid-row: first-s/first-e;
                  z-index: 13;
+                 font-family: 'Poppins', sans-serif;
                  color: white;
                  background-color: $drop-tab-color;
                  height: 60px;
@@ -275,6 +288,7 @@
     .right-navbar-container {
         grid-column: rightnav-s/rightnav-e;
         grid-row: mainrow-s/mainrow-e;
+        font-family: 'Poppins', sans-serif;
         justify-self: end;
 
     }
@@ -291,7 +305,8 @@
         display: grid;
         width: 100%;
         height: 100px;
-        grid-template-rows: [bannertop-s] 50px [bannertop-e bannerend-s] 38px [bannerend-e timedottophalf-s] 12px [timedottophalf-e timedotbottomhalf-s] 12px [timedotbottomhalf-e tab-s] minmax(132px, auto) [tab-e];        grid-template-columns: [leftpadding-s] 4.85% [leftpadding-e circle-s] 1.3% [circle-e rightpadding-s] 4.85% [rightpadding-e image-s] 6.3% [image-e meta-s] auto [meta-e tagOne-s] min-content [tagOne-e tagTwo-s] min-content [tagTwo-e tagThree-s] min-content [tagThree-e tagFour-s] min-content [tagFour-e];
+        grid-template-rows: [bannertop-s] 50px [bannertop-e bannerend-s] 38px [bannerend-e timedottophalf-s] 12px [timedottophalf-e timedotbottomhalf-s] 12px [timedotbottomhalf-e tab-s] minmax(132px, auto) [tab-e];        
+        grid-template-columns: [leftpadding-s] 4.85% [leftpadding-e circle-s] 1.3% [circle-e rightpadding-s] 4.85% [rightpadding-e image-s] 6.3% [image-e meta-s] auto [meta-e tagOne-s] min-content [tagOne-e tagTwo-s] min-content [tagTwo-e tagThree-s] min-content [tagThree-e tagFour-s] min-content [tagFour-e];
         z-index: 6;
 
         .timedotdot{
@@ -395,6 +410,7 @@
             grid-column: meta-s/meta-e;
             grid-row: bannertop-s/timedottophalf-e;
             align-self: end;
+            justify-self: start;
             padding-left: 20px;
             padding-top: 20px;
             font-size: 16px;
@@ -408,6 +424,7 @@
             grid-row: bannerend-s/timedottophalf-e;
             padding-left: 20px;
             padding-bottom: 8px;
+            justify-self: start;
             font-size: 12px;
             font-family: 'Poppins', sans-serif;
             color: $light-gray-text;
@@ -418,6 +435,7 @@
             grid-column: meta-s/meta-e;
             grid-row: bannertop-s/bannertop-e;
             align-self: center;
+            justify-self: start;
             font-size: 30px;
             color: $white-text;
             font-family: 'Poppins', sans-serif;
@@ -463,10 +481,12 @@
                         @include drop-tabs-content-up-transistion;
 
                         &__text {
+                            font-family: 'Poppins', sans-serif;
                             transform-origin: 0 0;
                             font-size: 15px;
                             overflow-y:auto;
                             max-height: 0px;
+                            text-align: left;
                             @include drop-tabs-content-up-transistion;
                         }
                     }
@@ -484,8 +504,11 @@
                     padding-left: 3%;
                     padding-right: 3%;
                     z-index: 4;
-                    font-family: 'Poppins', sans-serif;
                     font-weight: 400pt;
+
+                    .Story-bottom-title {
+                        font-family: 'Poppins', sans-serif;
+                    }
                 }
             
             }
@@ -517,11 +540,13 @@
                         @include drop-tabs-contnent-down-transistion;
 
                         &__text {
+                            font-family: 'Poppins', sans-serif;
                             transform-origin: 0 0;
                             // transform: scaleY(1);
                             max-height: 400px;
                             overflow-y: auto;
                             font-size: 15px;
+                            text-align: left;
                             @include drop-tabs-contnent-down-transistion;
                         }
                     }
@@ -726,11 +751,13 @@
                                 .comment-post-comment {
                                     grid-column: image-s/user-e;
                                     grid-row: bottom-s/bottom-e;
-                                    padding: 5px 10px 10px 10px;
+                                    padding: 5px 10px 10px 15px;
                                     color: #e9e9e9;
+                                    justify-self: start;
                                     @include drop-tabs-content-up-transistion;
 
                                     &__text{
+                                        text-align: left;
                                         font-size: 0px;
                                         @include drop-tabs-content-up-transistion;
                                     }
@@ -824,8 +851,9 @@
                                 .comment-post-comment {
                                     grid-column: image-s/user-e;
                                     grid-row: bottom-s/bottom-e;
-                                    padding: 5px 10px 10px 10px;
+                                    padding: 5px 10px 10px 15px;
                                     color: #e9e9e9;
+                                    justify-self: start;
                                     @include drop-tabs-contnent-down-transistion;
 
                                     &__text{
