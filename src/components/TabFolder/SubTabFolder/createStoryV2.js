@@ -1,82 +1,63 @@
-import React from 'react';
-import {IKImage, IKContext, IKUpload } from 'imagekitio-react'
+import React, { useState } from 'react';
+import {IKImage, IKContext, IKUpload } from 'imagekitio-react';
 
 import DropZoneComponent from 'react-dropzone-component';
 import '../../../../node_modules/react-dropzone-component/styles/filepicker.css';
 import '../../../../node_modules/dropzone/dist/min/dropzone.min.css';
 
-const publicKey = "public_apc8wdtxr+MUmacre+57Wpm132I=";
-let urlEndpoint = "https://ik.imagekit.io/yfmtxjiun";
-const authenticationEndpoint = "https://scjournalapiv2.herokuapp.com/authenticationEndpoint";
+function CreateStoryV2(props) {
 
-class CreateStory extends React.Component {
-    constructor(props) {
-        super(props);
+    const publicKey = "public_apc8wdtxr+MUmacre+57Wpm132I=";
+    let urlEndpoint = "https://ik.imagekit.io/yfmtxjiun";
+    const authenticationEndpoint = "https://scjournalapiv2.herokuapp.com/authenticationEndpoint";
 
-        // const publicKey = "public_apc8wdtxr+MUmacre+57Wpm132I=";
-        // let urlEndpoint = "https://ik.imagekit.io/yfmtxjiun";
-        // const authenticationEndpoint = "https://scjournalapiv2.herokuapp.com/authenticationEndpoint";
+    const [storyData, setStoryData] = useState({
+        __id: props.userId,
+        userImage: props.userImage,
+        userName: props.userName,
+        postTitle: '',
+        postDate: new Date(),
+        shipTag: '',
+        locationTag: '',
+        activityTag: '',
+        typeTag: '',
+        story: '', 
+        image1: '',
+        image2: '',
+        image3: '', 
+        hash: '', 
+        password: ''
+    });
 
-        this.state = {
-            __id: this.props.userId,
-            userImage: this.props.userImage,
-            userName: this.props.userName,
-            postTitle: '',
-            postDate: new Date(),
-            shipTag: '',
-            locationTag: '',
-            activityTag: '',
-            typeTag: '',
-            story: '', 
-            image1: '',
-            image2: '',
-            image3: '', 
-            hash: '', 
-            password: ''
-        }
+    const onError = (err) => {
+        console.log('Error');
+        console.log(err);
+    };
+      
+    const onSuccess = (res) => {
+        console.log('Success');
+        console.log(res);
+    };
 
-        this.handleImage1drop = this.handleImage1drop.bind(this);
-        this.handleImage2drop = this.handleImage2drop.bind(this);
-        this.handleImage3drop = this.handleImage3drop.bind(this);
-        this.componentConfig = this.componentConfig.bind(this);
-        this.djsConfig = this.djsConfig.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEncryptChange = this.handleEncryptChange.bind(this);
-        this.handleEncryptCheck = this.handleEncryptCheck.bind(this);
-        // this.onSuccess = this.onSuccess.bind(this);
-        // this.onError = this.onError.bind(this);
-    }
-
-    // onError = (err) => {
-    //     console.log("Error dumb shit");
-    //     console.log(err);
-    // }
-
-    // onSuccess = (res) => {
-    //     console.log("Success you ugly mother fucker!");
-    //     console.log(res)
-    // }
-
-    handleImage1drop() {
+    const handleImage1drop = () => {
         return {
-            addedfile: file => this.setState({image1: file})
+            addedfile: file => setStoryData({...storyData, image1: file})
         }
 
     }
-    handleImage2drop() {
+    const handleImage2drop = () => {
         return {
-            addedfile: file => this.setState({image2: file})
+            addedfile: file => setStoryData({...storyData, image2: file})
         }
     }
-     handleImage3drop() {
+    const handleImage3drop = () =>{
         return {
-            addedfile: file => this.setState({image3: file})
+            addedfile: file => setStoryData({...storyData, image3: file})
         }
     }
     
     // dropzone handlers besides the image ones
-    componentConfig() {
+    const componentConfig = () => {
         return {
             iconFiletypes: ['.jpg', '.png'], 
             showFiletypeIcon: true,
@@ -84,60 +65,41 @@ class CreateStory extends React.Component {
         }
     }
 
-    djsConfig() {
+    const djsConfig = () => {
         return {
             addRemoveLinks: true,
             maxFiles: 1
         }
     }
 
-    handleEncryptChange(password) {
-        // bcrypt.genSalt().then(salt => {
-        //     bcrypt.hash(password, salt).then(hash => {
-        //         console.log("hash before state submit" + hash)
-        //         this.setState({password: password, 
-        //         hash: hash});
-        //         console.log("password after state commit" + password);
-        //     });
-        // })
+    const handleChange = (e) =>{
+        setStoryData({...storyData, [e.target.name]: e.target.value})
     }
 
-    handleEncryptCheck(password) {
-        // console.log("compare check pre check " + password)
-        // bcrypt.compare(password, this.state.hash).then((res) => {
-        //     console.log(res);
-        // })
-    }
-
-    handleChange(e) {
-        this.setState({[e.target.name]: e.target.value})
-    }
-
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log("submit was hit");
-        const testState = this.state;
+        const testState = storyData;
         console.log(testState);
-        this.handleEncryptChange("jellytest");
+        // handleEncryptChange("jellytest");
     }
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit} className='create-story-form'>
+    return (
+        <form onSubmit={handleSubmit} className='create-story-form'>
             <div className='form1' >
                 <input
                     type='text' name='postTitle'
                     placeholder='Enter Name Here'
-                    value={this.state.postTitle}
-                    onChange={this.handleChange}
+                    value={storyData.postTitle}
+                    onChange={handleChange}
                 />
                 <input 
                     type='text' name='story'
                     placeholder='Tell your story'
-                    value={this.state.story}
-                    onChange={this.handleChange}
+                    value={storyData.story}
+                    onChange={handleChange}
                 />
-                <select name='shipTag' onChange={this.handleChange} value={this.state.shipTag}>
+                <select name='shipTag' onChange={handleChange} value={storyData.shipTag}>
                     <option default>Select your Ship</option>
                     <option value='1'>Aegis Avenger Titan</option>
                     <option value='2'>Aegis Avenger Warlock</option>
@@ -263,7 +225,7 @@ class CreateStory extends React.Component {
                     <option value='122'>Tumbril Cyclone MT</option>
                     <option value='123'>Vanduul Scythe</option>
                 </select>
-                <select name='locationTag' onChange={this.handleChange} value={this.state.locationTag}>
+                <select name='locationTag' onChange={handleChange} value={storyData.locationTag}>
                     <option default>Select Story Location</option>
                     <option value='1'>Microtech</option>
                     <option value='2'>Calliope</option>
@@ -294,7 +256,7 @@ class CreateStory extends React.Component {
                     <option value='27'>R&R CRU-L4</option>
                     <option value='28'>Jericho Station</option>
                 </select>
-                <select name='activityTag' onChange={this.handleChange} value={this.state.activityTag}>
+                <select name='activityTag' onChange={handleChange} value={storyData.activityTag}>
                     <option default>Select Story Activity</option>
                     <option value='1'>Mining</option>
                     <option value='2'>Bounty Hunting</option>
@@ -309,7 +271,7 @@ class CreateStory extends React.Component {
                     <option value='11'>Smuggling</option>
                     <option value='12'>Criminal</option>
                 </select>
-                <select name='typeTag' onChange={this.handleChange} value={this.state.typeTag}>
+                <select name='typeTag' onChange={handleChange} value={storyData.typeTag}>
                     <option default>Select Story Type</option>
                     <option value='1'>Game Play</option>
                     <option value='2'>Lore</option>
@@ -317,24 +279,25 @@ class CreateStory extends React.Component {
             </div>
             <div className='img-uploaders'>
                 <IKContext publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
-                    <IKUpload fileName="testName" />
+                    <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
                 </IKContext>
-                <DropZoneComponent 
-                    config={this.componentConfig()}
-                    djsConfig={this.djsConfig()}
-                    eventHandlers={this.handleImage2drop()}
+                {/* <DropZoneComponent 
+                    config={componentConfig}
+                    djsConfig={djsConfig}
+                    eventHandlers={handleImage2drop}
                 ></DropZoneComponent>
                 <DropZoneComponent 
-                    config={this.componentConfig()}
-                    djsConfig={this.djsConfig()}
-                    eventHandlers={this.handleImage3drop()}
-                ></DropZoneComponent>
+                    config={componentConfig}
+                    djsConfig={djsConfig}
+                    eventHandlers={handleImage3drop}
+                ></DropZoneComponent> */}
             </div>
             <button className='btn' type='submit'>Enter</button>
-            <button className='btn' onClick={this.handleEncryptCheck(this.state.password)}>Confirmr</button>
+            {/* <button className='btn' onClick={this.handleEncryptCheck(storyData.password)}>Confirmr</button> */}
         </form>
-        )
-    }
+    )
 }
 
-export default CreateStory;
+export default CreateStoryV2;
