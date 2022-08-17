@@ -43,6 +43,10 @@ function CreateStoryV2(props) {
         setStoryData({...storyData, [e.target.name]: e.target.value})
     }
 
+    const handleSubmit = () => {
+        console.log(storyData);
+    }
+
     // handles for Dropzone component, ignore for now
     const handleImage1drop = () => {
         return {
@@ -272,8 +276,8 @@ function CreateStoryV2(props) {
             <div className='img-uploaders'>
                 <IKContext publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
                     <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
-                    <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
-                    <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    <IKUpload fileName="testName2" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    <IKUpload fileName="testName3" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
                 </IKContext>
                 {/* commented out for now, while i get hooked up to imagekit */}
                 {/* <DropZoneComponent 
