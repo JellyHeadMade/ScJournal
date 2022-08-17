@@ -39,6 +39,11 @@ function CreateStoryV2(props) {
         console.log(res);
     };
 
+    const handleChange = (e) =>{
+        setStoryData({...storyData, [e.target.name]: e.target.value})
+    }
+
+    // handles for Dropzone component, ignore for now
     const handleImage1drop = () => {
         return {
             addedfile: file => setStoryData({...storyData, image1: file})
@@ -56,7 +61,6 @@ function CreateStoryV2(props) {
         }
     }
     
-    // dropzone handlers besides the image ones
     const componentConfig = () => {
         return {
             iconFiletypes: ['.jpg', '.png'], 
@@ -70,18 +74,6 @@ function CreateStoryV2(props) {
             addRemoveLinks: true,
             maxFiles: 1
         }
-    }
-
-    const handleChange = (e) =>{
-        setStoryData({...storyData, [e.target.name]: e.target.value})
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("submit was hit");
-        const testState = storyData;
-        console.log(testState);
-        // handleEncryptChange("jellytest");
     }
 
     return (
@@ -283,6 +275,7 @@ function CreateStoryV2(props) {
                     <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
                     <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
                 </IKContext>
+                {/* commented out for now, while i get hooked up to imagekit */}
                 {/* <DropZoneComponent 
                     config={componentConfig}
                     djsConfig={djsConfig}
@@ -295,7 +288,6 @@ function CreateStoryV2(props) {
                 ></DropZoneComponent> */}
             </div>
             <button className='btn' type='submit'>Enter</button>
-            {/* <button className='btn' onClick={this.handleEncryptCheck(storyData.password)}>Confirmr</button> */}
         </form>
     )
 }
