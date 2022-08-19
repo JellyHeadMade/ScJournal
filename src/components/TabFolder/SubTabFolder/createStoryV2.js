@@ -29,6 +29,16 @@ function CreateStoryV2(props) {
         password: ''
     });
 
+    const ranID = (length) => {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
     const onError = (err) => {
         console.log('Error');
         console.log(err);
@@ -43,7 +53,8 @@ function CreateStoryV2(props) {
         setStoryData({...storyData, [e.target.name]: e.target.value})
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(storyData);
     }
 
@@ -275,9 +286,11 @@ function CreateStoryV2(props) {
             </div>
             <div className='img-uploaders'>
                 <IKContext publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
-                    <IKUpload fileName="testName1" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
-                    <IKUpload fileName="testName2" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
-                    <IKUpload fileName="testName3" onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    {/* need to figure out a different first part of the name instead of story title as that can change between uploads, im thinking 
+                    a mix of the username and post count, or even the day.  */}
+                    <IKUpload fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    <IKUpload fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    <IKUpload fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
                 </IKContext>
                 {/* commented out for now, while i get hooked up to imagekit */}
                 {/* <DropZoneComponent 
