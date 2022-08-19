@@ -21,10 +21,9 @@ function CreateStoryV2(props) {
         locationTag: '',
         activityTag: '',
         typeTag: '',
-        story: '', 
-        image1: '',
-        image2: '',
-        image3: '', 
+        story: '',
+        storyImages: [],
+        imageMax: false,
         hash: '', 
         password: ''
     });
@@ -47,6 +46,9 @@ function CreateStoryV2(props) {
     const onSuccess = (res) => {
         console.log('Success');
         console.log(res);
+        console.log(res.url);
+        console.log(res.name);
+        console.log(res.thumbnailUrl);
     };
 
     const handleChange = (e) =>{
@@ -285,12 +287,10 @@ function CreateStoryV2(props) {
                 </select>
             </div>
             <div className='img-uploaders'>
-                <IKContext publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
+                <IKContext className='ContextTest' publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
                     {/* need to figure out a different first part of the name instead of story title as that can change between uploads, im thinking 
                     a mix of the username and post count, or even the day.  */}
-                    <IKUpload fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
-                    <IKUpload fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
-                    <IKUpload fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
+                    {storyData.imageMax ? null : <IKUpload className='UploadTest' fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>}
                 </IKContext>
                 {/* commented out for now, while i get hooked up to imagekit */}
                 {/* <DropZoneComponent 
