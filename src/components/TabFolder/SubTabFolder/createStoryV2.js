@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {IKImage, IKContext, IKUpload } from 'imagekitio-react';
-
-import DropZoneComponent from 'react-dropzone-component';
-import '../../../../node_modules/react-dropzone-component/styles/filepicker.css';
-import '../../../../node_modules/dropzone/dist/min/dropzone.min.css';
 
 function CreateStoryV2(props) {
 
@@ -28,6 +24,21 @@ function CreateStoryV2(props) {
         password: ''
     });
 
+    const maxCheck = () => {
+        if (storyData.storyImages.length >= 3) {
+            setStoryData({
+                ...storyData,
+                imageMax: true
+            });
+        } else {
+            setStoryData({
+                ...storyData,
+                imageMax: false
+            });
+        }
+    }
+    
+
     const ranID = (length) => {
         var result           = '';
         var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -45,11 +56,19 @@ function CreateStoryV2(props) {
       
     const onSuccess = (res) => {
         console.log('Success');
+        setStoryData({
+            ...storyData,
+            storyImages: [...storyData.storyImages, res.url]
+        })
         console.log(res);
         console.log(res.url);
         console.log(res.name);
         console.log(res.thumbnailUrl);
     };
+
+    useEffect(() => {
+        maxCheck();
+    } , [storyData.storyImages]);
 
     const handleChange = (e) =>{
         setStoryData({...storyData, [e.target.name]: e.target.value})
@@ -58,39 +77,6 @@ function CreateStoryV2(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(storyData);
-    }
-
-    // handles for Dropzone component, ignore for now
-    const handleImage1drop = () => {
-        return {
-            addedfile: file => setStoryData({...storyData, image1: file})
-        }
-
-    }
-    const handleImage2drop = () => {
-        return {
-            addedfile: file => setStoryData({...storyData, image2: file})
-        }
-    }
-    const handleImage3drop = () =>{
-        return {
-            addedfile: file => setStoryData({...storyData, image3: file})
-        }
-    }
-    
-    const componentConfig = () => {
-        return {
-            iconFiletypes: ['.jpg', '.png'], 
-            showFiletypeIcon: true,
-            postUrl: 'https://httpbin.org/post'
-        }
-    }
-
-    const djsConfig = () => {
-        return {
-            addRemoveLinks: true,
-            maxFiles: 1
-        }
     }
 
     return (
@@ -292,17 +278,6 @@ function CreateStoryV2(props) {
                     a mix of the username and post count, or even the day.  */}
                     {storyData.imageMax ? null : <IKUpload className='UploadTest' fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>}
                 </IKContext>
-                {/* commented out for now, while i get hooked up to imagekit */}
-                {/* <DropZoneComponent 
-                    config={componentConfig}
-                    djsConfig={djsConfig}
-                    eventHandlers={handleImage2drop}
-                ></DropZoneComponent>
-                <DropZoneComponent 
-                    config={componentConfig}
-                    djsConfig={djsConfig}
-                    eventHandlers={handleImage3drop}
-                ></DropZoneComponent> */}
             </div>
             <button className='btn' type='submit'>Enter</button>
         </form>
