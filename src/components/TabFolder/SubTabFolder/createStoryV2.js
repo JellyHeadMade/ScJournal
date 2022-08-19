@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {IKImage, IKContext, IKUpload } from 'imagekitio-react';
+import ImagePrev from './imagePrev';
 
 function CreateStoryV2(props) {
 
@@ -19,26 +20,37 @@ function CreateStoryV2(props) {
         typeTag: '',
         story: '',
         storyImages: [],
+        imageThumbnails: [],
+        imagePaths: [],
         imageMax: false,
         hash: '', 
         password: ''
     });
 
-    const maxCheck = () => {
-        if (storyData.storyImages.length >= 3) {
+    const handleDelete = (e) => {
+        const indexNum = eval(e.target.title);
+        const oldStoryImages = storyData.storyImages;
+        const oldStoryThumbnails = storyData.imageThumbnails;
+        const oldStoryPaths = storyData.imagePaths;
+        if (storyData.storyImages.length <= 1 && storyData.imageThumbnails.length <= 1 && storyData.imagePaths.length <= 1) {
             setStoryData({
                 ...storyData,
-                imageMax: true
-            });
-        } else {
+                storyImages: [],
+                imageThumbnails: [],
+                imagePaths: []
+        })
+        } else if (storyData.storyImages.length > 1 && storyData.imageThumbnails.length > 1 && storyData.imagePaths.length > 1) {
+            oldStoryImages.splice(indexNum, 1);
+            oldStoryThumbnails.splice(indexNum, 1);
+            oldStoryPaths.splice(indexNum, 1);
             setStoryData({
                 ...storyData,
-                imageMax: false
-            });
+                storyImages: oldStoryImages,
+                imageThumbnails: oldStoryThumbnails,
+                imagePaths: oldStoryPaths
+            })
         }
     }
-    
-
     const ranID = (length) => {
         var result           = '';
         var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -58,17 +70,11 @@ function CreateStoryV2(props) {
         console.log('Success');
         setStoryData({
             ...storyData,
-            storyImages: [...storyData.storyImages, res.url]
-        })
-        console.log(res);
-        console.log(res.url);
-        console.log(res.name);
-        console.log(res.thumbnailUrl);
+            storyImages: [...storyData.storyImages, res.url],
+            imageThumbnails: [...storyData.imageThumbnails, res.thumbnailUrl],
+            imagePaths: [...storyData.imagePaths, res.filePath],
+        });
     };
-
-    useEffect(() => {
-        maxCheck();
-    } , [storyData.storyImages]);
 
     const handleChange = (e) =>{
         setStoryData({...storyData, [e.target.name]: e.target.value})
@@ -272,11 +278,16 @@ function CreateStoryV2(props) {
                     <option value='2'>Lore</option>
                 </select>
             </div>
+            <div className='img-preview-container'>
+                <ImagePrev index='0' onClick={handleDelete} src={storyData.imageThumbnails[0]} path='0' />
+                <ImagePrev index='1' onClick={handleDelete} src={storyData.imageThumbnails[1]} path='1'/>
+                <ImagePrev index='2' onClick={handleDelete} src={storyData.imageThumbnails[2]} path='2'/>
+            </div>
             <div className='img-uploaders'>
                 <IKContext className='ContextTest' publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
                     {/* need to figure out a different first part of the name instead of story title as that can change between uploads, im thinking 
                     a mix of the username and post count, or even the day.  */}
-                    {storyData.imageMax ? null : <IKUpload className='UploadTest' fileName={`${storyData.postTitle == '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>}
+                    {storyData.storyImages.length === 3 ? null : <IKUpload className='UploadTest' fileName={`${storyData.postTitle === '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>}
                 </IKContext>
             </div>
             <button className='btn' type='submit'>Enter</button>
