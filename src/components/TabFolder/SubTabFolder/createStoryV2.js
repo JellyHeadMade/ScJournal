@@ -21,33 +21,35 @@ function CreateStoryV2(props) {
         story: '',
         storyImages: [],
         imageThumbnails: [],
-        imagePaths: [],
+        imageIDs: [],
         imageMax: false,
         hash: '', 
         password: ''
     });
 
     const handleDelete = (e) => {
+        console.log(e);
+        console.log(storyData.imageIDs);
         const indexNum = eval(e.target.title);
         const oldStoryImages = storyData.storyImages;
         const oldStoryThumbnails = storyData.imageThumbnails;
-        const oldStoryPaths = storyData.imagePaths;
-        if (storyData.storyImages.length <= 1 && storyData.imageThumbnails.length <= 1 && storyData.imagePaths.length <= 1) {
+        const oldStoryIDs = storyData.imageIDs;
+        if (storyData.storyImages.length <= 1 && storyData.imageThumbnails.length <= 1 && storyData.imageIDs.length <= 1) {
             setStoryData({
                 ...storyData,
                 storyImages: [],
                 imageThumbnails: [],
-                imagePaths: []
+                imageIDs: []
         })
-        } else if (storyData.storyImages.length > 1 && storyData.imageThumbnails.length > 1 && storyData.imagePaths.length > 1) {
+        } else if (storyData.storyImages.length > 1 && storyData.imageThumbnails.length > 1 && storyData.imageIDs.length > 1) {
             oldStoryImages.splice(indexNum, 1);
             oldStoryThumbnails.splice(indexNum, 1);
-            oldStoryPaths.splice(indexNum, 1);
+            oldStoryIDs.splice(indexNum, 1);
             setStoryData({
                 ...storyData,
                 storyImages: oldStoryImages,
                 imageThumbnails: oldStoryThumbnails,
-                imagePaths: oldStoryPaths
+                imagePaths: oldStoryIDs
             })
         }
     }
@@ -68,11 +70,12 @@ function CreateStoryV2(props) {
       
     const onSuccess = (res) => {
         console.log('Success');
+        console.log(res);
         setStoryData({
             ...storyData,
             storyImages: [...storyData.storyImages, res.url],
             imageThumbnails: [...storyData.imageThumbnails, res.thumbnailUrl],
-            imagePaths: [...storyData.imagePaths, res.filePath],
+            imageIDs: [...storyData.imageIDs, res.fileId],
         });
     };
 
@@ -280,8 +283,8 @@ function CreateStoryV2(props) {
             </div>
             <div className='img-preview-container'>
                 <ImagePrev index='0' onClick={handleDelete} src={storyData.imageThumbnails[0]} path='0' />
-                <ImagePrev index='1' onClick={handleDelete} src={storyData.imageThumbnails[1]} path='1'/>
-                <ImagePrev index='2' onClick={handleDelete} src={storyData.imageThumbnails[2]} path='2'/>
+                <ImagePrev index='1' onClick={handleDelete} src={storyData.imageThumbnails[1]} path='1' />
+                <ImagePrev index='2' onClick={handleDelete} src={storyData.imageThumbnails[2]} path='2' />
             </div>
             <div className='img-uploaders'>
                 <IKContext className='ContextTest' publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
