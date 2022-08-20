@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {IKImage, IKContext, IKUpload } from 'imagekitio-react';
 import ImagePrev from './imagePrev';
+import axios from 'axios';
+import jsonify from 'jsonify';
 
 function CreateStoryV2(props) {
 
@@ -28,6 +30,12 @@ function CreateStoryV2(props) {
     });
 
     const handleDelete = (e) => {
+        axios.delete(`https://scjournalapiv2.herokuapp.com/deleteImage/${storyData.imageIDs[e.target.title]}`)
+        .then(response => {
+            console.log(response);
+        }).catch(error => {
+            console.log(error);
+        });
         console.log(e);
         console.log(storyData.imageIDs);
         const indexNum = eval(e.target.title);
@@ -53,6 +61,7 @@ function CreateStoryV2(props) {
             })
         }
     }
+
     const ranID = (length) => {
         var result           = '';
         var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

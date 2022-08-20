@@ -12,7 +12,7 @@ import {
 
 import {
     setPage
-} from './navigationActions'
+} from './navigationActions';
 
 export {
     setPostDetails,
