@@ -68,6 +68,14 @@
                -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                  -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
              }
+             .nav-bar-spacer1{
+                height: 60px;
+                width: auto;
+                background-color: greenyellow;
+                grid-column: logo-s/hometab-s;
+                grid-row: first-s/first-e;
+                z-index: 16;
+             }
              .home-tab {
                  display: grid;
                  grid-column: hometab-s/hometab-e;
@@ -78,6 +86,8 @@
                  height: 60px;
                  border-radius: 0 0 25px 0;
                  &__Hidden__activefalse {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
                     z-index: 16;
                     width: 0px;
                     font-size: 0;
@@ -85,6 +95,8 @@
                     font-family: 'Poppins', sans-serif;
                  }
                  &__Hidden__activetrue {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
                     z-index: 16;
                     display: grid;
                     width: min-content;
@@ -101,6 +113,8 @@
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activetrue {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
                     z-index: 16;
                     display: grid;
                     width: min-content;
@@ -117,6 +131,8 @@
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activefalse {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
                     z-index: 16;
                     display: grid;
                     background-color: $drop-tab-color;
@@ -132,6 +148,14 @@
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
+             }
+             .nav-bar-spacer2{
+                height: 60px;
+                width: auto;
+                background-color: white;
+                grid-column: hometab-s/hometab-e;
+                grid-row: first-s/first-e;
+                z-index: 15;
              }
              .contact-tab {
                  display: grid;
@@ -143,6 +167,8 @@
                  font-size: 62.5%;
 
                  &__Hidden__activefalse {
+                    grid-column: contacttab-s/contacttab-e;
+                    grid-row: first-s/first-e;
                     z-index: 15;
                     width: 0px;
                     font-size: 0;
@@ -150,6 +176,8 @@
                     font-family: 'Poppins', sans-serif;
                  }
                  &__Hidden__activetrue {
+                    grid-column: contacttab-s/contacttab-e;
+                    grid-row: first-s/first-e;
                     z-index: 15;
                     display: grid;
                     width: min-content;
@@ -166,6 +194,8 @@
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activetrue {
+                    grid-column: contacttab-s/contacttab-e;
+                    grid-row: first-s/first-e;
                     z-index: 15;
                     display: grid;
                     width: min-content;
@@ -182,6 +212,8 @@
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
                  &__notHidden__activefalse {
+                    grid-column: contacttab-s/contacttab-e;
+                    grid-row: first-s/first-e;
                     z-index: 15;
                     display: grid;
                     background-color: $drop-tab-color;
@@ -198,6 +230,14 @@
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                  }
              }
+             .nav-bar-spacer3{
+                height: 60px;
+                width: auto;
+                background-color: yellow;
+                grid-column: contacttab-s/contacttab-e;
+                grid-row: first-s/first-e;
+                z-index: 14;
+             }
              .create-post-tab {
                  display: grid;
                  grid-column: createtab-s/createtab-e;
@@ -208,6 +248,8 @@
                  font-size: 62.5%;
 
                 &__Hidden__activefalse {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
                     z-index: 14;
                     width: 0px;
                     font-size: 0;
@@ -215,6 +257,8 @@
                     font-family: 'Poppins', sans-serif;
                 }
                 &__Hidden__activetrue {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
                     z-index: 14;
                     display: grid;
                     width: min-content;
@@ -231,6 +275,8 @@
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                 }
                 &__notHidden__activetrue {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
                     z-index: 14;
                     display: grid;
                     width: min-content;
@@ -247,6 +293,8 @@
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                 }
                 &__notHidden__activefalse {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
                     z-index: 14;
                     display: grid;
                     background-color: $drop-tab-color;
@@ -262,6 +310,14 @@
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
                 }
+             }
+             .nav-bar-spacer4{
+                height: 60px;
+                width: auto;
+                background-color: red;
+                grid-column: createtab-s/createtab-e;
+                grid-row: first-s/first-e;
+                z-index: 13;
              }
              .arrow-tab {
                  display: grid;
