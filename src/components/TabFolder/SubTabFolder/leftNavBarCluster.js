@@ -72,15 +72,19 @@ class LeftNavBarCluster extends React.Component {
                 <div className='logo-tab'>
                     <img src='https://via.placeholder.com/40/ffffff.png'/>
                 </div>
+                <div className='nav-bar-spacer1'></div>
                 {this.state.activeStates[0].clickable ? 
                     <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} onClick={(e) => this.handleActiveClick(e, 'Home')}>Home</div> :
                     <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} >Home</div>}
+                    <div className='nav-bar-spacer2'></div>
                 {this.state.activeStates[1].clickable ? 
                     <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}  onClick={(e) => this.handleActiveClick(e, 'Contact')} >About/Contact</div> : 
                     <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}>About/Contact</div>}
+                    <div className='nav-bar-spacer3'></div>
                 {this.state.activeStates[2].clickable ? 
                     <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}  onClick={(e) => this.handleActiveClick(e, 'Create')} >Create Post</div> : 
                     <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}>Create Post</div>}
+                    <div className='nav-bar-spacer4'></div>
                 <div className='arrow-tab' onClick={this.onClickArrow}>Arrow</div>
             </div>
         )
