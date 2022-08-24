@@ -72,7 +72,7 @@ class LeftNavBarCluster extends React.Component {
                 <div className='logo-tab'>
                     <img src='https://via.placeholder.com/40/ffffff.png'/>
                 </div>
-                <div className='nav-bar-spacer1' style={{backgroundColor: this.state.activeStates[0].bgColor}}></div>
+                <div className='nav-bar-spacer1' style={this.state.HiddenState === 'Hidden' ? {backgroundColor: '#4FACEE'} : {backgroundColor: this.state.activeStates[0].bgColor}}></div>
                 {this.state.activeStates[0].clickable ? 
                     <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} onClick={(e) => this.handleActiveClick(e, 'Home')}>Home</div> :
                     <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} >Home</div>}
