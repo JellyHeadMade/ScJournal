@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 
 const HOME_TAB_STATE = [
-    {name: 'Home', active: true, clickable: false}, 
-    {name: 'Contact', active: false, clickable: true}, 
-    {name: 'Create', active: false, clickable: true}
+    {name: 'Home', active: true, clickable: false, bgColor: '#4FACEE'}, 
+    {name: 'Contact', active: false, clickable: true, bgColor: '#164664'}, 
+    {name: 'Create', active: false, clickable: true, bgColor: '#164664'}
 ];
 const CONTACT_TAB_STATE = [
-    {name: 'Home', active: false, clickable: true}, 
-    {name: 'Contact', active: true, clickable: false}, 
-    {name: 'Create', active: false, clickable: true}
+    {name: 'Home', active: false, clickable: true, bgColor: '#164664'}, 
+    {name: 'Contact', active: true, clickable: false, bgColor: '#4FACEE'}, 
+    {name: 'Create', active: false, clickable: true, bgColor: '#164664'}
 ];
 const CREATE_TAB_STATE = [
-    {name: 'Home', active: false, clickable: true}, 
-    {name: 'Contact', active: false, clickable: true}, 
-    {name: 'Create', active: true, clickable: false}
+    {name: 'Home', active: false, clickable: true, bgColor: '#164664'}, 
+    {name: 'Contact', active: false, clickable: true, bgColor: '#164664'}, 
+    {name: 'Create', active: true, clickable: false, bgColor: '#4FACEE'}
 ];
 
 class LeftNavBarCluster extends React.Component {
@@ -72,7 +72,7 @@ class LeftNavBarCluster extends React.Component {
                 <div className='logo-tab'>
                     <img src='https://via.placeholder.com/40/ffffff.png'/>
                 </div>
-                <div className='nav-bar-spacer1'></div>
+                <div className='nav-bar-spacer1' style="background-color: ${}; height: {{height}}px; background-position: {{bgPos}}px 0px;"></div>
                 {this.state.activeStates[0].clickable ? 
                     <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} onClick={(e) => this.handleActiveClick(e, 'Home')}>Home</div> :
                     <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} >Home</div>}
