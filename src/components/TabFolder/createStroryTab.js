@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import TabBannerTitle from './tabBannerTitle';
-import DropTab from './dropTab';
-import CreateStory from './SubTabFolder/createStory';
 import CreateStoryV2 from './SubTabFolder/createStoryV2';
-// import AddImages from './SubTabFolder/addImages';
-// import TabButton from './SubTabFolder/tabButton';
+import BasicPage from './SubTabFolder/basicPage';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
@@ -18,12 +14,10 @@ function CreateStoryTab(props) {
 
     return(
         <div className='create-post-tab-group'>
-            <TabBannerTitle title={userinfo.tabTitle}/>
             <div className='tab-group-drop-container'>
                 <div className='drop-container'>
                     {props.usersStuff.map((info) => {
-                        // return (<DropTab create={userinfo.createbool} type='Story' content={<CreateStory key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
-                        return (<DropTab create={userinfo.createbool} type='Story' content={<CreateStoryV2 key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
+                        return (<BasicPage title={userinfo.tabTitle} content={<CreateStoryV2 key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
                     })}
                 </div>
             </div>
