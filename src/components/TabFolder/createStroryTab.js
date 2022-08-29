@@ -13,14 +13,10 @@ function CreateStoryTab(props) {
     }, [])
 
     return(
-        <div className='create-post-tab-group'>
-            <div className='tab-group-drop-container'>
-                <div className='drop-container'>
-                    {props.usersStuff.map((info) => {
-                        return (<BasicPage title={userinfo.tabTitle} content={<CreateStoryV2 key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
-                    })}
-                </div>
-            </div>
+        <div className='create-post-container'>
+            {props.usersStuff.map((info) => {
+                return (<BasicPage title={userinfo.tabTitle} content={<CreateStoryV2 key={info.savedUserId+1} userImage={info.savedUserImage} userName={info.savedUserName} userId={info.savedUserId} />}/>)
+            })}
         </div>
     )
 }

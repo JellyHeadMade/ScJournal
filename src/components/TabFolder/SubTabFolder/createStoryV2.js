@@ -302,7 +302,7 @@ function CreateStoryV2(props) {
                     {storyData.storyImages.length === 3 ? null : <IKUpload className='UploadTest' fileName={`${storyData.postTitle === '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>}
                 </IKContext>
             </div>
-            <button className='btn' type='submit'>Enter</button>
+            <button className='btn-img-upload' type='submit'>Enter</button>
         </form>
     )
 }
