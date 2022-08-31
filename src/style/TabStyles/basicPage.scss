@@ -1,15 +1,18 @@
 .basic-page-container {
-    background-color: lightcoral;
+    background-color: $drop-tab-color;
     padding : 20px;
     border-radius: 10px;
 
     .basic-page-header {
-        background-color: green;
+        // background-color: green;
+        display: flex;
     
         padding: 0 0 20px 0;
         font-family: 'Poppins', sans-serif;
         font-size: 30px;
-        color: $light-gray-text;
+        color: $white-text;
+        justify-items: start;
+
     
     }
 
