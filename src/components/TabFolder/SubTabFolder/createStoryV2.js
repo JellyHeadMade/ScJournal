@@ -100,19 +100,24 @@ function CreateStoryV2(props) {
     return (
         <form onSubmit={handleSubmit} className='create-story-form'>
             <div className='form1' >
+                <div className='title-title'>Title:</div>
                 <input
+                    className='form-title'
                     type='text' name='postTitle'
                     placeholder='Enter Name Here'
                     value={storyData.postTitle}
                     onChange={handleChange}
                 />
+                <div className='title-story'>Story:</div>
                 <input 
+                    className='form-story'
                     type='text' name='story'
                     placeholder='Tell your story'
                     value={storyData.story}
                     onChange={handleChange}
                 />
-                <select name='shipTag' onChange={handleChange} value={storyData.shipTag}>
+                <div className='title-ship-tag'>Ship:</div>
+                <select name='shipTag' onChange={handleChange} value={storyData.shipTag} className='ship-tag-select'>
                     <option default>Select your Ship</option>
                     <option value='1'>Aegis Avenger Titan</option>
                     <option value='2'>Aegis Avenger Warlock</option>
@@ -238,7 +243,8 @@ function CreateStoryV2(props) {
                     <option value='122'>Tumbril Cyclone MT</option>
                     <option value='123'>Vanduul Scythe</option>
                 </select>
-                <select name='locationTag' onChange={handleChange} value={storyData.locationTag}>
+                <div className='title-location-tag'>Location:</div>
+                <select name='locationTag' onChange={handleChange} value={storyData.locationTag} className='location-tag-select'>
                     <option default>Select Story Location</option>
                     <option value='1'>Microtech</option>
                     <option value='2'>Calliope</option>
@@ -269,7 +275,8 @@ function CreateStoryV2(props) {
                     <option value='27'>R&R CRU-L4</option>
                     <option value='28'>Jericho Station</option>
                 </select>
-                <select name='activityTag' onChange={handleChange} value={storyData.activityTag}>
+                <div className='title-activity-tag'>Activity:</div>
+                <select name='activityTag' onChange={handleChange} value={storyData.activityTag} className='activity-tag-select'>
                     <option default>Select Story Activity</option>
                     <option value='1'>Mining</option>
                     <option value='2'>Bounty Hunting</option>
@@ -284,7 +291,8 @@ function CreateStoryV2(props) {
                     <option value='11'>Smuggling</option>
                     <option value='12'>Criminal</option>
                 </select>
-                <select name='typeTag' onChange={handleChange} value={storyData.typeTag}>
+                <div className='title-type-tag'>Type:</div>
+                <select name='typeTag' onChange={handleChange} value={storyData.typeTag} className='type-tag-select'>
                     <option default>Select Story Type</option>
                     <option value='1'>Game Play</option>
                     <option value='2'>Lore</option>
