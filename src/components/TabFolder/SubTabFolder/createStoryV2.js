@@ -55,7 +55,7 @@ function CreateStoryV2(props) {
                 ...storyData,
                 storyImages: oldStoryImages,
                 imageThumbnails: oldStoryThumbnails,
-                imagePaths: oldStoryIDs
+                imageIDs: oldStoryIDs
             })
         }
     }
