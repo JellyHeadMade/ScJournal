@@ -22,7 +22,7 @@ class PageDefault extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props);
     }
     
     componentDidUpdate(prevProps) {
@@ -61,7 +61,6 @@ class PageDefault extends React.Component {
             <div className='PageDefault'>
                 <NavBar/>
                 {this.state.currentPage}
-                {console.log(this.state.currentPage)}
             </div>
         )
     }

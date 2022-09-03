@@ -44,19 +44,7 @@ class CreateStory extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEncryptChange = this.handleEncryptChange.bind(this);
         this.handleEncryptCheck = this.handleEncryptCheck.bind(this);
-        // this.onSuccess = this.onSuccess.bind(this);
-        // this.onError = this.onError.bind(this);
     }
-
-    // onError = (err) => {
-    //     console.log("Error dumb shit");
-    //     console.log(err);
-    // }
-
-    // onSuccess = (res) => {
-    //     console.log("Success you ugly mother fucker!");
-    //     console.log(res)
-    // }
 
     handleImage1drop() {
         return {

@@ -12,7 +12,7 @@ function TabBanner(props) {
     }
 
     const handleEditRedirect = () => {
-        console.log(props.postId)
+        // console.log(props.postId)
     }
 
     return (
@@ -25,7 +25,6 @@ function TabBanner(props) {
                         <div onClick={handleEditRedirect} className='tab-base-stack-banner__edit'>
                             <a>Edit</a>
                         </div> : null}
-                        {console.log(props.viewer_id)}
                     <div className='tab-base-stack-banner__type'>
                         <a>{props.typeTag}</a>
                     </div>

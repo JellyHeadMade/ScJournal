@@ -10,7 +10,6 @@ function DropTab(props) {
     const [dropTabState, setDropTabState] = useState({isExpanded: false, drop: 'up', content: 'drained'});
 
     const onClick = (event) => {
-        console.log('Clicked!');
         if(dropTabState.isExpanded == false) {
             setDropTabState({...dropTabState, isExpanded: true, drop: 'down', content: 'fill'});
         } else {

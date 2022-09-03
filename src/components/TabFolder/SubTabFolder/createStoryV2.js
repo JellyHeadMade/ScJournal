@@ -36,8 +36,6 @@ function CreateStoryV2(props) {
         }).catch(error => {
             console.log(error);
         });
-        console.log(e);
-        console.log(storyData.imageIDs);
         const indexNum = eval(e.target.title);
         const oldStoryImages = storyData.storyImages;
         const oldStoryThumbnails = storyData.imageThumbnails;
