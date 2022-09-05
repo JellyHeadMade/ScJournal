@@ -19,6 +19,7 @@
         grid-template-columns: [title-s] 3fr [title-e shipTag-s] 2fr [shipTag-e locationTag-s] 1fr [locationTag-e activityTag-s] 1fr [activityTag-e typeTag-s] 1fr [typeTag-e];
         grid-template-rows: [titles-s] auto [titles-e top-s] auto [top-e titles2-s] auto [titles2-e bottom-s] auto [bottom-e];
         grid-row-gap: 10px;
+        grid-column-gap: 10px;
 
         .title-title {
             grid-column: title-s / title-e;
@@ -29,6 +30,8 @@
         .form-title {
             grid-column: title-s / title-e;
             grid-row: top-s / top-e;
+            border-radius: 5px;
+            border-style: none;
         }
 
         .title-story {
@@ -41,6 +44,8 @@
             grid-column: title-s / tags-e;
             grid-row: bottom-s / bottom-e;
             height: 200px;
+            border-radius: 10px;
+            border-style: none;
         }
 
         .title-ship-tag {
@@ -52,6 +57,9 @@
         .ship-tag-select {
             grid-column: shipTag-s / shipTag-e;
             grid-row: top-s / top-e;
+            border-radius: 5px;
+            border-style: none;
+            background-color: $ship-tag-color;
         }
 
         .title-location-tag {
@@ -63,6 +71,9 @@
         .location-tag-select {
             grid-column: locationTag-s / locationTag-e;
             grid-row: top-s / top-e;
+            border-radius: 5px;
+            border-style: none;
+            background-color: $location-tag-color;
         }
 
         .title-activity-tag {
@@ -74,6 +85,9 @@
         .activity-tag-select {
             grid-column: activityTag-s / activityTag-e;
             grid-row: top-s / top-e;
+            border-radius: 5px;
+            border-style: none;
+            background-color: $activity-tag-color;
         }
 
         .title-type-tag {
@@ -85,6 +99,9 @@
         .type-tag-select {
             grid-column: typeTag-s / typeTag-e;
             grid-row: top-s / top-e;
+            border-radius: 5px;
+            border-style: none;
+            background-color: $type-tag-color;
         }
 
     }
