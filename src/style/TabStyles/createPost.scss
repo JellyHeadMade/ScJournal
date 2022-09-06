@@ -25,6 +25,7 @@
             grid-column: title-s / title-e;
             grid-template-rows: titles-s / titles-e;
             justify-self: start;
+            font-family: 'Poppins', sans-serif;
         }
 
         .form-title {
@@ -32,12 +33,14 @@
             grid-row: top-s / top-e;
             border-radius: 5px;
             border-style: none;
+            font-family: 'Poppins', sans-serif;
         }
 
         .title-story {
             grid-column: title-s / title-e;
             grid-row: titles2-s / titles2-e;
             justify-self: start;
+            font-family: 'Poppins', sans-serif;
         }
         
         .form-story {
@@ -46,12 +49,14 @@
             height: 200px;
             border-radius: 10px;
             border-style: none;
+            font-family: 'Poppins', sans-serif;
         }
 
         .title-ship-tag {
             grid-column: shipTag-s / shipTag-e;
             grid-row: titles-s / titles-e;
             justify-self: start;
+            font-family: 'Poppins', sans-serif;
         }
 
         .ship-tag-select {
@@ -60,12 +65,14 @@
             border-radius: 5px;
             border-style: none;
             background-color: $ship-tag-color;
+            font-family: 'Poppins', sans-serif;
         }
 
         .title-location-tag {
             grid-column: locationTag-s / locationTag-e;
             grid-row: titles-s / titles-e;
             justify-self: start;
+            font-family: 'Poppins', sans-serif;
         }
 
         .location-tag-select {
@@ -74,12 +81,14 @@
             border-radius: 5px;
             border-style: none;
             background-color: $location-tag-color;
+            font-family: 'Poppins', sans-serif;
         }
 
         .title-activity-tag {
             grid-column: activityTag-s / activityTag-e;
             grid-row: titles-s / titles-e;
             justify-self: start;
+            font-family: 'Poppins', sans-serif;
         }
 
         .activity-tag-select {
@@ -88,12 +97,14 @@
             border-radius: 5px;
             border-style: none;
             background-color: $activity-tag-color;
+            font-family: 'Poppins', sans-serif;
         }
 
         .title-type-tag {
             grid-column: typeTag-s / typeTag-e;
             grid-row: titles-s / titles-e;
             justify-self: start;
+            font-family: 'Poppins', sans-serif;
         }
 
         .type-tag-select {
@@ -102,6 +113,7 @@
             border-radius: 5px;
             border-style: none;
             background-color: $type-tag-color;
+            font-family: 'Poppins', sans-serif;
         }
 
     }
@@ -125,10 +137,12 @@
                 height: 300px;
                 width: auto;
                 justify-self: center;
+                font-family: 'Poppins', sans-serif;
             }
 
             .delete-btn {
                 grid-row: buttons-s / buttons-e;
+                font-family: 'Poppins', sans-serif;
             }
         }
         .image-prev1 {
@@ -141,10 +155,12 @@
                 height: 300px;
                 width: auto;
                 justify-self: center;
+                font-family: 'Poppins', sans-serif;
             }
 
             .delete-btn {
                 grid-row: buttons-s / buttons-e;
+                font-family: 'Poppins', sans-serif;
             }
         }
         .image-prev2 {
@@ -157,10 +173,12 @@
                 height: 300px;
                 width: auto;
                 justify-self: center;
+                font-family: 'Poppins', sans-serif;
             }
 
             .delete-btn {
                 grid-row: buttons-s / buttons-e;
+                font-family: 'Poppins', sans-serif;
             }
         }
 
