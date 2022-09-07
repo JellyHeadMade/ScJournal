@@ -152,9 +152,20 @@
                 justify-self: center;
             }
 
-            .delete-btn {
+            .delete-btn-active {
                 grid-row: buttons-s / buttons-e;
                 font-family: 'Poppins', sans-serif;
+                opacity: 100%;
+                font-size: 15px;
+                transition: all 1.2s ease-in-out;
+            }
+
+            .delete-btn-notactive {
+                grid-row: buttons-s / buttons-e;
+                font-family: 'Poppins', sans-serif;
+                opacity: 0%;
+                font-size: 0px;
+                transition: all 1.2s ease-in-out;
             }
         }
         .image-prev1 {
@@ -182,9 +193,20 @@
                 justify-self: center;
             }
 
-            .delete-btn {
+            .delete-btn-active {
                 grid-row: buttons-s / buttons-e;
                 font-family: 'Poppins', sans-serif;
+                opacity: 100%;
+                font-size: 15px;
+                transition: all 1.2s ease-in-out;
+            }
+
+            .delete-btn-notactive {
+                grid-row: buttons-s / buttons-e;
+                font-family: 'Poppins', sans-serif;
+                opacity: 0%;
+                font-size: 0px;
+                transition: all 1.2s ease-in-out;
             }
         }
         .image-prev2 {
@@ -212,9 +234,20 @@
                 justify-self: center;
             }
 
-            .delete-btn {
+            .delete-btn-active {
                 grid-row: buttons-s / buttons-e;
                 font-family: 'Poppins', sans-serif;
+                opacity: 100%;
+                font-size: 15px;
+                transition: all 1.2s ease-in-out;
+            }
+
+            .delete-btn-notactive {
+                grid-row: buttons-s / buttons-e;
+                font-family: 'Poppins', sans-serif;
+                opacity: 0%;
+                font-size: 0px;
+                transition: all 1.2s ease-in-out;
             }
         }
 
