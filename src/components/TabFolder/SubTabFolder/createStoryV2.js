@@ -305,7 +305,7 @@ function CreateStoryV2(props) {
                 <IKContext className='ContextTest' publicKey={publicKey} urlEndpoint={urlEndpoint} authenticationEndpoint={authenticationEndpoint}>
                     {/* need to figure out a different first part of the name instead of story title as that can change between uploads, im thinking 
                     a mix of the username and post count, or even the day.  */}
-                    {storyData.storyImages.length === 3 ? null : <IKUpload className='UploadTest' fileName={`${storyData.postTitle === '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>}
+                    <IKUpload className={storyData.storyImages.length === 3 ? 'no-upload-allowed' : 'upload-allowed'} fileName={`${storyData.postTitle === '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
                 </IKContext>
             </div>
             <button className='btn-img-upload' type='submit'>Enter</button>

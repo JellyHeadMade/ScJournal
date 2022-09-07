@@ -254,7 +254,22 @@
     }
 
     .img-uploaders {
-        background-color: aquamarine;
+        // background-color: aquamarine;
+
+        .no-upload-allowed {
+            transition: all 1.2s ease-in-out;
+            font-size: 13px;
+            opacity: 0%;
+            // height: 0px;
+        }
+
+        .upload-allowed {
+            transition: all 1.2s ease-in-out;
+            color: white;
+            font-size: 13px;
+            opacity: 100%;
+            // height: auto;
+        }
 
     }
 
