@@ -255,6 +255,10 @@
 
     .img-uploaders {
         // background-color: aquamarine;
+        display: flex;
+        justify-self: start;
+        padding: 0 20% 0;
+        
 
         .no-upload-allowed {
             transition: all 1.2s ease-in-out;
