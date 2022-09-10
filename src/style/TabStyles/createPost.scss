@@ -264,7 +264,11 @@
             transition: all 1.2s ease-in-out;
             font-size: 13px;
             opacity: 0%;
-            // height: 0px;
+            background-color: $active-tab-color;
+            border-style: none;
+            border-radius: 5px;
+            padding: 5px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .upload-allowed {
@@ -272,13 +276,24 @@
             color: white;
             font-size: 13px;
             opacity: 100%;
-            // height: auto;
+            background-color: $active-tab-color;
+            border-style: none;
+            border-radius: 5px;
+            padding: 5px;
+            font-family: 'Poppins', sans-serif;
+
+            input[type="file"] {
+                background-color: black;
+            }
         }
 
     }
 
     .btn-img-upload {
-        background-color: orange;
-
+        background-color: $active-tab-color;
+        border-style: none;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: 'Poppins', sans-serif;
     }
 }

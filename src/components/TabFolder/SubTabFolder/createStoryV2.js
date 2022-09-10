@@ -308,7 +308,7 @@ function CreateStoryV2(props) {
                     <IKUpload className={storyData.storyImages.length === 3 ? 'no-upload-allowed' : 'upload-allowed'} fileName={`${storyData.postTitle === '' ? "defaultPost" : storyData.postTitle}+postimage_${ranID(7)}`} onSuccess={onSuccess} onError={onError} useUniqueFileName={false}/>
                 </IKContext>
             </div>
-            <button className='btn-img-upload' type='submit'>Enter</button>
+            <button className='btn-img-upload' type='submit'>Create Story</button>
         </form>
     )
 }
