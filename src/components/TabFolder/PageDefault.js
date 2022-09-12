@@ -9,20 +9,21 @@ import AboutContact from './aboutContact';
 const DEFAULT_HOME_PAGE = <TimeDot/>;
 const DEFAULT_CONTACT_PAGE = <AboutContact/> // obviously this needs to be swapped out for a contact page but for now it's just a placeholder    
 const DEFAULT_CREATE_PAGE = <CreatePost/>;
+const DEFAULT_USER_PAGE = <AboutContact/>;
 
 class PageDefault extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             currentPage: DEFAULT_HOME_PAGE,
-            pageName: 'home'
+            pageName: 'Home'
         }
 
         this.handlePageChange = this.handlePageChange.bind(this);
     }
 
     componentDidMount() {
-        // console.log(this.props);
+        console.log(this.props);
     }
     
     componentDidUpdate(prevProps) {
@@ -48,6 +49,10 @@ class PageDefault extends React.Component {
                     currentPage: DEFAULT_CREATE_PAGE
                 });
                 break;
+            case 'User':
+                this.setState({
+                    currentPage: DEFAULT_USER_PAGE
+                });
             default:
                 this.setState({
                     currentPage: DEFAULT_HOME_PAGE

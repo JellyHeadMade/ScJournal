@@ -17,6 +17,11 @@ const CREATE_TAB_STATE = [
     {name: 'Contact', active: false, clickable: true, bgColor: '#164664'}, 
     {name: 'Create', active: true, clickable: false, bgColor: '#4FACEE'}
 ];
+const USER_TAB_STATE = [
+    {name: 'Home', active: false, clickable: true, bgColor: '#164664'},
+    {name: 'Contact', active: false, clickable: true, bgColor: '#164664'},
+    {name: 'Create', active: false, clickable: true, bgColor: '#164664'}
+];
 
 class LeftNavBarCluster extends React.Component {
     constructor(props) {
@@ -58,6 +63,11 @@ class LeftNavBarCluster extends React.Component {
             case 'Create':
                 this.setState({activeStates: CREATE_TAB_STATE});
                 this.props.setPage('Create');
+                this.onClickArrow();
+                break;
+            case 'User':
+                this.setState({activeStates: USER_TAB_STATE});
+                this.props.setPage('User');
                 this.onClickArrow();
                 break;
             default:
