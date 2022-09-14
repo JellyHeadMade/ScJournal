@@ -23,7 +23,7 @@ class PageDefault extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+        console.log(this.props.page);
     }
     
     componentDidUpdate(prevProps) {
@@ -53,6 +53,7 @@ class PageDefault extends React.Component {
                 this.setState({
                     currentPage: DEFAULT_USER_PAGE
                 });
+                break;
             default:
                 this.setState({
                     currentPage: DEFAULT_HOME_PAGE
