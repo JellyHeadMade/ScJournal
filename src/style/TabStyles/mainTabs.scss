@@ -75,6 +75,7 @@
                 grid-column: logo-s/hometab-s;
                 grid-row: first-s/first-e;
                 z-index: 16;
+                transition: all 0.1s ease-in-out;
              }
              .home-tab {
                  display: grid;
@@ -93,6 +94,7 @@
                     font-size: 0;
                     padding: 0;
                     font-family: 'Poppins', sans-serif;
+                    transition: all 0.2s ease-in-out;
                  }
                  &__Hidden__activetrue {
                     grid-column: hometab-s/hometab-e;
@@ -111,6 +113,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                  }
                  &__notHidden__activetrue {
                     grid-column: hometab-s/hometab-e;
@@ -129,6 +132,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                  }
                  &__notHidden__activefalse {
                     grid-column: hometab-s/hometab-e;
@@ -147,6 +151,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                  }
              }
              .nav-bar-spacer2{
@@ -156,6 +161,7 @@
                 grid-column: hometab-s/hometab-e;
                 grid-row: first-s/first-e;
                 z-index: 15;
+                transition: all 0.1s ease-in-out;
              }
              .contact-tab {
                  display: grid;
@@ -174,6 +180,7 @@
                     font-size: 0;
                     padding: 0;
                     font-family: 'Poppins', sans-serif;
+                    transition: all 0.2s ease-in-out;
                  }
                  &__Hidden__activetrue {
                     grid-column: contacttab-s/contacttab-e;
@@ -192,6 +199,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                  }
                  &__notHidden__activetrue {
                     grid-column: contacttab-s/contacttab-e;
@@ -210,6 +218,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                  }
                  &__notHidden__activefalse {
                     grid-column: contacttab-s/contacttab-e;
@@ -228,6 +237,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                  }
              }
              .nav-bar-spacer3{
@@ -237,6 +247,7 @@
                 grid-column: contacttab-s/contacttab-e;
                 grid-row: first-s/first-e;
                 z-index: 14;
+                transition: all 0.1s ease-in-out;
              }
              .create-post-tab {
                  display: grid;
@@ -255,6 +266,7 @@
                     font-size: 0;
                     padding: 0;
                     font-family: 'Poppins', sans-serif;
+                    transition: all 0.2s ease-in-out;
                 }
                 &__Hidden__activetrue {
                     grid-column: createtab-s/createtab-e;
@@ -273,6 +285,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                 }
                 &__notHidden__activetrue {
                     grid-column: createtab-s/createtab-e;
@@ -291,6 +304,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                 }
                 &__notHidden__activefalse {
                     grid-column: createtab-s/createtab-e;
@@ -309,6 +323,7 @@
                     box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                     -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                    transition: all 0.2s ease-in-out;
                 }
              }
              .nav-bar-spacer4{
@@ -318,6 +333,7 @@
                 grid-column: createtab-s/createtab-e;
                 grid-row: first-s/first-e;
                 z-index: 13;
+                transition: all 0.1s ease-in-out;
              }
              .arrow-tab {
                  display: grid;
@@ -337,6 +353,7 @@
                  box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                  -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
                  -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
+                 transition: all 0.5s ease-in-out;
              }
          }
      }
