@@ -69,13 +69,50 @@
                  -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
              }
              .nav-bar-spacer1{
-                height: 60px;
-                width: auto;
-                background-color: greenyellow;
-                grid-column: logo-s/hometab-s;
-                grid-row: first-s/first-e;
-                z-index: 16;
-                transition: all 0.1s ease-in-out;
+
+                &__Hidden__activefalse {
+                    opacity: 0%;
+                    height: 60px;
+                    width: auto;
+                    background-color: greenyellow;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__Hidden__activetrue {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: greenyellow;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__notHidden__activetrue {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: greenyellow;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__notHidden__activefalse {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: greenyellow;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
+                    transition: all 0.2s ease-in-out;
+                }
              }
              .home-tab {
                  display: grid;
@@ -155,13 +192,50 @@
                  }
              }
              .nav-bar-spacer2{
-                height: 60px;
-                width: auto;
-                background-color: white;
-                grid-column: hometab-s/hometab-e;
-                grid-row: first-s/first-e;
-                z-index: 15;
-                transition: all 0.1s ease-in-out;
+
+                &__Hidden__activefalse {
+                    opacity: 0%;
+                    height: 60px;
+                    width: auto;
+                    background-color: white;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__Hidden__activetrue {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: white;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__notHidden__activetrue {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: white;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__notHidden__activefalse {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: white;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
+                    transition: all 0.2s ease-in-out;
+                }
              }
              .contact-tab {
                  display: grid;
@@ -241,13 +315,50 @@
                  }
              }
              .nav-bar-spacer3{
-                height: 60px;
-                width: auto;
-                background-color: yellow;
-                grid-column: contacttab-s/contacttab-e;
-                grid-row: first-s/first-e;
-                z-index: 14;
-                transition: all 0.1s ease-in-out;
+
+                &__Hidden__activefalse {
+                    opacity: 0%;
+                    height: 60px;
+                    width: auto;
+                    background-color: yellow;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__Hidden__activetrue {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: yellow;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__notHidden__activetrue {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: yellow;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &__notHidden__activefalse {
+                    opacity: 100%;
+                    height: 60px;
+                    width: auto;
+                    background-color: yellow;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
+                    transition: all 0.2s ease-in-out;
+                }
              }
              .create-post-tab {
                  display: grid;
@@ -330,9 +441,9 @@
                 height: 60px;
                 width: auto;
                 background-color: red;
-                grid-column: createtab-s/createtab-e;
+                grid-column: logo-s/createtab-e;
                 grid-row: first-s/first-e;
-                z-index: 13;
+                z-index: 0;
                 transition: all 0.1s ease-in-out;
              }
              .arrow-tab {
