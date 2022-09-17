@@ -92,16 +92,16 @@ class LeftNavBarCluster extends React.Component {
                 </div>
                 <div className={`nav-bar-spacer1__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} style={{backgroundColor: this.state.activeStates[0].bgColor}}></div>
                 {this.state.activeStates[0].clickable ? 
-                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} onClick={(e) => this.handleActiveClick(e, 'Home')}>Home</div> :
-                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} >Home</div>}
+                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} onClick={(e) => this.handleActiveClick(e, 'Home')}><p>Home</p></div> :
+                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} ><p>Home</p></div>}
                     <div className={`nav-bar-spacer2__${this.state.HiddenState}__active${this.state.activeStates[1].active}`} style={{backgroundColor: this.state.activeStates[1].bgColor}}></div>
                 {this.state.activeStates[1].clickable ? 
-                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}  onClick={(e) => this.handleActiveClick(e, 'Contact')} >About/Contact</div> : 
-                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}>About/Contact</div>}
+                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}  onClick={(e) => this.handleActiveClick(e, 'Contact')} ><p>About/Contact</p></div> : 
+                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}><p>About/Contact</p></div>}
                     <div className={`nav-bar-spacer3__${this.state.HiddenState}__active${this.state.activeStates[2].active}`} style={{backgroundColor: this.state.activeStates[2].bgColor}}></div>
                 {this.state.activeStates[2].clickable ? 
-                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}  onClick={(e) => this.handleActiveClick(e, 'Create')} >Create Post</div> : 
-                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}>Create Post</div>}
+                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}  onClick={(e) => this.handleActiveClick(e, 'Create')} ><p>Create Post</p></div> : 
+                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}><p>Create Post</p></div>}
                     <div className='nav-bar-spacer4' style={{backgroundColor: '#164664'}}></div>
                 <div className='arrow-tab' onClick={this.onClickArrow}>Arrow</div>
             </div>
