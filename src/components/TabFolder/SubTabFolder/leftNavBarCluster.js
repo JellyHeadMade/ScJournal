@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 const HOME_TAB_STATE = [
     {name: 'Home', active: true, clickable: false, bgColor: '#4FACEE'}, 
     {name: 'Contact', active: false, clickable: true, bgColor: '#164664'}, 
@@ -103,7 +106,9 @@ class LeftNavBarCluster extends React.Component {
                     <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}  onClick={(e) => this.handleActiveClick(e, 'Create')} ><p>Create Post</p></div> : 
                     <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}><p>Create Post</p></div>}
                     <div className='nav-bar-spacer4' style={{backgroundColor: '#164664'}}></div>
-                <div className='arrow-tab' onClick={this.onClickArrow}>Arrow</div>
+                <div className='arrow-tab' onClick={this.onClickArrow}>
+                    {this.state.HiddenState === 'Hidden' ? <FontAwesomeIcon icon={faChevronRight} /> : <FontAwesomeIcon icon={faChevronLeft} />}
+                </div>
             </div>
         )
     }
