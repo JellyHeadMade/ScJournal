@@ -91,8 +91,43 @@ function CreateStoryV2(props) {
     }
 
     const handleSubmit = (e) => {
+        const finalJSONobject = {
+            "user_id": props.userId,
+            "title": storyData.postTitle,
+            "post_date": "2020-05-17 00:00:00",
+            "image1": storyData.imageThumbnails[0],
+            "image2": storyData.imageThumbnails[1],
+            "image3": storyData.imageThumbnails[2],
+            "story": storyData.story,
+            "user_image": props.userImage,
+            "ship_tag_id": storyData.shipTag,
+            "activity_tag_id": storyData.activityTag,
+            "location_tag_id": storyData.locationTag,
+            "type_tag_id": storyData.typeTag,
+            "username": props.userName
+        };
         e.preventDefault();
-        console.log(storyData);
+        axios.post('https://scjournalapiv2.herokuapp.com/testpost', {
+            "user_id": props.userId,
+            "title": storyData.postTitle,
+            "post_date": "2020-05-17 00:00:00",
+            "image1": storyData.imageThumbnails[0],
+            "image2": storyData.imageThumbnails[1],
+            "image3": storyData.imageThumbnails[2],
+            "story": storyData.story,
+            "user_image": props.userImage,
+            "ship_tag_id": storyData.shipTag,
+            "activity_tag_id": storyData.activityTag,
+            "location_tag_id": storyData.locationTag,
+            "type_tag_id": storyData.typeTag,
+            "username": props.userName
+        })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
     return (
