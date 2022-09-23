@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {IKImage, IKContext, IKUpload } from 'imagekitio-react';
 import ImagePrev from './imagePrev';
 import axios from 'axios';
-import jsonify from 'jsonify';
+import jsonify, { stringify } from 'jsonify';
 
 function CreateStoryV2(props) {
     
@@ -91,8 +91,66 @@ function CreateStoryV2(props) {
         setStoryData({...storyData, [e.target.name]: e.target.value})
     }
 
+    const buildJSON = () => {
+        const storyJSON = {
+            "user_id": storyData.__id ? storyData.__id : null,
+            "title": storyData.postTitle ? storyData.postTitle : null,
+            "post_date": storyData.postDate ? storyData.postDate : null,
+            "image1": storyData.imageThumbnails[0] ? storyData.imageThumbnails[0] : null,
+            "image2": storyData.imageThumbnails[1] ? storyData.imageThumbnails[1] : null,
+            "image3": storyData.imageThumbnails[2] ? storyData.imageThumbnails[2] : null,
+            "story": storyData.story ? storyData.story : null,
+            "user_image": storyData.userImage ? storyData.userImage : null,
+            "ship_tag_id": storyData.shipTag ? storyData.shipTag : null,
+            "activity_tag_id": storyData.activityTag ? storyData.activityTag : null,
+            "location_tag_id": storyData.locationTag ? storyData.locationTag : null,
+            "type_tag_id": storyData.typeTag ? storyData.typeTag : null,
+            "username": storyData.userName ? storyData.userName : null
+        }
+        return JSON.stringify(storyJSON);
+    }
+
+    const buildForm = () => {
+        let formData = new FormData();
+
+        formData.append('user_id', storyData.__id ? storyData.__id : null);
+        formData.append('title', storyData.postTitle ? storyData.postTitle : null);
+        formData.append('post_date', storyData.postDate ? storyData.postDate : null);
+        formData.append('image1', storyData.imageThumbnails[0] ? storyData.imageThumbnails[0] : null);
+        formData.append('image2', storyData.imageThumbnails[1] ? storyData.imageThumbnails[1] : null);
+        formData.append('image3', storyData.imageThumbnails[2] ? storyData.imageThumbnails[2] : null);
+        formData.append('story', storyData.story ? storyData.story : null);
+        formData.append('user_image', storyData.userImage ? storyData.userImage : null);
+        formData.append('ship_tag_id', storyData.shipTag ? storyData.shipTag : null);
+        formData.append('activity_tag_id', storyData.activityTag ? storyData.activityTag : null);
+        formData.append('location_tag_id', storyData.locationTag ? storyData.locationTag : null);
+        formData.append('type_tag_id', storyData.typeTag ? storyData.typeTag : null);
+        formData.append('username', storyData.userName ? storyData.userName : null);
+
+        return formData;
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        const finalData = buildForm();
+        console.log(...finalData);
+        const finalJSON = buildJSON();
+        console.log(finalJSON);
+        axios({
+            method: "post",
+            url: "https://scjournalapiv2.herokuapp.com/testpost",
+            data: finalJSON,
+            headers: { "Content-Type": "application/json" },
+          })
+            .then(function (response) {
+              //handle success
+              console.log(response);
+            })
+            .catch(function (response) {
+              //handle error
+              console.log(response);
+            });
+        
     }
 
     return (
