@@ -10,7 +10,7 @@ export function setUserInfo() {
             {
                 savedUserImage: 'http://via.placeholder.com/63',
                 savedUserName: 'JellyHeadMade',
-                savedUserId: '4'
+                savedUserId: '1'
             },
         ]
     })
