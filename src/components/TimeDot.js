@@ -19,23 +19,22 @@ function TimeDot(props) {
                 <div className='time-line'>
                     {props.posts.map((post) => (
                         <div className='test'>
-                            <TabBase userImage={post.userImage} 
-                                postTitle={post.postTitle} 
+                            <TabBase userImage={post.user_image} 
+                                postTitle={post.title} 
                                 viewer_id={timelineState.viewerId}
                                 user_id={post.user_id}
-                                userName={post.userName} 
-                                postDate={post.postDate} 
-                                shipTag={post.shipTag} 
-                                locationTag={post.locationTag}
-                                activityTag={post.activityTag}
-                                typeTag={post.typeTag}
+                                userName={post.username} 
+                                postDate={post.post_date} 
+                                shipTag={post.ship_tag_id} 
+                                locationTag={post.location_tag_id}
+                                activityTag={post.activity_tag_id}
+                                typeTag={post.type_tag_id}
                                 story={post.story}
                                 images1={post.image1}
                                 images2={post.image2}
                                 images3={post.image3}
-                                comments={post.comments}
-                                key={post._id}
-                                postId={post._id}/>
+                                key={post.id}
+                                postId={post.id}/>
                         </div>
                         ))}
                 </div>
