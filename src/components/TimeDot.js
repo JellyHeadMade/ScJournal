@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import * as actions from '../actions';
 
 import TabBase from './TabFolder/tabBase';
@@ -8,6 +8,7 @@ import TabBase from './TabFolder/tabBase';
 function TimeDot(props) {
 
     const [timelineState, setTimelinestate] = useState({userId: 2, viewerId: '2'});
+    const dispatch = useDispatch();
 
     useEffect(() => {
         props.setPostDetails();
