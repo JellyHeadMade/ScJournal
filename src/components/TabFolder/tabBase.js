@@ -30,7 +30,18 @@ function TabBase(props) {
             <div className='tab-group-drop-container'>
                 <div className='drop-container'>
                     <DropTab type='Story' order='1' content={<StoryContent story={props.story} />}/>
-                    <DropTab type='Images' order='2' content={<ImageGallery image1={props.images1} image2={props.images2} image3={props.images3}/>} />
+                    <DropTab type='Images' order='2' content={<ImageGallery 
+                        image1={props.images1} 
+                        image1Thumbnail={props.images1Thumbnail} 
+                        image1Path={props.images1Path}
+                        image2={props.images2} 
+                        image2Thumbnail={props.images2Thumbnail}
+                        image2Path={props.images2Path}
+                        image3={props.images3}
+                        image3Thumbnail={props.images3Thumbnail}
+                        image3Path={props.images3Path}
+                        />} 
+                    />
                     <div className='drop-container-spacer1'></div>
                     <DropTab type='Comments' order='3' content={<CommentContent comments={postComments}/>} />
                     <div className='drop-container-spacer2'></div>

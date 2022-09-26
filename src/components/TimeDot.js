@@ -32,8 +32,14 @@ function TimeDot(props) {
                                 typeTag={post.type_tag_id}
                                 story={post.story}
                                 images1={post.image1}
+                                images1Thumbnail={post.image1Thumbnail}
+                                images1Path={post.image1Path}
                                 images2={post.image2}
+                                images2Thumbnail={post.image2Thumbnail}
+                                images2Path={post.image2Path}
                                 images3={post.image3}
+                                images3Thumbnail={post.image3Thumbnail}
+                                images3Path={post.image3Path}
                                 key={post.id}
                                 postId={post.id}/>
                         </div>
