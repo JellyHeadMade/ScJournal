@@ -57,7 +57,7 @@ class PageDefault extends React.Component {
                 break;
             default:
                 this.setState({
-                    currentPage: DEFAULT_HOME_PAGE
+                    currentPage: this.state.currentPage
                 });
                 break;
         }
