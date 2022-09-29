@@ -16,17 +16,6 @@ function RightNavBarCluster(props){
 
     const userPageClick = (event) => {
         props.setPage('User');
-        axios.get('https://scjournalapiv2.herokuapp.com/getallpost')
-        .then((response) => {
-            const data = response.data;
-            console.log(data);
-            console.log(data[0].id);
-            console.log(data[1].id);
-            console.log(data[0]);
-            console.log(data[2].story);
-        }).catch((error) => {
-            console.log(error);
-        });
     }
 
     return (

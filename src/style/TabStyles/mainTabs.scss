@@ -42,6 +42,8 @@
          display: grid;
          grid-column: leftnav-s/leftnav-e;
          grid-row: mainrow-s/mainrow-e;
+         position: fixed;
+         z-index: 50;
  
          .left-nav-cluster-container {
              height: 100%;
@@ -801,7 +803,6 @@
                         &__text {
                             font-family: 'Poppins', sans-serif;
                             transform-origin: 0 0;
-                            // transform: scaleY(1);
                             max-height: 400px;
                             overflow-y: auto;
                             font-size: 15px;

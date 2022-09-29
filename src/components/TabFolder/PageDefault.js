@@ -5,11 +5,12 @@ import NavBar from './navBar';
 import CreatePost from '../createPost';
 import TimeDot from '../TimeDot';
 import AboutContact from './aboutContact';
+import CreateUserPage from './createUserPage';
 
 const DEFAULT_HOME_PAGE = <TimeDot/>;
 const DEFAULT_CONTACT_PAGE = <AboutContact/> // obviously this needs to be swapped out for a contact page but for now it's just a placeholder    
 const DEFAULT_CREATE_PAGE = <CreatePost/>;
-const DEFAULT_USER_PAGE = <AboutContact/>;
+const DEFAULT_USER_PAGE = <CreateUserPage/>;
 
 class PageDefault extends React.Component {
     constructor(props) {
