@@ -25,11 +25,6 @@ const USER_TAB_STATE = [
     {name: 'Contact', active: false, clickable: true, bgColor: '#164664'},
     {name: 'Create', active: false, clickable: true, bgColor: '#164664'}
 ];
-const SCROLL_TAB_STATE = [
-    {name: 'Home', active: false, clickable: true, bgColor: '#164664'},
-    {name: 'Contact', active: false, clickable: true, bgColor: '#164664'},
-    {name: 'Create', active: false, clickable: true, bgColor: '#164664'}
-];
 
 class LeftNavBarCluster extends React.Component {
     constructor(props) {
@@ -60,8 +55,6 @@ class LeftNavBarCluster extends React.Component {
         if (prevProps.page !== this.props.page) {
             if (this.props.page === 'User') {
                 this.setState({activeStates: USER_TAB_STATE});
-            } else if (this.props.page === 'Scrolling') {
-                this.setState({activeStates: SCROLL_TAB_STATE});
             }
         }
     }

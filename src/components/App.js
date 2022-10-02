@@ -8,20 +8,24 @@ import * as actions from '../actions';
 
 function App(props) {
 
-  const [prevPage, setPrevPage] = React.useState(props.page);
+  var previouspage = props.pages.page;
+
+  var previousPos = window.pageYOffset || document.documentElement.scrollTop;
 
   useEffect(() => {
     const handleScroll = event => {
-      console.log('window.scrollY', window.scrollY);
-      console.log(props.pages.page);
-      const prevScrollHeight = window.scrollY - 1;
 
-      console.log('prevScrollHeight', prevScrollHeight);
+      window.onscroll = function() {
+        var currentPos = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (prevScrollHeight < window.scrollY) {
-        props.setPage('Scrolling');
-      } else {
-        props.setPage('prevPage');
+        if (previousPos > currentPos) {
+          console.log('scrolling up');
+          props.setPage(previouspage);
+        } else {
+          console.log('scrolling down');
+          props.setPage('Scrolling');
+        }
+        previousPos = currentPos;
       }
     };
 
