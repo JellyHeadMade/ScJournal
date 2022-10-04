@@ -32,7 +32,8 @@ class LeftNavBarCluster extends React.Component {
 
         this.state = {
             HiddenState: 'Hidden',
-            activeStates: HOME_TAB_STATE
+            activeStates: HOME_TAB_STATE,
+            scrollingState: false
         }
         this.onClickArrow = this.onClickArrow.bind(this);
         this.handleActiveClick = this.handleActiveClick.bind(this);
@@ -52,6 +53,13 @@ class LeftNavBarCluster extends React.Component {
     }
 
     componentDidUpdate = (prevProps) => {
+        if (prevProps.scrolling !== this.props.scrolling) {
+            if (prevProps.scrolling === true) {
+                this.setState({scrollingState: false});
+            } else {
+                this.setState({scrollingState: true});
+            }
+        }
         if (prevProps.page !== this.props.page) {
             if (this.props.page === 'User') {
                 this.setState({activeStates: USER_TAB_STATE});
@@ -116,8 +124,10 @@ class LeftNavBarCluster extends React.Component {
 
 function mapStateToProps(state) {
     const { page } = state.navigationReducer;
+    const { scrolling } = state.scrollingReducer;
     return {
-        page
+        page,
+        scrolling
     }
 }
 

@@ -7,3 +7,5 @@ export const TEST_POST_GET = 'TEST_POST_GET';
 export const SET_USER_INFO = 'SET_USER_INFO';
 //NAVIGATION 
 export const SET_PAGE = 'SET_PAGE';
+//SCROLLING
+export const SET_SCROLLING = 'SET_SCROLLING';

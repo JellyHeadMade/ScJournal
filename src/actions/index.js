@@ -2,10 +2,6 @@ import {
     setPostDetails
 } from './postTest';
 
-// import {
-//     testPostDetails
-// } from './testPost';
-
 import {
     setUserInfo
 } from './user';
@@ -14,8 +10,13 @@ import {
     setPage
 } from './navigationActions';
 
+import {
+    setScrolling
+} from './scrollingAction';
+
 export {
     setPostDetails,
     setUserInfo,
-    setPage
+    setPage,
+    setScrolling
 };

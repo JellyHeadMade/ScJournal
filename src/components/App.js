@@ -20,10 +20,12 @@ function App(props) {
 
         if (previousPos > currentPos) {
           console.log('scrolling up');
-          props.setPage(previouspage);
+          props.setScrolling(false);
+          console.log(props);
         } else {
           console.log('scrolling down');
-          props.setPage('Scrolling');
+          props.setScrolling(true);
+          console.log(props);
         }
         previousPos = currentPos;
       }
@@ -44,7 +46,8 @@ function App(props) {
 }
 
 function mapStateToProps(state) {
-  return { pages : state.navigationReducer }
+  return { pages : state.navigationReducer,
+           scrolling : state.scrollingReducer };
 }
 
 
