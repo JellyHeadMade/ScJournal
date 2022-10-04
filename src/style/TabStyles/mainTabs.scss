@@ -72,48 +72,56 @@
              }
              .nav-bar-spacer1{
 
-                &__Hidden__activefalse {
-                    opacity: 0%;
-                    height: 60px;
-                    width: auto;
-                    background-color: greenyellow;
+                &__Hidden__activefalse__scrollingfalse {
+                    @include hidespacer;
                     grid-column: logo-s/hometab-s;
                     grid-row: first-s/first-e;
                     z-index: 3;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__Hidden__activetrue {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: greenyellow;
+                &__Hidden__activefalse__scrollingtrue {
+                    @include hidespacer;
                     grid-column: logo-s/hometab-s;
                     grid-row: first-s/first-e;
                     z-index: 3;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__notHidden__activetrue {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: greenyellow;
+                // 
+                &__Hidden__activetrue__scrollingfalse {
+                    @include showspacer;
                     grid-column: logo-s/hometab-s;
                     grid-row: first-s/first-e;
                     z-index: 3;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__notHidden__activefalse {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: greenyellow;
+                &__Hidden__activetrue__scrollingtrue {
+                    @include hidespacer;
                     grid-column: logo-s/hometab-s;
                     grid-row: first-s/first-e;
                     z-index: 3;
-                    transition: all 0.2s ease-in-out;
+                }
+                // 
+                &__notHidden__activetrue__scrollingfalse {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
+                }
+                &__notHidden__activetrue__scrollingtrue {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
+                }
+                // 
+                &__notHidden__activefalse__scrollingfalse {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
+                }
+                &__notHidden__activefalse__scrollingtrue {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-s;
+                    grid-row: first-s/first-e;
+                    z-index: 3;
                 }
              }
              .home-tab {
@@ -125,142 +133,110 @@
                  font-size: 62.5%;
                  height: 60px;
                  border-radius: 0 0 25px 0;
-                 &__Hidden__activefalse {
+                 &__Hidden__activefalse__scrollingfalse {
                     grid-column: hometab-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 16;
-                    // width: 0px;
-                    font-size: 0;
-                    padding: 0;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 0%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
                  }
-                 &__Hidden__activetrue {
+                 &__Hidden__activefalse__scrollingtrue {
                     grid-column: hometab-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 16;
-                    display: grid;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: black;
-                    background-color: $active-tab-color;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
                  }
-                 &__notHidden__activetrue {
+                //  
+                 &__Hidden__activetrue__scrollingfalse {
                     grid-column: hometab-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 16;
-                    display: grid;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: black;
-                    background-color: $active-tab-color;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include active-tab;
                  }
-                 &__notHidden__activefalse {
+                 &__Hidden__activetrue__scrollingtrue {
                     grid-column: hometab-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 16;
-                    display: grid;
-                    background-color: $drop-tab-color;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
+                 }
+                // 
+                 &__notHidden__activetrue__scrollingfalse {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 16;
+                    @include active-tab;
+                 }
+                 &__notHidden__activetrue__scrollingtrue {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 16;
+                    @include active-tab;
+                 }
+                // 
+                 &__notHidden__activefalse__scrollingfalse {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 16;
+                    @include nonhidden-nonactive-tab;
+                 }
+                 &__notHidden__activefalse__scrollingtrue {
+                    grid-column: hometab-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 16;
+                    @include nonhidden-nonactive-tab
                  }
              }
              .nav-bar-spacer2{
 
-                &__Hidden__activefalse {
-                    opacity: 0%;
-                    height: 60px;
-                    width: auto;
-                    background-color: white;
+                &__Hidden__activefalse__scrollingfalse {
+                    @include hidespacer;
                     grid-column: logo-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 2;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__Hidden__activetrue {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: white;
+                &__Hidden__activefalse__scrollingtrue {
+                    @include hidespacer;
                     grid-column: logo-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 2;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__notHidden__activetrue {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: white;
+                // 
+                &__Hidden__activetrue__scrollingfalse {
+                    @include showspacer;
                     grid-column: logo-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 2;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__notHidden__activefalse {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: white;
+                &__Hidden__activetrue__scrollingtrue {
+                    @include hidespacer;
                     grid-column: logo-s/hometab-e;
                     grid-row: first-s/first-e;
                     z-index: 2;
-                    transition: all 0.2s ease-in-out;
+                }
+                // 
+                &__notHidden__activetrue__scrollingfalse {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
+                }
+                &__notHidden__activetrue__scrollingtrue {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
+                }
+                // 
+                &__notHidden__activefalse__scrollingfalse {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
+                }
+                &__notHidden__activefalse__scrollingtrue {
+                    @include showspacer;
+                    grid-column: logo-s/hometab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 2;
                 }
              }
              .contact-tab {
@@ -272,142 +248,110 @@
                  height: 60px;
                  font-size: 62.5%;
 
-                 &__Hidden__activefalse {
+                 &__Hidden__activefalse__scrollingfalse {
                     grid-column: contacttab-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 15;
-                    width: 0px;
-                    font-size: 0;
-                    padding: 0;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 0%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
                  }
-                 &__Hidden__activetrue {
+                 &__Hidden__activefalse__scrollingtrue {
                     grid-column: contacttab-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 15;
-                    display: grid;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: black;
-                    background-color: $active-tab-color;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
                  }
-                 &__notHidden__activetrue {
+                //  
+                 &__Hidden__activetrue__scrollingfalse {
                     grid-column: contacttab-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 15;
-                    display: grid;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: black;
-                    background-color: $active-tab-color;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include active-tab;
                  }
-                 &__notHidden__activefalse {
+                 &__Hidden__activetrue__scrollingtrue {
                     grid-column: contacttab-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 15;
-                    display: grid;
-                    background-color: $drop-tab-color;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
+                 }
+                //  
+                 &__notHidden__activetrue__scrollingfalse {
+                    grid-column: contacttab-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 15;
+                    @include active-tab;
+                 }
+                 &__notHidden__activetrue__scrollingtrue {
+                     grid-column: contacttab-s/contacttab-e;
+                     grid-row: first-s/first-e;
+                     z-index: 15;
+                     @include active-tab;
+                 }
+                //  
+                 &__notHidden__activefalse__scrollingfalse {
+                    grid-column: contacttab-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 15;
+                    @include nonhidden-nonactive-tab;
+                 }
+                 &__notHidden__activefalse__scrollingtrue {
+                    grid-column: contacttab-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 15;
+                    @include nonhidden-nonactive-tab;
                  }
              }
              .nav-bar-spacer3{
 
-                &__Hidden__activefalse {
-                    opacity: 0%;
-                    height: 60px;
-                    width: auto;
-                    background-color: yellow;
+                &__Hidden__activefalse__scrollingfalse {
+                    @include hidespacer;
                     grid-column: logo-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 1;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__Hidden__activetrue {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: yellow;
+                &__Hidden__activefalse__scrollingtrue {
+                    @include hidespacer;
                     grid-column: logo-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 1;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__notHidden__activetrue {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: yellow;
+                // 
+                &__Hidden__activetrue__scrollingfalse {
+                    @include showspacer;
                     grid-column: logo-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 1;
-                    transition: all 0.2s ease-in-out;
                 }
-
-                &__notHidden__activefalse {
-                    opacity: 100%;
-                    height: 60px;
-                    width: auto;
-                    background-color: yellow;
+                &__Hidden__activetrue__scrollingtrue {
+                    @include hidespacer;
                     grid-column: logo-s/contacttab-e;
                     grid-row: first-s/first-e;
                     z-index: 1;
-                    transition: all 0.2s ease-in-out;
+                }
+                // 
+                &__notHidden__activetrue__scrollingfalse {
+                    @include showspacer;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
+                }
+                &__notHidden__activetrue__scrollingtrue {
+                    @include showspacer;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
+                }
+                // 
+                &__notHidden__activefalse__scrollingfalse {
+                    @include showspacer;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
+                }
+                &__notHidden__activefalse__scrollingtrue {
+                    @include showspacer;
+                    grid-column: logo-s/contacttab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 1;
                 }
              }
              .create-post-tab {
@@ -419,96 +363,56 @@
                  height: 60px;
                  font-size: 62.5%;
 
-                &__Hidden__activefalse {
+                &__Hidden__activefalse__scrollingfalse {
                     grid-column: createtab-s/createtab-e;
                     grid-row: first-s/first-e;
                     z-index: 14;
-                    width: 0px;
-                    font-size: 0;
-                    padding: 0;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 0%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
                 }
-                &__Hidden__activetrue {
+                &__Hidden__activefalse__scrollingtrue {
                     grid-column: createtab-s/createtab-e;
                     grid-row: first-s/first-e;
                     z-index: 14;
-                    display: grid;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: black;
-                    background-color: $active-tab-color;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
                 }
-                &__notHidden__activetrue {
+                // 
+                &__Hidden__activetrue__scrollingfalse {
                     grid-column: createtab-s/createtab-e;
                     grid-row: first-s/first-e;
                     z-index: 14;
-                    display: grid;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: black;
-                    background-color: $active-tab-color;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include active-tab;
                 }
-                &__notHidden__activefalse {
+                &__Hidden__activetrue__scrollingtrue {
                     grid-column: createtab-s/createtab-e;
                     grid-row: first-s/first-e;
                     z-index: 14;
-                    display: grid;
-                    background-color: $drop-tab-color;
-                    width: min-content;
-                    font-size: inherit;
-                    padding: 0 50px;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    border-radius: 0 0 25px 0;
-                    box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -webkit-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ; 
-                    -moz-box-shadow: 15px 0 24px rgba(0, 0, 0, 0.2)  ;
-                    transition: all 0.2s ease-in-out;
-
-                    p {
-                        opacity: 100%;
-                        transition: left 2s ease-in-out;
-                        -webkit-transition: left 0.2s ease-in-out;
-                        font-family: 'Poppins', sans-serif;
-                    }
+                    @include hidden-nonactive-tab;
+                }
+                // 
+                &__notHidden__activetrue__scrollingfalse {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 14;
+                    @include active-tab;
+                }
+                &__notHidden__activetrue__scrollingtrue {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 14;
+                    @include active-tab;
+                }
+                // 
+                &__notHidden__activefalse__scrollingfalse {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 14;
+                    @include nonhidden-nonactive-tab;
+                }
+                &__notHidden__activefalse__scrollingtrue {
+                    grid-column: createtab-s/createtab-e;
+                    grid-row: first-s/first-e;
+                    z-index: 14;
+                    @include nonhidden-nonactive-tab;
                 }
              }
              .nav-bar-spacer4{

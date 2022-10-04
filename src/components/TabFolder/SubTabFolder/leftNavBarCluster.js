@@ -32,8 +32,7 @@ class LeftNavBarCluster extends React.Component {
 
         this.state = {
             HiddenState: 'Hidden',
-            activeStates: HOME_TAB_STATE,
-            scrollingState: false
+            activeStates: HOME_TAB_STATE
         }
         this.onClickArrow = this.onClickArrow.bind(this);
         this.handleActiveClick = this.handleActiveClick.bind(this);
@@ -53,13 +52,6 @@ class LeftNavBarCluster extends React.Component {
     }
 
     componentDidUpdate = (prevProps) => {
-        if (prevProps.scrolling !== this.props.scrolling) {
-            if (prevProps.scrolling === true) {
-                this.setState({scrollingState: false});
-            } else {
-                this.setState({scrollingState: true});
-            }
-        }
         if (prevProps.page !== this.props.page) {
             if (this.props.page === 'User') {
                 this.setState({activeStates: USER_TAB_STATE});
@@ -101,18 +93,18 @@ class LeftNavBarCluster extends React.Component {
                 <div className='logo-tab'>
                     <img src='https://via.placeholder.com/40/ffffff.png'/>
                 </div>
-                <div className={`nav-bar-spacer1__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} style={{backgroundColor: this.state.activeStates[0].bgColor}}></div>
+                <div className={`nav-bar-spacer1__${this.state.HiddenState}__active${this.state.activeStates[0].active}__scrolling${this.props.scrolling}`} style={{backgroundColor: this.state.activeStates[0].bgColor}}></div>
                 {this.state.activeStates[0].clickable ? 
-                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} onClick={(e) => this.handleActiveClick(e, 'Home')}><p>Home</p></div> :
-                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}`} ><p>Home</p></div>}
-                    <div className={`nav-bar-spacer2__${this.state.HiddenState}__active${this.state.activeStates[1].active}`} style={{backgroundColor: this.state.activeStates[1].bgColor}}></div>
+                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}__scrolling${this.props.scrolling}`} onClick={(e) => this.handleActiveClick(e, 'Home')}><p>Home</p></div> :
+                    <div className={`home-tab__${this.state.HiddenState}__active${this.state.activeStates[0].active}__scrolling${this.props.scrolling}`} ><p>Home</p></div>}
+                    <div className={`nav-bar-spacer2__${this.state.HiddenState}__active${this.state.activeStates[1].active}__scrolling${this.props.scrolling}`} style={{backgroundColor: this.state.activeStates[1].bgColor}}></div>
                 {this.state.activeStates[1].clickable ? 
-                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}  onClick={(e) => this.handleActiveClick(e, 'Contact')} ><p>About/Contact</p></div> : 
-                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}`}><p>About/Contact</p></div>}
-                    <div className={`nav-bar-spacer3__${this.state.HiddenState}__active${this.state.activeStates[2].active}`} style={{backgroundColor: this.state.activeStates[2].bgColor}}></div>
+                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}__scrolling${this.props.scrolling}`}  onClick={(e) => this.handleActiveClick(e, 'Contact')} ><p>About/Contact</p></div> : 
+                    <div className={`contact-tab__${this.state.HiddenState}__active${this.state.activeStates[1].active}__scrolling${this.props.scrolling}`}><p>About/Contact</p></div>}
+                    <div className={`nav-bar-spacer3__${this.state.HiddenState}__active${this.state.activeStates[2].active}__scrolling${this.props.scrolling}`} style={{backgroundColor: this.state.activeStates[2].bgColor}}></div>
                 {this.state.activeStates[2].clickable ? 
-                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}  onClick={(e) => this.handleActiveClick(e, 'Create')} ><p>Create Post</p></div> : 
-                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}`}><p>Create Post</p></div>}
+                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}__scrolling${this.props.scrolling}`}  onClick={(e) => this.handleActiveClick(e, 'Create')} ><p>Create Post</p></div> : 
+                    <div className={`create-post-tab__${this.state.HiddenState}__active${this.state.activeStates[2].active}__scrolling${this.props.scrolling}`}><p>Create Post</p></div>}
                     <div className='nav-bar-spacer4' style={{backgroundColor: '#164664'}}></div>
                 <div className='arrow-tab' onClick={this.onClickArrow}>
                     {this.state.HiddenState === 'Hidden' ? <FontAwesomeIcon icon={faChevronRight} /> : <FontAwesomeIcon icon={faChevronLeft} />}
