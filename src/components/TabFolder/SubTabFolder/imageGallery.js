@@ -1,11 +1,22 @@
 import React from 'react';
 
 function ImageGallery(props) {
+
+    const onClick = (e) => {
+        console.log('image clicked!');
+    }
+
     return (
         <div className='image-gallery-tab-content'>
-            <img className='img' src={props.image1Thumbnail} />
-            <img className='img' src={props.image2Thumbnail} />
-            <img className='img' src={props.image3Thumbnail} />
+            <div onClick={onClick} className='placeholder'>
+                <img className='img' src={props.image1Thumbnail} />
+            </div>
+            <div onClick={onClick} className='placeholder'>
+                <img className='img' src={props.image2Thumbnail} />
+            </div>
+            <div onClick={onClick} className='placeholder'>
+                <img className='img' src={props.image3Thumbnail} />
+            </div>
         </div>
     )
 }
