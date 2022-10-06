@@ -9,26 +9,30 @@ function ImageGallery(props) {
         console.log('image trigger shows state as ', clicked);
     }
 
-    const onClick = (e) => {
-        if (!clicked) {
-            setClicked(true);
-            fullImageTrigger(e.target.alt); 
-        } else {
-            setClicked(false);
-        }
-        console.log('onclicked shows state as ', clicked);
+    // const onClick = (e) => {
+    //     if (!clicked) {
+    //         setClicked(true);
+    //         fullImageTrigger(e.target.alt); 
+    //     } else {
+    //         setClicked(false);
+    //     }
+    //     console.log('onclicked shows state as ', clicked);
+    // }
+
+    const onClick = (highresImage) => {
+        fullImageTrigger(highresImage);
     }
 
     return (
         <div className='image-gallery-tab-content'>
-            <div onClick={onClick} className='placeholder'>
-                <img className='img' alt={props.image1} src={props.image1Thumbnail} />
+            <div onClick={() => onClick(props.image1)} className='placeholder'>
+                <img className='img' src={props.image1Thumbnail} />
             </div>
-            <div onClick={onClick} className='placeholder'>
-                <img className='img' alt={props.image2} src={props.image2Thumbnail} />
+            <div onClick={() => onClick(props.image2)} className='placeholder'>
+                <img className='img' src={props.image2Thumbnail} />
             </div>
-            <div onClick={onClick} className='placeholder'>
-                <img className='img' alt={props.image3} src={props.image3Thumbnail} />
+            <div onClick={() => onClick(props.image3)} className='placeholder'>
+                <img className='img' src={props.image3Thumbnail} />
             </div>
         </div>
     )
