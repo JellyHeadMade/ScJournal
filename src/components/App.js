@@ -19,13 +19,9 @@ function App(props) {
         var currentPos = window.pageYOffset || document.documentElement.scrollTop;
 
         if (previousPos > currentPos) {
-          console.log('scrolling up');
           props.setScrolling(false);
-          console.log(props);
         } else {
-          console.log('scrolling down');
           props.setScrolling(true);
-          console.log(props);
         }
         previousPos = currentPos;
       }

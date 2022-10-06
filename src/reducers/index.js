@@ -6,6 +6,7 @@ import userReducer from './userReducer';
 import testPostReducer from './testPostReducer';
 import navigationReducer from './navigationReducer';
 import scrollingReducer from './scrollingReducer';
+import fullScreenImgReducer from './fullScreenImgReducer';
 
 const rootReducer = combineReducers({
   // form,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   userReducer,
   testPostReducer,
   navigationReducer,
-  scrollingReducer
+  scrollingReducer,
+  fullScreenImgReducer
 });
 
 export default rootReducer;

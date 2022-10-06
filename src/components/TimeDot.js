@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { connect, useDispatch, useSelector } from 'react-redux';
 import * as actions from '../actions';
+import FullScreenImg from './TabFolder/SubTabFolder/fullScreenImg';
 
 import TabBase from './TabFolder/tabBase';
 
@@ -16,6 +17,7 @@ function TimeDot(props) {
 
     return (
         <div className='line'>
+            <FullScreenImg />
                 <div className='line__line'></div>
                 <div className='time-line'>
                     {props.posts.map((post) => (

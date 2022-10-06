@@ -1,26 +1,17 @@
 import React, { useState } from 'react';
 
+import { connect } from 'react-redux';
+import * as actions from '../../../actions';
+
 function ImageGallery(props) {
 
     const [clicked, setClicked] = useState(false);
 
-    const fullImageTrigger = (image) => { // stand in for a call to redux
-        console.log('clicked, here is the image: ', image);
-        console.log('image trigger shows state as ', clicked);
-    }
-
-    // const onClick = (e) => {
-    //     if (!clicked) {
-    //         setClicked(true);
-    //         fullImageTrigger(e.target.alt); 
-    //     } else {
-    //         setClicked(false);
-    //     }
-    //     console.log('onclicked shows state as ', clicked);
-    // }
-
     const onClick = (highresImage) => {
-        fullImageTrigger(highresImage);
+        if (!props.fullScreenImg) {
+            props.setFullScreenImg(highresImage);
+        }
+        console.log('image gallery shows props as ', props);
     }
 
     return (
@@ -37,5 +28,14 @@ function ImageGallery(props) {
         </div>
     )
 }
+
+function mapStateToProps(state) {
+    const { fullScreenImg } = state.fullScreenImgReducer;
+    return {
+        fullScreenImg
+    }
+}
+
+ImageGallery = connect(mapStateToProps, actions)(ImageGallery);
 
 export default ImageGallery;
