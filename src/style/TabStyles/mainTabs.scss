@@ -5,6 +5,13 @@
     grid-template-rows: [topPadding-s] 150px [topPadding-e rest-s] 1fr [rest-e];
     z-index: 13;
 
+    .full-screen-img-container {
+        z-index: 22;
+        grid-column: leftofline-s / post-e;
+        grid-row: topPadding-s / rest-e;
+        display: none;
+    }
+
     &__line {
         z-index: 14;
         background-color: #4FACEE;

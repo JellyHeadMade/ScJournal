@@ -5,10 +5,6 @@ import * as actions from '../../../actions';
 
 function FullScreenImg(props) {
 
-    useEffect(() => {
-        console.log('full screen img props: ', props);
-    }, []);
-
     const onExit = () => {
         props.setFullScreenImg('');
     }

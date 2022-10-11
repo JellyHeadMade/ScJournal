@@ -5,13 +5,10 @@ import * as actions from '../../../actions';
 
 function ImageGallery(props) {
 
-    const [clicked, setClicked] = useState(false);
-
     const onClick = (highresImage) => {
         if (!props.fullScreenImg) {
             props.setFullScreenImg(highresImage);
         }
-        console.log('image gallery shows props as ', props);
     }
 
     return (
