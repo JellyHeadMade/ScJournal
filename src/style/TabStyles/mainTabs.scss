@@ -5,11 +5,19 @@
     grid-template-rows: [topPadding-s] 150px [topPadding-e rest-s] 1fr [rest-e];
     z-index: 13;
 
-    .full-screen-img-container {
+    .full-screen-img-container-true {
         z-index: 22;
         grid-column: leftofline-s / post-e;
         grid-row: topPadding-s / rest-e;
-        display: none;
+        width: 90%;
+        height: auto;
+    }
+    .full-screen-img-container-false {
+        z-index: 22;
+        grid-column: leftofline-s / post-e;
+        grid-row: topPadding-s / rest-e;
+        width: 0px;
+        height: 0px;
     }
 
     &__line {

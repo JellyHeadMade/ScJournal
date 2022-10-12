@@ -10,7 +10,7 @@ function FullScreenImg(props) {
     }
 
     return (
-        <div className='full-screen-img-container'>
+        <div className={props.fullScreenImg ? 'full-screen-img-container-true' : 'full-screen-img-container-false'}>
             {props.fullScreenImg ? <div className='full-screen-img-box'>
                 <img className='full-screen-img' src={props.fullScreenImg} />
                 <button onClick={onExit}>exit</button>
