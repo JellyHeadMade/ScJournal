@@ -5,6 +5,7 @@ import '../style/main.scss';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import FullScreenImg from './TabFolder/SubTabFolder/fullScreenImg';
 
 function App(props) {
 
@@ -36,6 +37,7 @@ function App(props) {
 
   return (
     <div className="App">
+      <FullScreenImg />
       <PageDefault/>
     </div>
   );
