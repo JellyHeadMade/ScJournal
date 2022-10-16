@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
@@ -12,8 +12,10 @@ function FullScreenImg(props) {
     return (
         <div className={props.fullScreenImg ? 'full-screen-img-container-true' : 'full-screen-img-container-false'}>
             {props.fullScreenImg ? <div className='full-screen-img-box'>
-                <img className='full-screen-img' src={props.fullScreenImg} />
-                <button className='exit-btn' onClick={onExit}>exit</button>
+                <div className='full-screen-img-bg'>
+                    <img className='full-screen-img' src={props.fullScreenImg} />
+                    <button className='exit-btn' onClick={onExit}>exit</button>
+                </div>
             </div> : null}
         </div>
     )
