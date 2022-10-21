@@ -5,7 +5,6 @@ function AboutContactForm(props) {
 
     const [toSend, setToSend] = useState({
         from_name: '',
-        to_name: '',
         message: '',
         reply_to: '',
       });
@@ -14,13 +13,13 @@ function AboutContactForm(props) {
         e.preventDefault();
         send(
             'service_9w1vdyj',
-            'template_5f7up5a',
+            'template_bcczx6p',
             toSend,
             'mQeg9BBrfezQkPMsS'
           )
             .then((response) => {
               console.log('SUCCESS!', response.status, response.text);
-              setToSend({ ...toSend, from_name: '', to_name: '', message: '', reply_to: '' });
+              setToSend({ ...toSend, from_name: '', message: '', reply_to: '' });
               alert('Message Sent');
             })
             .catch((err) => {
@@ -45,20 +44,13 @@ function AboutContactForm(props) {
                 />
                 <input
                   type='text'
-                  name='to_name'
-                  placeholder='to name'
-                  value={toSend.to_name}
-                  onChange={handleChange}
-                />
-                <input
-                  type='text'
                   name='message'
                   placeholder='Your message'
                   value={toSend.message}
                   onChange={handleChange}
                 />
                 <input
-                  type='text'
+                  type='email'
                   name='reply_to'
                   placeholder='Your email'
                   value={toSend.reply_to}
