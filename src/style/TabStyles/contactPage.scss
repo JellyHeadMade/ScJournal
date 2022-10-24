@@ -4,4 +4,34 @@
     height: auto;
     padding-left: 7.5%;
     width: 85%;
+
+    .basic-page-container {
+
+        .basic-page-header {
+
+        }
+
+        .basic-page-splitter {
+
+        }
+
+        .basic-page-body {
+
+            .about-contact-content-container {
+
+                .about-text-container {
+                    color: white;
+                    background-color: brown;
+                }
+
+                .about-contact-form-contact {
+                    background-color: blue;
+
+                    .contact-form {
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
 }

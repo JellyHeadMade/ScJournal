@@ -34,7 +34,7 @@ function AboutContactForm(props) {
 
     return (
         <div className='about-contact-form-contact'>
-            <form onSubmit={onSubmit}>
+            <form className='contact-form' onSubmit={onSubmit}>
                 <input
                   type='text'
                   name='from_name'
