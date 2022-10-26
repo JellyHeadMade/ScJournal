@@ -35,21 +35,27 @@ function AboutContactForm(props) {
     return (
         <div className='about-contact-form-contact'>
             <form className='contact-form' onSubmit={onSubmit}>
+              <div className='contact-form-name-title'>Name</div>
                 <input
+                  className='contact-form-name'
                   type='text'
                   name='from_name'
                   placeholder='from name'
                   value={toSend.from_name}
                   onChange={handleChange}
                 />
+              <div className='contact-form-message-title'>You're Message</div>
                 <input
+                  className='contact-form-message'
                   type='text'
                   name='message'
                   placeholder='Your message'
                   value={toSend.message}
                   onChange={handleChange}
                 />
+              <div className='contact-form-email-title'>Email</div>
                 <input
+                  className='contact-form-email'
                   type='email'
                   name='reply_to'
                   placeholder='Your email'
