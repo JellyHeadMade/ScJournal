@@ -35,7 +35,7 @@ function AboutContactForm(props) {
     return (
         <div className='about-contact-form-contact'>
             <form className='contact-form' onSubmit={onSubmit}>
-              <div className='contact-form-name-title'>Name</div>
+              <div className='contact-form-name-title'>Name :</div>
                 <input
                   className='contact-form-name'
                   type='text'
@@ -44,7 +44,7 @@ function AboutContactForm(props) {
                   value={toSend.from_name}
                   onChange={handleChange}
                 />
-              <div className='contact-form-message-title'>You're Message</div>
+              <div className='contact-form-message-title'>You're Message :</div>
                 <input
                   className='contact-form-message'
                   type='text'
@@ -53,7 +53,7 @@ function AboutContactForm(props) {
                   value={toSend.message}
                   onChange={handleChange}
                 />
-              <div className='contact-form-email-title'>Email</div>
+              <div className='contact-form-email-title'>Email :</div>
                 <input
                   className='contact-form-email'
                   type='email'
