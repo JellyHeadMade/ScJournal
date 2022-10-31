@@ -62,7 +62,7 @@ function AboutContactForm(props) {
                   value={toSend.reply_to}
                   onChange={handleChange}
                 />
-                <button type='submit'>Submit</button>
+                <button className='contact-form-btn' type='submit'>Submit</button>
             </form>
         </div>
     )
