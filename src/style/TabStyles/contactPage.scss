@@ -22,7 +22,14 @@
 
                 .about-text-container {
                     color: white;
-                    background-color: brown;
+                    // background-color: brown;
+
+                    .about-text-body {
+                        padding: 0 10% 0 10%;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1.2em;
+                        line-height: 1.5em;
+                    }
                 }
 
                 .about-contact-form-contact {
