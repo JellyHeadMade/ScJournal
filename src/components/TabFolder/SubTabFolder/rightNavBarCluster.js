@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
@@ -7,24 +7,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
-function RightNavBarCluster(props){
+class RightNavBarCluster extends React.Component{
+    constructor(props) {
+        super(props);
 
-    const [hiddenState, setHiddenState] = useState('Hidden');
-    const [loggedIn, setLoggedIn] = useState(false);
-
-    console.log(props.page);
-
-    const userPageClick = (event) => {
-        props.setPage('User');
+        this.state = {
+            loggedIn: false,
+        }
+        this.userPageClick = this.userPageClick.bind(this);
     }
 
-    return (
-        <div className='right-nav-cluster-container'>
-            <div className='login-tab' onClick={userPageClick}>{loggedIn ? <FontAwesomeIcon icon={faCircleUser} /> : 'Login/Sign Up'}</div>
-            <div className='filter-tab'>Filters</div>
-            <div className='arrow-tab'>Arrow</div>
-        </div>
-    )
+    userPageClick = (event) => {
+        this.props.setPage('User');
+    }
+
+    render() {
+        return (
+            <div className='right-nav-cluster-container'>
+                <div className='login-tab' onClick={this.userPageClick}>{this.state.loggedIn ? <FontAwesomeIcon icon={faCircleUser} /> : 'Login/Sign Up'}</div>
+                <div className='filter-tab'>Filters</div>
+                <div className='arrow-tab'>Arrow</div>
+            </div>
+        )
+    }
 }
 
 function mapStateToProps(state) {
