@@ -4,7 +4,7 @@ function CommentContent(props) {
 
     return(
         <div className='comments'>
-            <div className='comments-container'>
+            {props.comments.length != 0 ? <div className='comments-container'>
                 {props.comments.map((comments) => 
                     <div className='comment-wrapper'>
                         <div className='comment-userimage'>
@@ -18,7 +18,8 @@ function CommentContent(props) {
                         </div>
                     </div>
                 )}  
-            </div>
+            </div> :
+            <div className='comments-container-empty'>No comments Here Yet!</div>}
         </div>
     )
 }
