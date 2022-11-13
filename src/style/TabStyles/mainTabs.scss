@@ -970,6 +970,20 @@
                                 }
                             }
                          }
+
+                         .comments-container-empty {
+                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                            border-radius: 20px;
+                            color: #e9e9e9;
+                            display: grid;
+                            grid-gap: 15px;
+                            transform-origin: 0 0;
+                            max-height: 0px;
+                            overflow-y: auto;
+                            transform: scaleY(0);
+                            font-family: 'Poppins', sans-serif;
+                            @include drop-tabs-content-up-transistion;
+                         }
                     }
 
                 }
@@ -1068,6 +1082,22 @@
                                     }
                                 }
                             }
+                         }
+
+                         .comments-container-empty {
+                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                            border-radius: 20px;
+                            color: #e9e9e9;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            display: grid;
+                            grid-gap: 15px;
+                            transform-origin: 0 0;
+                            max-height: 200px;
+                            overflow-y: auto;
+                            transform: scaleY(1);
+                            font-family: 'Poppins', sans-serif;
+                            @include drop-tabs-contnent-down-transistion;
                          }
                     }
 
