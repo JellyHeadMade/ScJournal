@@ -2,6 +2,10 @@ import React from 'react';
 
 function CommentContent(props) {
 
+    const addCommentOnClick = () => {
+        console.log('add comment');
+    }
+
     return(
         <div className='comments'>
             {props.comments.length != 0 ? <div className='comments-container'>
@@ -20,6 +24,7 @@ function CommentContent(props) {
                 )}  
             </div> :
             <div className='comments-container-empty'>No comments Here Yet!</div>}
+            <div className='add-comment-btn' onClick={addCommentOnClick}>Add Comment</div>
         </div>
     )
 }

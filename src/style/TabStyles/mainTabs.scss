@@ -916,7 +916,8 @@
                             background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
                             border-radius: 20px;
                             display: grid;
-                            grid-gap: 15px;
+                            grid-template-rows: [main-s] min-content [main-e mid-s] 20px [mid-e bottom-s] min-content [bottom-e];
+                            // grid-gap: 15px;
                             transform-origin: 0 0;
                             max-height: 0px;
                             overflow-y: auto;
@@ -984,6 +985,17 @@
                             font-family: 'Poppins', sans-serif;
                             @include drop-tabs-content-up-transistion;
                          }
+
+                        .add-comment-btn{
+                            grid-row: mid-s/button-e;
+                            font-family: 'Poppins', sans-serif;
+                            background-color: $active-tab-color;
+                            border-radius: 0 0 20px 20px;
+                            z-index: 1;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+                            @include drop-tabs-content-up-transistion;
+                        }
                     }
 
                 }
@@ -1030,15 +1042,18 @@
                             background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
                             border-radius: 20px;
                             display: grid;
-                            grid-gap: 15px;
+                            grid-template-rows: [main-s] min-content [main-e mid-s] 20px [mid-e bottom-s] min-content [bottom-e];
+                            // grid-gap: 15px;
                             transform-origin: 0 0;
                             max-height: 200px;
                             overflow-y: auto;
                             transform: scaleY(1);
+                            z-index: 4;
                             @include drop-tabs-contnent-down-transistion;
 
                             .comment-wrapper {
                                 display: grid;
+                                grid-row: main-s/mid-e;
                                 grid-template-columns: [image-s] 60px [image-e user-s] auto [user-e];
                                 grid-template-rows: [top-s] 40px [top-e bottom-s] auto [bottom-e];
                                 @include drop-tabs-contnent-down-transistion;
@@ -1097,8 +1112,19 @@
                             overflow-y: auto;
                             transform: scaleY(1);
                             font-family: 'Poppins', sans-serif;
+                            grid-row: main-s/mid-e;
                             @include drop-tabs-contnent-down-transistion;
                          }
+
+                         .add-comment-btn{
+                            font-family: 'Poppins', sans-serif;
+                            background-color: $active-tab-color;
+                            border-radius: 0 0 20px 20px;
+                            z-index: 1;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+                            @include drop-tabs-contnent-down-transistion;
+                        }
                     }
 
                 }
