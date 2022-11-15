@@ -913,7 +913,7 @@
                         @include drop-tabs-content-up-transistion;
 
                          .comments-container {
-                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                            background-color: #131f29;
                             border-radius: 20px;
                             transform-origin: 0 0;
                             max-height: 0px;
@@ -970,7 +970,7 @@
                          }
 
                          .comments-container-empty {
-                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                            background-color: #131f29;
                             border-radius: 20px;
                             color: #e9e9e9;
                             display: grid;
@@ -1037,11 +1037,15 @@
 
                          .comment-batch{
                             display: grid;
-                            
+                            grid-template-columns: [one-s] 1fr [one-e];
+                            grid-template-rows: [comments-s] min-content [comments-e mid-s] 20px [mid-e bottom-s] min-content [bottom-e];
+
                             .comments-container {
-                                background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                                background-color: #131f29;
                                 border-radius: 20px;
                                 display: grid;
+                                grid-row: comments-s/mid-e;
+                                grid-column: one-s/one-e;
                                 // grid-gap: 15px;
                                 transform-origin: 0 0;
                                 max-height: 200px;
@@ -1099,7 +1103,7 @@
                              }
     
                              .comments-container-empty {
-                                background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                                background-color: #131f29;
                                 border-radius: 20px;
                                 color: #e9e9e9;
                                 padding-top: 10px;
@@ -1111,7 +1115,9 @@
                                 overflow-y: auto;
                                 transform: scaleY(1);
                                 font-family: 'Poppins', sans-serif;
-                                grid-row: main-s/mid-e;
+                                z-index: 4;
+                                grid-row: comments-s/mid-e;
+                                grid-column: one-s/one-e;
                                 @include drop-tabs-contnent-down-transistion;
                              }
     
@@ -1120,8 +1126,10 @@
                                 background-color: $active-tab-color;
                                 border-radius: 0 0 20px 20px;
                                 z-index: 1;
-                                padding-top: 5px;
+                                padding-top: 25px;
                                 padding-bottom: 5px;
+                                grid-row: mid-s/bottom-e;
+                                grid-column: one-s/one-e;
                                 @include drop-tabs-contnent-down-transistion;
                             }
                          }
