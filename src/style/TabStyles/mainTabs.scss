@@ -915,9 +915,6 @@
                          .comments-container {
                             background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
                             border-radius: 20px;
-                            display: grid;
-                            grid-template-rows: [main-s] min-content [main-e mid-s] 20px [mid-e bottom-s] min-content [bottom-e];
-                            // grid-gap: 15px;
                             transform-origin: 0 0;
                             max-height: 0px;
                             overflow-y: auto;
@@ -1038,93 +1035,96 @@
                         font-size: 12px;
                         @include drop-tabs-contnent-down-transistion;
 
-                         .comments-container {
-                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
-                            border-radius: 20px;
+                         .comment-batch{
                             display: grid;
-                            grid-template-rows: [main-s] min-content [main-e mid-s] 20px [mid-e bottom-s] min-content [bottom-e];
-                            // grid-gap: 15px;
-                            transform-origin: 0 0;
-                            max-height: 200px;
-                            overflow-y: auto;
-                            transform: scaleY(1);
-                            z-index: 4;
-                            @include drop-tabs-contnent-down-transistion;
-
-                            .comment-wrapper {
+                            
+                            .comments-container {
+                                background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                                border-radius: 20px;
                                 display: grid;
-                                grid-row: main-s/mid-e;
-                                grid-template-columns: [image-s] 60px [image-e user-s] auto [user-e];
-                                grid-template-rows: [top-s] 40px [top-e bottom-s] auto [bottom-e];
+                                // grid-gap: 15px;
+                                transform-origin: 0 0;
+                                max-height: 200px;
+                                overflow-y: auto;
+                                transform: scaleY(1);
+                                z-index: 4;
                                 @include drop-tabs-contnent-down-transistion;
-   
-                                .comment-userimage {
-                                    grid-column: image-s/image-e;
-                                    grid-row: top-s/top-e;
-                                    padding: 5px 15px;
+    
+                                .comment-wrapper {
+                                    display: grid;
+                                    grid-row: main-s/mid-e;
+                                    grid-template-columns: [image-s] 60px [image-e user-s] auto [user-e];
+                                    grid-template-rows: [top-s] 40px [top-e bottom-s] auto [bottom-e];
                                     @include drop-tabs-contnent-down-transistion;
-
-                                    &__img{
+       
+                                    .comment-userimage {
+                                        grid-column: image-s/image-e;
+                                        grid-row: top-s/top-e;
+                                        padding: 5px 15px;
                                         @include drop-tabs-contnent-down-transistion;
+    
+                                        &__img{
+                                            @include drop-tabs-contnent-down-transistion;
+                                        }
+                                    }
+       
+                                    .comment-username {
+                                       grid-column: user-s/user-e;
+                                       grid-row: top-s/top-e;
+                                       justify-self: start;
+                                       align-self: center;
+                                       color: #e9e9e9;
+                                       @include drop-tabs-contnent-down-transistion;
+    
+                                       &__name{
+                                            font-size: 12px;
+                                            @include drop-tabs-contnent-down-transistion;
+                                       }
+                                    }
+       
+                                    .comment-post-comment {
+                                        grid-column: image-s/user-e;
+                                        grid-row: bottom-s/bottom-e;
+                                        padding: 5px 10px 10px 15px;
+                                        color: #e9e9e9;
+                                        justify-self: start;
+                                        @include drop-tabs-contnent-down-transistion;
+    
+                                        &__text{
+                                            font-size: 12px;
+                                            @include drop-tabs-contnent-down-transistion;
+                                        }
                                     }
                                 }
-   
-                                .comment-username {
-                                   grid-column: user-s/user-e;
-                                   grid-row: top-s/top-e;
-                                   justify-self: start;
-                                   align-self: center;
-                                   color: #e9e9e9;
-                                   @include drop-tabs-contnent-down-transistion;
-
-                                   &__name{
-                                        font-size: 12px;
-                                        @include drop-tabs-contnent-down-transistion;
-                                   }
-                                }
-   
-                                .comment-post-comment {
-                                    grid-column: image-s/user-e;
-                                    grid-row: bottom-s/bottom-e;
-                                    padding: 5px 10px 10px 15px;
-                                    color: #e9e9e9;
-                                    justify-self: start;
-                                    @include drop-tabs-contnent-down-transistion;
-
-                                    &__text{
-                                        font-size: 12px;
-                                        @include drop-tabs-contnent-down-transistion;
-                                    }
-                                }
+                             }
+    
+                             .comments-container-empty {
+                                background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
+                                border-radius: 20px;
+                                color: #e9e9e9;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                display: grid;
+                                grid-gap: 15px;
+                                transform-origin: 0 0;
+                                max-height: 200px;
+                                overflow-y: auto;
+                                transform: scaleY(1);
+                                font-family: 'Poppins', sans-serif;
+                                grid-row: main-s/mid-e;
+                                @include drop-tabs-contnent-down-transistion;
+                             }
+    
+                             .add-comment-btn{
+                                font-family: 'Poppins', sans-serif;
+                                background-color: $active-tab-color;
+                                border-radius: 0 0 20px 20px;
+                                z-index: 1;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                @include drop-tabs-contnent-down-transistion;
                             }
                          }
-
-                         .comments-container-empty {
-                            background-color: rgba($color: $tab-back-drop-color, $alpha: 0.7);
-                            border-radius: 20px;
-                            color: #e9e9e9;
-                            padding-top: 10px;
-                            padding-bottom: 10px;
-                            display: grid;
-                            grid-gap: 15px;
-                            transform-origin: 0 0;
-                            max-height: 200px;
-                            overflow-y: auto;
-                            transform: scaleY(1);
-                            font-family: 'Poppins', sans-serif;
-                            grid-row: main-s/mid-e;
-                            @include drop-tabs-contnent-down-transistion;
-                         }
-
-                         .add-comment-btn{
-                            font-family: 'Poppins', sans-serif;
-                            background-color: $active-tab-color;
-                            border-radius: 0 0 20px 20px;
-                            z-index: 1;
-                            padding-top: 5px;
-                            padding-bottom: 5px;
-                            @include drop-tabs-contnent-down-transistion;
-                        }
                     }
 
                 }
