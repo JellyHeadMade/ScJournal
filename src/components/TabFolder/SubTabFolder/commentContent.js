@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function CommentContent(props) {
 
+    const [clicked, setClicked] = useState(false);
+
     const addCommentOnClick = () => {
         console.log('add comment');
+        if (clicked) {
+            setClicked(false);
+        } else {
+            setClicked(true);
+        }
     }
 
     return(
@@ -25,7 +32,7 @@ function CommentContent(props) {
                     )}  
                 </div> :
                 <div className='comments-container-empty'>No comments Here Yet!</div>}
-                <div className='add-comment-btn' onClick={addCommentOnClick}>Add Comment</div>
+                <div className='add-comment-btn' onClick={addCommentOnClick}>{clicked ? 'Submit Comment' : 'Add Comment' }</div>
             </div>
         </div>
     )
