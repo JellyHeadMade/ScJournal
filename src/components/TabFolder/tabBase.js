@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import TabBanner from './tabBanner';
 import DropTab from './dropTab';
@@ -8,21 +8,6 @@ import CommentContent from './SubTabFolder/commentContent';
 import axios from 'axios';
 
 function TabBase(props) {
-
-    const [postComments, setPostComments] = useState([]);
-
-    useEffect(() => {
-        if (props.postId) {
-            axios.get(`https://scjournalapiv2.herokuapp.com/getpostcomments/${props.postId}`)
-                .then((response) => {
-                    const data = response.data;
-                    console.log(data);
-                    setPostComments(data);
-                }).catch((error) => {
-                    console.log(error);
-                });
-        }
-    }, [])
 
     return (
         <div className='tab-group-container'>
@@ -43,7 +28,7 @@ function TabBase(props) {
                         />} 
                     />
                     <div className='drop-container-spacer1'></div>
-                    <DropTab type='Comments' order='3' content={<CommentContent postID={props.postId} user_id={props.user_id} user_image={props.userImage} user_name={props.userName} comments={postComments}/>} />
+                    <DropTab type='Comments' order='3' content={<CommentContent postID={props.postId} user_id={props.user_id} user_image={props.userImage} user_name={props.userName}/>} />
                     <div className='drop-container-spacer2'></div>
                 </div>
             </div>

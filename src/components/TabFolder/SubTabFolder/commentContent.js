@@ -1,7 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function CommentContent(props) {
+
+    const [postComments, setPostComments] = useState([]);
 
     const [clicked, setClicked] = useState(false);
 
@@ -14,8 +16,21 @@ function CommentContent(props) {
         comment: ''
     });
 
+    useEffect(() => {
+        if (props.postID) {
+            console.log('useeffect was hit');
+            axios.get(`https://scjournalapiv2.herokuapp.com/getpostcomments/${props.postID}`)
+                .then((response) => {
+                    const data = response.data;
+                    console.log(data);
+                    setPostComments(data);
+                }).catch((error) => {
+                    console.log(error);
+                });
+        }
+    }, [])
+
     const addCommentOnClick = () => {
-        console.log('add comment');
         if (clicked) {
             setClicked(false);
         } else {
@@ -63,17 +78,17 @@ function CommentContent(props) {
     return(
         <div className='comments'>
             {clicked !== true ? <div className='comment-batch'>
-                {props.comments.length != 0 ? <div className='comments-container'>
-                    {props.comments.map((comments) => 
+                {postComments.length !== 0 ? <div className='comments-container'>
+                    {postComments.map((comment) => 
                         <div className='comment-wrapper'>
                             <div className='comment-userimage'>
-                                <img className='comment-userimage__img' src={comments.userImage}></img>
+                                <img className='comment-userimage__img' src={comment.userImage}></img>
                             </div>
                             <div className='comment-username'>
-                                <a className='comment-username__name'>{comments.username}</a>
+                                <a className='comment-username__name'>{comment.username}</a>
                             </div>
                             <div className='comment-post-comment'>
-                                <a className='comment-post-comment__text'>{comments.comment}</a>
+                                <a className='comment-post-comment__text'>{comment.comment}</a>
                             </div>
                         </div>
                     )}  
@@ -99,4 +114,4 @@ function CommentContent(props) {
         </div>
     )
 }
-export default CommentContent;
+export default React.memo(CommentContent);
