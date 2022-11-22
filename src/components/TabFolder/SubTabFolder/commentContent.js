@@ -16,10 +16,8 @@ function CommentContent(props) {
         comment: ''
     });
 
-    useEffect(() => {
-        if (props.postID) {
-            console.log('useeffect was hit');
-            axios.get(`https://scjournalapiv2.herokuapp.com/getpostcomments/${props.postID}`)
+    const setComments = () => {
+        axios.get(`https://scjournalapiv2.herokuapp.com/getpostcomments/${props.postID}`)
                 .then((response) => {
                     const data = response.data;
                     console.log(data);
@@ -27,6 +25,12 @@ function CommentContent(props) {
                 }).catch((error) => {
                     console.log(error);
                 });
+    }
+
+    useEffect(() => {
+        if (props.postID) {
+            console.log('useeffect was hit');
+            setComments();
         }
     }, [])
 
@@ -63,6 +67,7 @@ function CommentContent(props) {
         })
             .then(function (response) {
                 console.log(response);
+                setComments();
                 if (clicked) {
                     setClicked(false);
                 } else {
