@@ -1041,6 +1041,7 @@
                             grid-template-rows: [comments-s] min-content [comments-e mid-s] 20px [mid-e bottom-s] min-content [bottom-e];
 
                             .comments-container {
+                                width: 100%;
                                 background-color: #131f29;
                                 border-radius: 20px;
                                 display: grid;
@@ -1056,7 +1057,7 @@
     
                                 .comment-wrapper {
                                     display: grid;
-                                    grid-row: main-s/mid-e;
+                                    grid-auto-flow: column;
                                     grid-template-columns: [image-s] 60px [image-e user-s] auto [user-e];
                                     grid-template-rows: [top-s] 40px [top-e bottom-s] auto [bottom-e];
                                     @include drop-tabs-contnent-down-transistion;
