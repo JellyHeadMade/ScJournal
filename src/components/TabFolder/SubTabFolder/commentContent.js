@@ -113,8 +113,8 @@ function CommentContent(props) {
                             onChange={(e) => setCommentData({...commentData, comment: e.target.value})}
                         />
                     </div>
-                    <div className='add-comment-btn' onClick={handleSubmit} type='submit'>Submit Comment</div>
                 </form>
+                <div className='add-comment-btn' onClick={handleSubmit}>Submit Comment</div>
             </div>}
         </div>
     )
