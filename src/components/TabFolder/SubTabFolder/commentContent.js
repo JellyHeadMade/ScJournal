@@ -106,6 +106,7 @@ function CommentContent(props) {
                 <form className='comment-form'>
                     <div className='comment-form-wrapper'>
                         <div className='comment-form-comment-title'>Comment</div>
+                        <div className='comment-exit-btn' onClick={addCommentOnClick}>Close</div>
                         <input 
                             className='comment-form-comment'
                             type='text' name='comment'
