@@ -73,6 +73,7 @@ function CommentContent(props) {
                 } else {
                     setClicked(true);
                 }
+                setCommentData({...commentData, comment: ''});
             })
             .catch(function (error) {
                 console.log(error);
@@ -109,9 +110,11 @@ function CommentContent(props) {
                             className='comment-form-comment'
                             type='text' name='comment'
                             placeholder='Add a comment...'
+                            maxLength={240}
                             value={commentData.comment}
                             onChange={(e) => setCommentData({...commentData, comment: e.target.value})}
                         />
+                        <div className='comment-character-count'>{`${commentData.comment.length}/240`}</div>
                     </div>
                 </form>
                 <div className='add-comment-btn' onClick={handleSubmit}>Submit Comment</div>
