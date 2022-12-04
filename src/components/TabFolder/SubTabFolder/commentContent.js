@@ -81,14 +81,31 @@ function CommentContent(props) {
             });
     }
 
+    const deleteComment = (commentID) => {
+        axios({
+            method: "delete",
+            url: `https://scjournalapiv2.herokuapp.com/deletecomment/${commentID}`,
+        })
+            .then(function (response) {
+                setComments();
+                console.log(response);
+                console.log('comment deleted');
+            })
+            .catch(function (error) {
+                console.log(error);
+                alert('There was an error deleting your comment. Please try again.');
+            });
+    }
+
     return(
         <div className='comments'>
             {clicked !== true ? <div className='comment-batch'>
                 {postComments.length !== 0 ? <div className='comments-container'>
                     {postComments.map((comment) => 
                         <div className='comment-wrapper'>
+                            <div className='delete-button' onClick={() => deleteComment(comment.id)}>Delete Comment</div>
                             <div className='comment-userimage'>
-                                <img className='comment-userimage__img' src={comment.userImage}></img>
+                                <img className='comment-userimage__img' src={comment.user_image}></img>
                             </div>
                             <div className='comment-username'>
                                 <a className='comment-username__name'>{comment.username}</a>
