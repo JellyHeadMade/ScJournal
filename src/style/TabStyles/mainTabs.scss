@@ -1061,6 +1061,18 @@
                                     grid-template-columns: [image-s] 60px [image-e user-s] auto [user-e];
                                     grid-template-rows: [top-s] 40px [top-e bottom-s] auto [bottom-e];
                                     @include drop-tabs-contnent-down-transistion;
+
+                                    .comment-delete-btn {
+                                        display: grid;
+                                        grid-column: user-s/user-e;
+                                        grid-row: top-s/bottom-e;
+                                        justify-self: end;
+                                        background-color: #d9534f;
+                                        align-self: center;
+                                        border-radius: 45%;
+                                        padding: 20px;
+                                        color: #e9e9e9;
+                                    }
        
                                     .comment-userimage {
                                         grid-column: image-s/image-e;
@@ -1069,6 +1081,7 @@
                                         @include drop-tabs-contnent-down-transistion;
     
                                         &__img{
+                                            width: 100%;
                                             @include drop-tabs-contnent-down-transistion;
                                         }
                                     }

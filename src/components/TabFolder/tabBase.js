@@ -28,7 +28,7 @@ function TabBase(props) {
                         />} 
                     />
                     <div className='drop-container-spacer1'></div>
-                    <DropTab type='Comments' order='3' content={<CommentContent postID={props.postId} user_id={props.user_id} user_image={props.userImage} user_name={props.userName}/>} />
+                    <DropTab type='Comments' order='3' content={<CommentContent viewer_id={props.viewer_id} postID={props.postId} user_id={props.user_id} user_image={props.userImage} user_name={props.userName}/>} />
                     <div className='drop-container-spacer2'></div>
                 </div>
             </div>

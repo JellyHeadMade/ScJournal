@@ -103,7 +103,7 @@ function CommentContent(props) {
                 {postComments.length !== 0 ? <div className='comments-container'>
                     {postComments.map((comment) => 
                         <div className='comment-wrapper'>
-                            <div className='delete-button' onClick={() => deleteComment(comment.id)}>Delete Comment</div>
+                            {props.viewer_id == comment.user_id ? <div className='comment-delete-btn' onClick={() => deleteComment(comment.id)}>X</div> : null}
                             <div className='comment-userimage'>
                                 <img className='comment-userimage__img' src={comment.user_image}></img>
                             </div>

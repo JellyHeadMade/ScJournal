@@ -7,7 +7,7 @@ import TabBase from './TabFolder/tabBase';
 
 function TimeDot(props) {
 
-    const [timelineState, setTimelinestate] = useState({userId: 2, viewerId: '2'});
+    const [timelineState, setTimelinestate] = useState({userId: 2, viewerId: '1'});
     const dispatch = useDispatch();
 
     useEffect(() => {
